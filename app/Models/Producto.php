@@ -26,4 +26,9 @@ class Producto extends Model
     	$producto->save();
     	return true;
     }
+
+    public static function Listar_Productos()
+    {
+        return Producto::all();
+    }
 }

@@ -14,6 +14,12 @@ class ProductoController extends Controller
     	return view('adminlte::producto.producto', compact('categorias'));
     }
 
+
+    public function MostrarProductos()
+    {
+        $productos = Producto::Listar_Productos();
+        return view('adminlte::producto.mostrarproductos', compact('productos'));
+    }
     public  function GuardarProducto(Request $request)
     {
     	$data = $request->all();

@@ -26,21 +26,40 @@ Landing page based on Pratt: http://blacktie.co/demo/pratt/
     <link rel="icon" type="image/png" href="/img/ico.png" sizes="16x16">
 
     <style>
+        
+
+
+
+        .asd
+        {
+            background-color: #616161;
+        }
         .verde
         {
             color:green;
         }
         .acme1
         {
-            color:#0F0F29;
+            color:#212121;
+            font-size: 45rem;
         }
         .fa-exclamation-circle,.fa-shopping-cart,.fa-bar-chart
         {
-            color:#3c8dbc;
+            /*color:#3c8dbc;*/
+            color: #F5F5F5;
         }
         .azul
         {
-            color:#3c8dbc;   
+            /*color:#3c8dbc;   */
+            color: #212121;
+        }
+        .blanco
+        {
+            color: #F5F5F5; 
+        }
+        .blanco-bg
+        {
+            background: #F5F5F5;
         }
         .fa-facebook-square,.fa-facebook-square:hover
         {
@@ -55,11 +74,24 @@ Landing page based on Pratt: http://blacktie.co/demo/pratt/
             color:#3c8dbc;
         }
         #jumbotron-landing
-        {background-image: url({{ asset('/img/acme1.jpg') }});}
+        {background-image: url({{ asset('/img/acme2.png') }});
+        background-repeat: no-repeat;
+        }
 
         #footerwrap {
-                background-color:  #3c8dbc;
+                background-color:  #F5F5F5;
         }
+
+
+        div    { background: #616161; }
+        .default-primary-color { background: #9E9E9E; }
+        .light-primary-color   { background: #F5F5F5; }
+        .text-primary-color    { color: #212121; }
+        .accent-color          { background: #FF5252; }
+        .primary-text-color    { color: #212121; }
+        .secondary-text-color  { color: #757575; }
+        .divider-color         { border-color: #BDBDBD; }
+
     </style>
 </head> 
 
@@ -68,23 +100,23 @@ Landing page based on Pratt: http://blacktie.co/demo/pratt/
 <div id="app" v-cloak>
     <!-- Fixed navbar -->
     <div id="navigation" class="navbar navbar-default navbar-fixed-top">
-        <div class="container">
+        <div class="container-fluid">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="/"><b class="text-warning">{{ trans('sociales.aplication_og_title')}}</b></a>
+                <a class="navbar-brand" href="/"><b class="blanco">{{ trans('sociales.aplication_og_title')}}</b></a>
             </div>
-            <div class="navbar-collapse collapse">
+            <div class="navbar-collapse collapse ">
                 <ul class="nav navbar-nav">
-                    <li class="active"><a href="#home" class="smoothScroll">{{ trans('adminlte_lang::message.home') }}</a></li>
+                    <li class="active "><a href="#home" class="smoothScroll">{{ trans('adminlte_lang::message.home') }}</a></li>
                     <li><a href="#desc" class="smoothScroll">{{ trans('adminlte_lang::message.description') }}</a></li>
                     {{-- <li><a href="#showcase" class="smoothScroll">{{ trans('adminlte_lang::message.showcase') }}</a></li> --}}
                     <li><a href="#contact" class="smoothScroll">{{ trans('adminlte_lang::message.contact') }}</a></li>
                     <!-- Borrar -->
-                    <li><a href="{{url('admin/PersonaNatural')}}">R. Persona Natural</a></li>
+                    <!-- <li><a href="{{url('admin/PersonaNatural')}}">R. Persona Natural</a></li> -->
                     <!-- Fin Borrar -->
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
@@ -99,7 +131,61 @@ Landing page based on Pratt: http://blacktie.co/demo/pratt/
         </div>
     </div>
 
-    <section id="home" name="home">
+    <!-- <section id="home" name="home">
+         <div id="jumbotron-landing" class="jumbotron">
+      <div class="container">
+        <div class="row">
+          <div class="pull-left">
+            {{-- <img src="images/logjo.png" alt="Logooo"> --}}
+            br*
+          </div>
+      </div>
+  </div>
+</div> -->
+</section>
+
+    <!-- <section id="home" name="home">
+        <div class="container-fluid jumnbotron" id="jumbotron-landing">
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+        </div>
+
+    </section> -->
+    <section>
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="container-fluid" id="home" name="home">
+                    <h1 class="acme1 text-sm-center h1">
+                        ACME
+                    </h1>
+                    <h2 class="text-center blanco">Si no lo tenemos, solo pidalo</h2>
+                </div>
+            </div>
+            
+        </div>
+        
+
+    </section>
+    
+    
+   <!--  <section id="home" name="home">
          <div id="jumbotron-landing" class="jumbotron">
       <div class="container">
         <div class="row">
@@ -116,25 +202,58 @@ Landing page based on Pratt: http://blacktie.co/demo/pratt/
         </div>
         <div class="row text-center">
           <div class="col-xs-12">
-            <h1><strong class="acme1">ACME</strong></h1>
-            <h3><strong  class="acme1">SI QUIERES ATRAPAR AL CORRECAMINOS, COMPRA AQUÍ</strong></h3>
-          </div>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br> -->
+            <!-- <h1><strong class="acme1">ACME</strong></h1> -->
+            <!-- <h3><strong  class="acme1">SI QUIERES ATRAPAR AL CORRECAMINOS, COMPRA AQUÍ</strong></h3> -->
+        <!--   </div>
         </div>
 
               
       </div>
    </div>
-    </section>
+    </section> -->
 
 <section id="desc" name="desc">
         <!-- INTRO WRAP -->
         <div id="intro">
             <div class="container">
                 <div class="row centered">
-                  <div class="col-xs-12">
-                    <h1 class="verde">Garantía</h1>
-                  </div>
+                  
+                <div class="row centered">
+                    <div class="col-xs-12 col-sm-4">
+                        <h2 class="h2 blanco">
+                            ATENCION
+                        </h2>
+                    </div>
+                    <div class="col-xs-12 col-sm-4">
+                        <h2 class="h2 blanco">
+                            ATENCION
+                        </h2>
+                    </div>
+                    <div class="col-xs-12 col-sm-4">
+                        <h2 class="h2 blanco">
+                            ATENCION
+                        </h2>
+                    </div>
+
+                </div>
+
+
                   <div class="col-xs-12 col-sm-4">
+                    <strong></strong>
                     <i class="fa fa-exclamation-circle fa-5x"></i>
                     <h3>Si muere en el intento, no se preocupe...  <strong class="azul">lo reviviremos</strong> sin importar que. </h3>
                     <p>Paremicos <strong class="azul">siempre disponibles</strong>  24/7/360.</p>
@@ -151,6 +270,24 @@ Landing page based on Pratt: http://blacktie.co/demo/pratt/
                   </div>
                 </div>
                 <div class="row centered">
+                    <div class="row centered">
+                    <div class="col-xs-12 col-sm-4">
+                        <h2 class="h2 blanco">
+                            ATENCION
+                        </h2>
+                    </div>
+                    <div class="col-xs-12 col-sm-4">
+                        <h2 class="h2 blanco">
+                            ATENCION
+                        </h2>
+                    </div>
+                    <div class="col-xs-12 col-sm-4">
+                        <h2 class="h2 blanco">
+                            ATENCION
+                        </h2>
+                    </div>
+
+                </div>
                   <div class="col-xs-12 col-sm-4">
                     <i class="fa fa-exclamation-circle fa-5x"></i>
                     <h3>Mas de  <strong class="azul">1000 clientes</strong> confian en nosotros </h3>
@@ -171,7 +308,6 @@ Landing page based on Pratt: http://blacktie.co/demo/pratt/
         </div><!--/ #introwrap -->
     </section>
     
-
    {{--  <section id="showcase" name="showcase">
         <div id="showcase">
             <div class="container">
@@ -205,9 +341,11 @@ Landing page based on Pratt: http://blacktie.co/demo/pratt/
         </div>
     </section> --}}
 
-    <section id="contact" name="contact">
-        <div id="footerwrap">
-            <div class="container">
+    <section id="contact" name="contact" >
+
+        <div id="footerwrap" >
+
+            <div class="container-fluid ">
                 <div class="col-lg-2">
                     <h3><strong>{{ trans('adminlte_lang::message.address') }}</strong></h3>
                     <p>
