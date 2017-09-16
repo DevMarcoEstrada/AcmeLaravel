@@ -178,6 +178,10 @@ return [
         App\Providers\RouteServiceProvider::class,
         Acacha\AdminLTETemplateLaravel\Providers\AdminLTETemplateServiceProvider::class,
         Acoustep\EntrustGui\EntrustGuiServiceProvider::class,
+
+        //Intervention/image
+        Intervention\Image\ImageServiceProvider::class,
+
         
     ],
 
@@ -229,6 +233,7 @@ return [
         'View' => Illuminate\Support\Facades\View::class,
         'AdminLTE' => Acacha\AdminLTETemplateLaravel\Facades\AdminLTE::class, 
         'Entrust'   => Zizaco\Entrust\EntrustFacade::class,
+        'Image' => Intervention\Image\Facades\Image::class,
 
     ],
 

@@ -4,6 +4,10 @@
 	Añadir Producto
 @endsection
 
+@section('contentheader_title')
+	Nuevo Producto
+@endsection
+
 @section('css')
 	<style>
 		.content-wrapper
@@ -58,34 +62,43 @@
 		<div class="row">
 			<div class="col-md-10 col-md-offset-1">
         		<h3 class="text-center color-azul"><strong><i class="fa fa-pencil-square" aria-hidden="true"></i>&nbsp; Añadir Producto&nbsp;<i class="fa fa-pencil-square" aria-hidden="true"></i></strong></h3>  
-	        	<form method="POST" action="{{url('admin/Producto')}}" accept-charset="UTF-8" class="" id="RegistroFormCategoria">
+	        	<form method="POST" action="{{url('admin/Producto')}}" accept-charset="UTF-8" class="" id="RegistroFormCategoria" enctype="multipart/form-data">
 	        		<input name="_token" type="hidden" value="{{ csrf_token() }}">
 	                                    <div class="form-group row">
-	                                        <div class="col-sm-4 ">
+	                                        <div class="col-sm-6 ">
 	                                          <label class="color-azul ">Nombre del Producto</label>
 
 	                                          <input type="text" class="form-control text-left"  id="cDescripcionProducto" name="cDescripcionProducto"  required placeholder="Nombre del Producto" maxlength="50" >
 	                                          <span  id ="ErrorMensaje-Nombre" class="help-block"></span>
 	                                        </div>
 
-	                                        <div class="col-sm-4">
+	                                        <div class="col-sm-6">
 	                                        	<lbl class="color-azul">Precio</lbl>
 	                                        	<input type="text" class="form-control text-left" id="precio" name="precio" placeholder="Precio del Producto">
 	                                        	<span class="ErrorMensaje-precio" class="help-block"></span>
 	                                        </div>
 
-	                                        <div class="col-sm-4">
-	                                        <label class="color-azul">Categoria:</label>
-	                                        <select class="form-control text-center" name="categoria_id" id="categoria_id">
-		                                        @foreach($categorias as $categoria)
-				                                    <option value="{{ $categoria->id }}" >{{ $categoria->nombre_categoria}}</option>
-		                              			@endforeach
-	                            			</select>
-	                                        <span  id ="ErrorMensaje-sexo_id" class="help-block"></span>
-	                                      </div>
+	                                        
 	                                        
 	                                    </div>
-
+	                                    
+										<div class="from-group row">
+	                                    	<div class="col-sm-6">
+		                                        <label class="color-azul">Categoria:</label>
+		                                        <select class="form-control text-center" name="categoria_id" id="categoria_id">
+			                                        @foreach($categorias as $categoria)
+					                                    <option value="{{ $categoria->id }}" >{{ $categoria->nombre_categoria}}</option>
+			                              			@endforeach
+		                            			</select>
+		                                        <span  id ="ErrorMensaje-sexo_id" class="help-block"></span>
+		                                    </div>
+											
+											<div class="col-sm-6">
+												<label class="color-azul">Imagen:</label>
+												<input type="file" name="image" id="image" accept="image/*">
+											</div>
+	                                    	
+	                                    </div>
 	                                   
 	                                    
 	                                    

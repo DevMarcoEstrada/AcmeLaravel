@@ -1,8 +1,13 @@
 @extends('adminlte::layouts.app')
 
-@section('htmlheader_title')
-	Añadir Categoria
+@section('contentheader_title')
+	Productos
 @endsection
+
+@section('htmlheader_title')
+	Productos
+@endsection
+
 
 @section('css')
 	<style>
@@ -47,6 +52,7 @@
 	</style>
 @endsection
 
+
 @section('script-inicio')
 	<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBC-ueG56d4pm8xrNLlPssupxlCCuwWIOo&libraries=adsense&language=es"></script>
 @endsection
@@ -58,22 +64,58 @@
 	
 		@foreach($productos as $producto)
 		<div class="row">
-			<div class="col-sm-12 col-md-4">
-				<h2 class="h2 text-center">
+
+			<!-- <div class="col-sm-12 col-md-3">
+
+				<h2 class="h2 text-left ">
+					 
+					<i class="fa fa-hand-o-right " aria-hidden="true"></i>&nbsp;
+					
+				</h2>
+					
+			</div> -->
+
+			<div class="col-sm-12 col-md-2 ">
+
+				<h2 class="h2 text-center ">
 					{{$producto->cDescripcionProducto}}
 				</h2>
 					
 			</div>
-		</div>
-		<div class="row">
-			<div class="col-sm-12 col-md-4">
-				<img src="{{ asset('/img/pistola-desintegradora.jpg') }}" class="img-fluid" alt="Sample photo">
+			<div class="col-sm-3 col-sm-push-5 col-md-3 col-md-push-1">
+				<img src="{{ asset('/img/productos/' . $producto->ruta_imagen) }}" class="img-fluid img-rounded" alt="Sample photo" width="90" height="90">
+				
 			</div>
-		</div>	
 
-		
+
+
+			<div class="col-sm-12  col-md-2">
+				<h2 class="h2 text-center ">
+					<strong>Precio:</strong>
+					<p>{{$producto->precio}}</p>
+				</h2>
+				
+			</div>
+			
+			<div class="col-sm-12 col-md-2">
+				<h2 class="h2 text-center">
+					<strong>En Stock:</strong>
+					<p>{{$producto->stock}}</p>
+				</h2>
+			</div>
+
+			<div class="col-sm-12 col-md-2 ">
+				<h2 class="h2 text-center">
+					<strong>Categoria:</strong>
+					<p>{{$producto->nombre_categoria}}</p>
+				</h2>
+			</div>
+		</div>
+		<hr>
 		@endforeach
 </div>
+
+
 
 @endsection
 

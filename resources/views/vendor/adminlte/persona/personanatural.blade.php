@@ -4,6 +4,10 @@
 	Registro de Persona Natural
 @endsection
 
+@section('contentheader_title')
+	Nuevo Cliente
+@endsection
+
 @section('css')
 	<style>
 		.content-wrapper
@@ -141,18 +145,32 @@
 	                                      </div>
 	                                    </div>
 	                                    <div class="form-group row">
-	                                      <div class="col-sm-6">
+	                                      <div class="col-sm-4">
 	                                        <label class="color-azul">Dirección de Negocio:</label>
 	                                        <input type="text" class="form-control text-center" 
 	                                        id="cDireccionNegocio" name="cDireccionNegocio"  required placeholder="Dirección de Negocio">
 	                                        <span  id ="ErrorMensaje-cDireccionNegocio" class="help-block"></span>
 	                                      </div>
-	                                      <div class="col-sm-6">
+	                                      <div class="col-sm-4">
 	                                        <label class="color-azul">Pagina de Contacto:</label>
 	                                        <input type="text" class="form-control text-center"  id="cPaginaContacto" name="cPaginaContacto"  placeholder="www.ejemplo.com">
 	                                        <span  id ="ErrorMensaje-cPaginaContacto" class="help-block"></span>
 	                                      </div>
+
+	                                      
+											<div class="col-sm-4">
+	                                        <label class="color-azul">Nro de Tarjeta:</label>
+	                                        <input type="text" class="form-control text-center"  id="numero_tarjeta" name="numero_tarjeta"  placeholder="00000000000000000" maxlength="16">
+	                                        <span  id ="ErrorMensaje-cPaginaContacto" class="help-block"></span>
+	                                      </div>
+
+
+
 	                                    </div>
+
+										
+
+
 	                                    <div class="form-group">
 	                                        
 	                                    </div>

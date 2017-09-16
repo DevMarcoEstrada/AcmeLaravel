@@ -17,7 +17,7 @@ class ProductoController extends Controller
 
     public function MostrarProductos()
     {
-        $productos = Producto::Listar_Productos();
+        $productos = Producto::Listar_Productos_Categoria();
         return view('adminlte::producto.mostrarproductos', compact('productos'));
     }
     public  function GuardarProducto(Request $request)

@@ -3,6 +3,9 @@
 @section('htmlheader_title')
 	Añadir Categoria
 @endsection
+@section('contentheader_title')
+	Nueva Categoria
+@endsection
 
 @section('css')
 	<style>

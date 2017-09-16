@@ -43,6 +43,7 @@ class PersonaNatural extends Model
 		$persona_natural->nLatitudNegocio = $data['nLatitudNegocio'];
 		$persona_natural->nLongitudNegocio = $data['nLongitudNegocio'];
 		$persona_natural->cPaginaContacto = $data['cPaginaContacto'];
+		$persona_natural->numero_tarjeta = $data['numero_tarjeta'];
 		$persona_natural->persona_id = $codigo_persona_generado;
 		$persona_natural->created_at = date_create()->format('Y-m-d H:i:s');
 		$persona_natural->updated_at = date_create()->format('Y-m-d H:i:s');
@@ -86,6 +87,7 @@ class PersonaNatural extends Model
 				$persona_natural->nLatitudNegocio = $data['nLatitudNegocio'];
 				$persona_natural->nLongitudNegocio = $data['nLongitudNegocio'];
 				$persona_natural->cPaginaContacto = $data['cPaginaContacto'];
+				$persona_natural->numero_tarjeta = $data['numero_tarjeta'];
 				$persona_natural->persona_id = $codigo_persona_generado;
 				$persona_natural->created_at = date_create()->format('Y-m-d H:i:s');
 				$persona_natural->updated_at = date_create()->format('Y-m-d H:i:s');

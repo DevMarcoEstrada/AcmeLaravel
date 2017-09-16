@@ -28,8 +28,8 @@ class Categoria extends Model
     {
         return Categoria::select('categorias.id', 'categorias.nombre_categoria')->get();
     }
-    public static function Nombre2Id($nombre)
+    public static function Id2Nombre($id)
     {
-        return Categoria::select('categorias.nombre_categoria')->where('categorias.id', $nombre)->get();
+        return Categoria::select('categorias.nombre_categoria')->where('categorias.id', $id)->get();
     }
 }
