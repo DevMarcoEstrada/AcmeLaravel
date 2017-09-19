@@ -73,31 +73,42 @@
 	                                        </div>
 
 	                                        <div class="col-sm-6">
-	                                        	<lbl class="color-azul">Precio</lbl>
-	                                        	<input type="text" class="form-control text-left" id="precio" name="precio" placeholder="Precio del Producto">
-	                                        	<span class="ErrorMensaje-precio" class="help-block"></span>
-	                                        </div>
-
-	                                        
-	                                        
-	                                    </div>
-	                                    
-										<div class="from-group row">
-	                                    	<div class="col-sm-6">
 		                                        <label class="color-azul">Categoria:</label>
 		                                        <select class="form-control text-center" name="categoria_id" id="categoria_id">
 			                                        @foreach($categorias as $categoria)
 					                                    <option value="{{ $categoria->id }}" >{{ $categoria->nombre_categoria}}</option>
 			                              			@endforeach
 		                            			</select>
-		                                        <span  id ="ErrorMensaje-sexo_id" class="help-block"></span>
+		                                        <span  id ="ErrorMensaje-categoria" class="help-block"></span>
 		                                    </div>
+
+	                                        
+	                                        
+	                                    </div>
+	                                    
+										<div class="form-group row">
+											<div class="col-sm-6">
+	                                        	<lbl class="color-azul">Precio</lbl>
+	                                        	<input type="text" class="form-control text-left" id="precio" name="precio" placeholder="Precio del Producto">
+	                                        	<span class="help-block" id="ErrorMensaje-precio" class="help-block"></span>
+	                                        </div>
+	                                    	
 											
 											<div class="col-sm-6">
-												<label class="color-azul">Imagen:</label>
-												<input type="file" name="image" id="image" accept="image/*">
+												<label class="color-azul">Stock:</label>
+												<input type="text" class="form-control text-left" id="stock" name="stock" placeholder="Stock">
+												<span  id ="ErrorMensaje-stock" class="help-block"></span>
 											</div>
 	                                    	
+	                                    </div>
+
+	                                    <div class="form-group row">
+	                                    	<div class="col-sm-6 col-sm-push-4">
+												<label class="color-azul">Imagen:</label>
+												<input type="file" name="image" id="image" accept="image/*">
+												<span  id ="ErrorMensaje-imagen" class="help-block"></span>
+											</div>
+
 	                                    </div>
 	                                   
 	                                    
@@ -106,7 +117,7 @@
 	                                    <div class="row"> 
 	                                      <div class="col-xs-12">
 	                                       {{-- <a href ="" id="btnContinuarPasoUno" class="btn btn-block pull-left btn-principal btn-continuar"><i class="fa fa-play-circle-o fa-3x" aria-hidden="true"></i><span style="font-size:40px;"> Continuar</span></a> --}}
-	                                       <button type="submit" id="btnAñadirCategoria" class="btn btn-block pull-left btn-success"><i class="fa fa-plus-square fa-2x" aria-hidden="true"></i><span style="font-size:20px;">&nbsp; Añadir Producto</span></button>
+	                                       <button type="submit" id="btnAñadirProducto" class="btn btn-block pull-left btn-success"><i class="fa fa-plus-square fa-2x" aria-hidden="true"></i><span style="font-size:20px;">&nbsp; Añadir Producto</span></button>
 	                                       <br>
 	                                       <br>
 	                                       <br>
@@ -120,4 +131,105 @@
 		</div>
 	</div>
 
+@endsection
+
+
+@section('script-fin')
+<script>
+	$('#cDescripcionProducto').on("keypress", function(){
+		$("#ErrorMensaje-Nombre").hide();
+	})
+
+	$('#precio').on("keypress", function(){
+		$("#ErrorMensaje-precio").hide();
+	})
+	
+	$('#stock').on("keypress", function(){
+		$("#ErrorMensaje-stock").hide();
+	})
+	$('#image').on("keypress", function(){
+		$("#ErrorMensaje-imagen").hide();
+	})
+
+	$('#btnAñadirProducto').on("click", function(evt)
+	{
+
+		var cDescripcionProducto = $('#cDescripcionProducto').val().trim();
+
+		if(cDescripcionProducto == null || cDescripcionProducto.length == 0)
+		{
+			$("#ErrorMensaje-Nombre").text("Este campo no puede estar vacio.");
+			$("#ErrorMensaje-Nombre").show();
+			$("#cDescripcionProducto").focus();
+			return false;
+		}
+
+		var precio = $("#precio").val().trim();
+		if(precio == null || precio.length == 0)
+		{
+			$("#ErrorMensaje-precio").text("Este campo no puede estar vacio.");
+			$("#ErrorMensaje-precio").show();
+			$("#precio").focus();
+			
+			return false;
+		}else{
+			if(isNaN($('#precio').val()))
+			{
+
+				$("#ErrorMensaje-precio").text("Usted debe ingresar un numero.");
+				$("#ErrorMensaje-precio").show();
+				$("#precio").text();
+				$("#precio").focus();
+				return false;
+			}
+			if(Number(precio) <= 0)
+				{
+					$("#ErrorMensaje-precio").text("Usted debe ingresar un numero valido.");
+					$("#ErrorMensaje-precio").show();
+					$("#precio").text();
+					$("#precio").focus();
+					return false;
+				}
+		}
+
+		var stock = $("#stock").val().trim();
+		if(stock == null || stock.length == 0)
+		{
+			$("#ErrorMensaje-stock").text("Este campo no puede estar vacio.");
+			$("#ErrorMensaje-stock").show();
+			$("#stock").focus();
+			
+			return false;
+		}else{
+			if(isNaN($('#stock').val()))
+			{
+				$("#ErrorMensaje-stock").text("Usted debe ingresar un numero.");
+				$("#ErrorMensaje-stock").show();
+				$("#stock").text();
+				$("#stock").focus();
+				return false;
+			}
+			if(Number(stock) < 0)
+				{
+					$("#ErrorMensaje-stock").text("Usted debe ingresar un numero valido.");
+					$("#ErrorMensaje-stock").show();
+					$("#stock").text();
+					$("#stock").focus();
+					return false;
+				}
+		}
+		
+
+		var ruta = $("#image").val().trim();
+
+		if( ruta == null || ruta.length == 0 )
+		{
+			$("#ErrorMensaje-imagen").text("Usted debe añadir una imagen.");
+			$("#ErrorMensaje-imagen").show();
+			$("#image").focus();
+			return false;
+		}
+	});
+
+</script>
 @endsection

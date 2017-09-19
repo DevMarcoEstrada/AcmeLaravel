@@ -161,7 +161,7 @@
 											<div class="col-sm-4">
 	                                        <label class="color-azul">Nro de Tarjeta:</label>
 	                                        <input type="text" class="form-control text-center"  id="numero_tarjeta" name="numero_tarjeta"  placeholder="00000000000000000" maxlength="16">
-	                                        <span  id ="ErrorMensaje-cPaginaContacto" class="help-block"></span>
+	                                        <span  id ="ErrorMensaje-numero_tarjeta" class="help-block"></span>
 	                                      </div>
 
 
@@ -388,6 +388,9 @@ $(document).ready(function()
 		$("#ErrorMensaje-cDireccionNegocio").hide();
 	})
 
+	$('#cPaginaContacto').on("keypress",function (){
+		$("#ErrorMensaje-cPaginaContacto").hide();
+	})
 
 
     $("#btnRegistrarPersonaNatural").on("click", function(evt) 
@@ -425,12 +428,21 @@ $(document).ready(function()
 
 	    var dni = $('#dni').val().trim();
 
-	    if( dni == null || dni.length == 0  ) {
+	    if( dni == null || dni.length != 8  ) {
 	       dni = null;
-	       $("#ErrorMensaje-dni").text('El DNI no puede ser vacío.');
+	       $("#ErrorMensaje-dni").text('El DNI debe tener 8 digitos.');
 	         $("#ErrorMensaje-dni").show();
 	         $("#dni").focus();
 	         return false;
+	       }else{
+	       		if(isNaN($('#dni').val()))
+				{
+					$("#ErrorMensaje-dni").text("Usted debe ingresar un numero de 8 digitos.");
+					$("#ErrorMensaje-dni").show();
+					$("#dni").text();
+					$("#dni").focus();
+					return false;
+				}
 	       }
 
 	    var cTelefonoFijo = $('#cTelefonoFijo').val().trim();
@@ -441,6 +453,15 @@ $(document).ready(function()
 	         $("#ErrorMensaje-cTelefonoFijo").show();
 	         $("#cTelefonoFijo").focus();
 	         return false;
+	       }else{
+	       		if(isNaN($('#cTelefonoFijo').val()))
+				{
+					$("#ErrorMensaje-cTelefonoFijo").text("Usted debe ingresar un numero.");
+					$("#ErrorMensaje-cTelefonoFijo").show();
+					$("#cTelefonoFijo").text();
+					$("#cTelefonoFijo").focus();
+					return false;
+				}
 	       }
 
 	    var cCelular = $('#cCelular').val().trim();
@@ -451,7 +472,17 @@ $(document).ready(function()
 	         $("#ErrorMensaje-cCelular").show();
 	         $("#cCelular").focus();
 	         return false;
-	       }
+	       }else{
+		       if(isNaN($('#cCelular').val()))
+				{
+					$("#ErrorMensaje-cCelular").text("Usted debe ingresar un numero.");
+					$("#ErrorMensaje-cCelular").show();
+					$("#cCelular").text();
+					$("#cCelular").focus();
+					return false;
+				}
+		}
+
 
 	    var cCorreoElectronico = $('#cCorreoElectronico').val().trim();
 
@@ -480,6 +511,36 @@ $(document).ready(function()
 	         $("#cDireccionNegocio").focus();
 	         return false;
 	       }   
+
+	    var cPaginaContacto = $('#cPaginaContacto').val().trim();
+
+	    if( cPaginaContacto == null || cPaginaContacto.length == 0  ) {
+	       cPaginaContacto = null;
+	       $("#ErrorMensaje-cPaginaContacto").text('El Correo Electrónico no puede ser vacío.');
+	         $("#ErrorMensaje-cPaginaContacto").show();
+	         $("#cPaginaContacto").focus();
+	         return false;
+	    }
+
+	    var numero_tarjeta = $('#numero_tarjeta').val().trim();
+
+	    if( numero_tarjeta == null || numero_tarjeta.length  != 16  ) {
+	       numero_tarjetanumero_tarjeta = null;
+	       $("#ErrorMensaje-numero_tarjeta").text('El numero de tarjeta debe tener 16 digitos.');
+	         $("#ErrorMensaje-numero_tarjeta").show();
+	         $("#numero_tarjeta").focus();
+	         return false;
+	    }else{
+
+	    	 if(isNaN($('#numero_tarjeta').val()))
+				{
+					$("#ErrorMensaje-numero_tarjeta").text("Usted debe ingresar un numero de 16 digitos.");
+					$("#ErrorMensaje-numero_tarjeta").show();
+					$("#numero_tarjeta").text();
+					$("#numero_tarjeta").focus();
+					return false;
+				}
+	    }
 
     $('RegistroFormPersonaNatural').submit();
   });

@@ -3,30 +3,26 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
-use App\Models\Sexo;
-use App\Models\EstadoCivil;
 use App\Models\Zona;
-use App\Models\PersonaNatural;
+use App\Models\PersonaJuridica;
 
-class PersonaController extends Controller
+class PersonaJuridicaController extends Controller
 {
-    public function RegistrarPersonaNatural()
-    {
-    	$sexos = Sexo::Listar_Sexo();
-    	$estadosciviles = EstadoCivil::Listar_Estados_Civiles();
-    	$departamentos  = Zona::Listar_zonas_departamentos(); 
+    //
 
-    	return view('adminlte::persona.personanatural',compact('sexos','estadosciviles','departamentos'));
-    
-    }
-    public function GuardarPersonaNatural(Request $request)
+    public function RegistrarPersonaJuridica()
     {
-        $data =$request->all();
+    	$departamentos  = Zona::Listar_zonas_departamentos(); 
+    	return view('adminlte::persona.personajuridica',compact('departamentos'));
+    }
+
+    public function GuardarPersonaJuridica(Request $request)
+    {
+    	$data =$request->all();
 
         // var_dump($data)
+        $bresultado = PersonaJuridica::GuardarPersonaJuridica($data);
 
-        $bresultado = PersonaNatural::GuardarPersonaNatural2($data);
 
         if ($bresultado) {
             // Exito
@@ -38,6 +34,6 @@ class PersonaController extends Controller
             return redirect()->back()->with('errors','Los Datos no han sido guardados correctamente.');
 
         }
-        
     }
 }
+

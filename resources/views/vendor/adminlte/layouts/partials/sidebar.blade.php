@@ -39,9 +39,11 @@
             <li class="active"><a href="{{ url('home') }}"><i class='fa fa-link'></i> <span>{{ trans('adminlte_lang::message.home') }}</span></a></li>
             <li><a href="#"><i class='fa fa-link'></i> <span>{{ trans('adminlte_lang::message.anotherlink') }}</span></a></li>
             <li><a href="{{url('admin/PersonaNatural')}}">R. Persona Natural</a></li>
+            <li><a href="{{url('admin/PersonaJuridica')}}">R. Persona Juridica</a></li>
             <li><a href="{{url('admin/Categoria')}}">Añadir Categoria</a></li>
             <li><a href="{{url('admin/Producto')}}">Añadir Producto</a></li>
             <li><a href="{{url('admin/MostrarProductos')}}">Mostrar Productos</a></li>
+            
             <li class="treeview">
                 <a href="#"><i class='fa fa-link'></i> <span>{{ trans('adminlte_lang::message.multilevel') }}</span> <i class="fa fa-angle-left pull-right"></i></a>
                 <ul class="treeview-menu">

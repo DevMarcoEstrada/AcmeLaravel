@@ -37,12 +37,18 @@ Route::get('admin/Categoria', ['as' =>'admin/Categoria', 'uses' => 'CategoriaCon
 // Ruta para Acceder al Registro de Producto
 Route::get('admin/Producto', ['as' =>'admin/Producto', 'uses' => 'ProductoController@AñadirProducto']);
 
+// Ruta para Acceder al Registro de Producto
+Route::get('admin/PersonaJuridica', ['as' =>'admin/PersonaJuridica', 'uses' => 'PersonaJuridicaController@RegistrarPersonaJuridica']);
+
 // Ruta para Acceder al Mostrar de Producto
 Route::get('admin/MostrarProductos', ['as' =>'admin/MostrarProductos', 'uses' => 'ProductoController@MostrarProductos']);
 
 
 // Ruta para Guardar Registro de Producto
 Route::post('admin/Producto', ['as' =>'admin/Producto', 'uses' => 'ProductoController@GuardarProducto']);
+
+// Ruta para Guardar Registro de Producto
+Route::post('admin/PersonaJuridica', ['as' =>'admin/PersonaJuridica', 'uses' => 'PersonaJuridicaController@GuardarPersonaJuridica']);
 
 // Ruta para Guardar Registro de Categoria
 Route::post('admin/Categoria', ['as' =>'admin/Categoria', 'uses' => 'CategoriaController@GuardarCategoria']);

@@ -22,7 +22,8 @@ class Producto extends Model
 
     	$producto->cDescripcionProducto = $data['cDescripcionProducto'];
     	$producto->precio = $data['precio'];
-    	$producto->categoria_id = $data['categoria_id'];
+    	$producto->stock = $data['stock'];
+        $producto->categoria_id = $data['categoria_id'];
         $producto->ruta_imagen = ImageController::GuardarImagen($data['image'], $data['cDescripcionProducto']);
         $producto->created_at = date_create()->format('Y-m-d H:i:s');
         $producto->updated_at = date_create()->format('Y-m-d H:i:s');

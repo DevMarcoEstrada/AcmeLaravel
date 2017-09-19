@@ -67,8 +67,8 @@
 	                                        <div class="col-sm-6 col-sm-offset-3">
 	                                          <label class="color-azul ">Nombre de la Categoria:</label>
 
-	                                          <input type="text" class="form-control text-lefat"  id="nombre_categoria" name="nombre_categoria"  required placeholder="Nombre de la Categoria" maxlength="50" >
-	                                          <span  id ="ErrorMensaje-Nombre" class="help-block"></span>
+	                                          <input type="text" class="form-control text-left"  id="nombre_categoria" name="nombre_categoria"  required placeholder="Nombre de la Categoria" maxlength="50" >
+	                                          <span  id ="ErrorMensaje-NombreCategoria" class="help-block"></span>
 	                                        </div>
 	                                        
 	                                    </div>
@@ -76,6 +76,7 @@
 	                                    <div class="form-group row">
 	                                      <div class="col-sm-6 col-sm-offset-3" >
 	                                        <label class="color-azul">Descripción:</label>
+	                                       <!--  <input type="text" class="form-control text-left"  id="descripcion" name="descripcion"  required placeholder="ASDASD" maxlength="50" > -->
 	                                        <textarea name="descripcion" id="descripcion" cols="5" rows="6" class="form-control" maxlength="250" placeholder="Añada una descripcion..."></textarea>
 	                                        <span  id ="ErrorMensaje-Descripcion" class="help-block"></span>
 	                                      </div>
@@ -89,11 +90,7 @@
 	                                      <div class="col-xs-12">
 	                                       {{-- <a href ="" id="btnContinuarPasoUno" class="btn btn-block pull-left btn-principal btn-continuar"><i class="fa fa-play-circle-o fa-3x" aria-hidden="true"></i><span style="font-size:40px;"> Continuar</span></a> --}}
 	                                       <button type="submit" id="btnAñadirCategoria" class="btn btn-block pull-left btn-success"><i class="fa fa-plus-square fa-2x" aria-hidden="true"></i><span style="font-size:20px;">&nbsp; Añadir Categoria</span></button>
-	                                       <br>
-	                                       <br>
-	                                       <br>
-	                                       <br>
-	                                       <br>
+	                                      
 	                                      </div>
 	                                      
 	                                    </div>
@@ -104,4 +101,41 @@
 
 @endsection
 
+@section('script-fin')
+<script>
+	$('#nombre_categoria').on("keypress", function(){
+		$("#ErrorMensaje-NombreCategoria").hide();
+
+	})
+
+	$('#descripcion').on("keypress", function(){
+		$("#ErrorMensaje-Descripcion").hide();
+	})
+
+	$('#btnAñadirCategoria').on("click", function(evt)
+	{
+		var nombre_categoria = $('#nombre_categoria').val().trim();
+
+		if( nombre_categoria == null || nombre_categoria.length == 0)
+		{
+			nombre_categoria = null;
+			$("#ErrorMensaje-NombreCategoria").text("El Nombre no puede ser vacio");
+			$("#ErrorMensaje-NombreCategoria").show();
+			$("#nombre_categoria").focus();	
+			return false;
+		}
+
+		var descripcion = $('#descripcion').val().trim();
+		if(descripcion == null || descripcion.length == 0)
+		{
+			
+			$("#ErrorMensaje-Descripcion").text("La descripcion no puede ser vacia");
+			$("#ErrorMensaje-Descripcion").show();
+			$("#descripcion").focus();
+			return false;
+		}
+	});	
+
+</script>
+@endsection
 
