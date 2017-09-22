@@ -30,6 +30,15 @@
 		    background-color: #ffffff;
 		    opacity: 1;
 		    }
+		.fa-users
+	    {
+			color: #3c8dbc;
+	    }
+	    .boton-azul
+		{
+			background-color: #3c8dbc;
+			color: #ffffff;
+		}
 		#map_canvas
 	  	{
 	    	width:600px; 
@@ -59,7 +68,7 @@
 	<div class="container-fluid spark-screen">
 		<div class="row">
 			<div class="col-md-10 col-md-offset-1">
-        		<h3 class="text-center color-azul"><strong><i class="fa fa-pencil-square" aria-hidden="true"></i>&nbsp; Registro de Proveedor&nbsp;<i class="fa fa-pencil-square" aria-hidden="true"></i></strong></h3>  
+        		<h3 class="text-center color-azul"><strong><i class="fa fa-users" aria-hidden="true"></i>&nbsp; Nuevo Proveedor&nbsp;<i class="fa fa-users" aria-hidden="true"></i></strong></h3>  
 	        	<form method="POST" action="{{url('admin/PersonaJuridica')}}" accept-charset="UTF-8" class="" id="RegistroFormPersonaJuridica">
 	        		<input name="_token" type="hidden" value="{{ csrf_token() }}">
 	                                    <div class="form-group row">
@@ -154,7 +163,7 @@
 	                                    <div class="row"> 
 	                                      <div class="col-xs-12">
 	                                       {{-- <a href ="" id="btnContinuarPasoUno" class="btn btn-block pull-left btn-principal btn-continuar"><i class="fa fa-play-circle-o fa-3x" aria-hidden="true"></i><span style="font-size:40px;"> Continuar</span></a> --}}
-	                                       <button type="submit" id="btnRegistrarPersonaJuridica" class="btn btn-block pull-left btn-success"><i class="fa fa-play-circle-o fa-3x" aria-hidden="true"></i><span style="font-size:20px;">&nbsp; Registrar Persona Natural</span></button>
+	                                       <button type="submit" id="btnRegistrarPersonaJuridica" class="btn btn-block pull-left boton-azul"><i class="fa fa-plus fa-3x" aria-hidden="true"></i><span style="font-size:20px;">&nbsp; Registrar Persona Natural</span></button>
 	                                       <br>
 	                                       <br>
 	                                       <br>

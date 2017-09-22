@@ -259,7 +259,7 @@ Landing page based on Pratt: http://blacktie.co/demo/pratt/
                     <p>Paremicos <strong class="azul">siempre disponibles</strong>  24/7/360.</p>
                   </div>
                   <div class="col-xs-12 col-sm-4">
-                    <i class="fa fa-shopping-cart fa-5x" aria-hidden="true"></i>
+                    <i class="fa fa-area-chart fa-5x" aria-hidden="true"></i>
                       <h3>Realiza tus <strong class="azul">Compras</strong> de manera segura y desde donde sea</h3>
                       <p>Delivery <strong class="azul">incluso en zonas alejadas</strong>, sin importar en que desierto este.</p>
                   </div>

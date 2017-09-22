@@ -6,7 +6,7 @@
         <!-- mini logo for sidebar mini 50x50 pixels -->
         <span class="logo-mini"><img src="/img/ico.png" alt="Sist Fact" /></span>
         <span class="logo-lg">
-            <img src="/img/logo.png" class="text-center" alt="Sist Fact" />
+            <img src="/img/acme_logo.png" class="text-center" alt="Sist Fact" />
         </span>
     </a>
 

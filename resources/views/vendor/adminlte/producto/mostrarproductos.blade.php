@@ -27,6 +27,15 @@
 			{
 				border-radius:4px;
 			}
+		.fa-product-hunt
+	    {
+			color: #3c8dbc;
+	    }
+	    .boton-azul
+		{
+			background-color: #3c8dbc;
+			color: #ffffff;
+		}
 		.form-control[readonly]{
 		    background-color: #ffffff;
 		    opacity: 1;

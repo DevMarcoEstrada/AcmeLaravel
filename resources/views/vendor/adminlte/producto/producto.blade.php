@@ -26,6 +26,15 @@
 			{
 				border-radius:4px;
 			}
+		.fa-product-hunt
+	    {
+			color: #3c8dbc;
+	    }
+	    .boton-azul
+		{
+			background-color: #3c8dbc;
+			color: #ffffff;
+		}
 		.form-control[readonly]{
 		    background-color: #ffffff;
 		    opacity: 1;
@@ -61,7 +70,7 @@
 <div class="container-fluid spark-screen">
 		<div class="row">
 			<div class="col-md-10 col-md-offset-1">
-        		<h3 class="text-center color-azul"><strong><i class="fa fa-pencil-square" aria-hidden="true"></i>&nbsp; Añadir Producto&nbsp;<i class="fa fa-pencil-square" aria-hidden="true"></i></strong></h3>  
+        		<h3 class="text-center color-azul"><strong><i class="fa fa-product-hunt" aria-hidden="true"></i>&nbsp; Nuevo Producto&nbsp;<i class="fa fa-product-hunt" aria-hidden="true"></i></strong></h3>  
 	        	<form method="POST" action="{{url('admin/Producto')}}" accept-charset="UTF-8" class="" id="RegistroFormCategoria" enctype="multipart/form-data">
 	        		<input name="_token" type="hidden" value="{{ csrf_token() }}">
 	                                    <div class="form-group row">
@@ -117,7 +126,7 @@
 	                                    <div class="row"> 
 	                                      <div class="col-xs-12">
 	                                       {{-- <a href ="" id="btnContinuarPasoUno" class="btn btn-block pull-left btn-principal btn-continuar"><i class="fa fa-play-circle-o fa-3x" aria-hidden="true"></i><span style="font-size:40px;"> Continuar</span></a> --}}
-	                                       <button type="submit" id="btnAñadirProducto" class="btn btn-block pull-left btn-success"><i class="fa fa-plus-square fa-2x" aria-hidden="true"></i><span style="font-size:20px;">&nbsp; Añadir Producto</span></button>
+	                                       <button type="submit" id="btnAñadirProducto" class="btn btn-block pull-left boton-azul"><i class="fa fa-plus fa-2x" aria-hidden="true"></i><span style="font-size:20px;">&nbsp; Añadir Producto</span></button>
 	                                       <br>
 	                                       <br>
 	                                       <br>
