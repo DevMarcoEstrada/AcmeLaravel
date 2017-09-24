@@ -86,38 +86,38 @@
 
 			<div class="col-sm-12 col-md-2 ">
 
-				<h2 class="h2 text-center ">
+				<h4 class="h4 text-center ">
 					{{$producto->cDescripcionProducto}}
-				</h2>
+				</h4>
 					
 			</div>
 			<div class="col-sm-3 col-sm-push-5 col-md-3 col-md-push-1">
-				<img src="{{ asset('/img/productos/' . $producto->ruta_imagen) }}" class="img-fluid img-rounded" alt="Sample photo" width="90" height="90">
+				<img src="{{ asset('/img/productos/' . $producto->ruta_imagen) }}" class="img-fluid img-rounded rounded mx-auto d-block" alt="Sample photo" width="50" height="50">
 				
 			</div>
 
 
 
 			<div class="col-sm-12  col-md-2">
-				<h2 class="h2 text-center ">
+				<h4 class="h4 text-center ">
 					<strong>Precio:</strong>
 					<p>{{$producto->precio}}</p>
-				</h2>
+				</h4>
 				
 			</div>
 			
 			<div class="col-sm-12 col-md-2">
-				<h2 class="h2 text-center">
+				<h4 class="h4 text-center">
 					<strong>En Stock:</strong>
 					<p>{{$producto->stock}}</p>
-				</h2>
+				</h4>
 			</div>
 
 			<div class="col-sm-12 col-md-2 ">
-				<h2 class="h2 text-center">
+				<h4 class="h4 text-center">
 					<strong>Categoria:</strong>
 					<p>{{$producto->nombre_categoria}}</p>
-				</h2>
+				</h4>
 			</div>
 		</div>
 		<hr>

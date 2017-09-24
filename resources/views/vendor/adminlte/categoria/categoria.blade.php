@@ -1,10 +1,10 @@
 @extends('adminlte::layouts.app')
 
 @section('htmlheader_title')
-	Añadir Categoria
+	Añadir Categoría
 @endsection
 @section('contentheader_title')
-	Nueva Categoria
+	Nueva Categoría
 @endsection
 
 @section('css')
@@ -15,7 +15,7 @@
 			}
 		.color-azul
 			{
-				color: #337ab7;
+				color: #009688;
 			}
 		.fa-pencil-square
 			{
@@ -27,11 +27,11 @@
 			}
 		.fa-bars
 	    {
-			color: #3c8dbc;
+			color: #009688;
 	    }
 	    .boton-azul
 		{
-			background-color: #3c8dbc;
+			background-color: #E64A19;
 			color: #ffffff;
 		}
 		.form-control[readonly]{
@@ -69,14 +69,14 @@
 <div class="container-fluid spark-screen">
 		<div class="row">
 			<div class="col-md-10 col-md-offset-1">
-        		<h3 class="text-center color-azul"><strong><i class="fa fa-bars" aria-hidden="true"></i>&nbsp; Añadir Categoria&nbsp;<i class="fa fa-bars" aria-hidden="true"></i></strong></h3>  
+        		<h3 class="text-center color-azul"><strong><i class="fa fa-bars" aria-hidden="true"></i>&nbsp; Añadir Categoría&nbsp;<i class="fa fa-bars" aria-hidden="true"></i></strong></h3>  
 	        	<form method="POST" action="{{url('admin/Categoria')}}" accept-charset="UTF-8" class="" id="RegistroFormCategoria">
 	        		<input name="_token" type="hidden" value="{{ csrf_token() }}">
 	                                    <div class="form-group row">
 	                                        <div class="col-sm-6 col-sm-offset-3">
-	                                          <label class="color-azul ">Nombre de la Categoria:</label>
+	                                          <label class="color-azul ">Nombre de la Categoría:</label>
 
-	                                          <input type="text" class="form-control text-left"  id="nombre_categoria" name="nombre_categoria"  required placeholder="Nombre de la Categoria" maxlength="50" >
+	                                          <input type="text" class="form-control text-left"  id="nombre_categoria" name="nombre_categoria"  required placeholder="Nombre de la Categoría" maxlength="50" >
 	                                          <span  id ="ErrorMensaje-NombreCategoria" class="help-block"></span>
 	                                        </div>
 	                                        
@@ -96,7 +96,7 @@
 	                                    
 	                                   
 	                                    <div class="row"> 
-	                                      <div class="col-xs-12">
+	                                      <div class="col-xs-6 col-xs-push-3">
 	                                       {{-- <a href ="" id="btnContinuarPasoUno" class="btn btn-block pull-left btn-principal btn-continuar"><i class="fa fa-play-circle-o fa-3x" aria-hidden="true"></i><span style="font-size:40px;"> Continuar</span></a> --}}
 	                                       <button type="submit" id="btnAñadirCategoria" class="btn btn-block pull-left boton-azul"><i class="fa fa-plus fa-2x" aria-hidden="true"></i><span style="font-size:20px;">&nbsp; Añadir Categoria</span></button>
 	                                      

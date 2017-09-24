@@ -60,6 +60,8 @@
                 <a href="#"><i class='fa fa-search'></i> <span>Mostrar</span> <i class="fa fa-angle-left pull-right"></i></a>
                 <ul class="treeview-menu">
                     <li><a href="{{url('admin/MostrarProductos')}}">Productos</a></li>
+                    <li><a href="{{url('admin/MostrarMensajes')}}">Mensajes</a></li>
+                    <li><a href="{{url('admin/MostrarCategorias')}}">Categorias</a></li>
                     <!-- <li><a href="#">{{ trans('adminlte_lang::message.linklevel2') }}</a></li> -->
                 </ul>
             </li>

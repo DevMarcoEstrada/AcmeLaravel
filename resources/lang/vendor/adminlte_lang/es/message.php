@@ -48,6 +48,7 @@ return [
     'level'                   => 'Nivel',
     'here'                    => 'Aquí',
     'descriptionpackage'      => 'Un laravel 5 paquete que cambia de forma predeterminada Laravel scaffolding/boilerplate a la plantilla AdminLTE',
+    'descriptionpackage'      => 'Un laravel 5 paquete que cambia de forma predeterminada Laravel scaffolding/boilerplate a la plantilla AdminLTE',
     'createdby'               => 'Creado por',
     'seecode'                 => 'Ver código en',
     'online'                  => 'En Línea',

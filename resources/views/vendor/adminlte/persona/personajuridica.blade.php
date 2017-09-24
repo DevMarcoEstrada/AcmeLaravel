@@ -16,7 +16,7 @@
 			}
 		.color-azul
 			{
-				color: #337ab7;
+				color: #009688;
 			}
 		.fa-pencil-square
 			{
@@ -26,19 +26,19 @@
 			{
 				border-radius:4px;
 			}
+		.fa-bars
+	    {
+			color: #009688;
+	    }
+	    .boton-azul
+		{
+			background-color: #E64A19;
+			color: #ffffff;
+		}
 		.form-control[readonly]{
 		    background-color: #ffffff;
 		    opacity: 1;
 		    }
-		.fa-users
-	    {
-			color: #3c8dbc;
-	    }
-	    .boton-azul
-		{
-			background-color: #3c8dbc;
-			color: #ffffff;
-		}
 		#map_canvas
 	  	{
 	    	width:600px; 
@@ -161,7 +161,7 @@
 	                                    
 	                                   
 	                                    <div class="row"> 
-	                                      <div class="col-xs-12">
+	                                      <div class="col-xs-6 col-xs-push-3">
 	                                       {{-- <a href ="" id="btnContinuarPasoUno" class="btn btn-block pull-left btn-principal btn-continuar"><i class="fa fa-play-circle-o fa-3x" aria-hidden="true"></i><span style="font-size:40px;"> Continuar</span></a> --}}
 	                                       <button type="submit" id="btnRegistrarPersonaJuridica" class="btn btn-block pull-left boton-azul"><i class="fa fa-plus fa-3x" aria-hidden="true"></i><span style="font-size:20px;">&nbsp; Registrar Persona Natural</span></button>
 	                                       <br>

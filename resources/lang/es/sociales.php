@@ -16,7 +16,7 @@ return [
     'aplication_og_title' => 'ACME',
     'aplication_og_description' => 'Empresa Dedicada a la Venta de indumentaria para caza de correcaminos. Mas de 10 años de experiencia en el mercado laboral.',
     'aplication_og_url' => env('APP_URL', 'http://admin.com'),
-    'aplication_og_image' => '/img/logo.png',
+    'aplication_og_image' => '/img/acme_logo.png',
    	'aplication_og_sitename' => env('APP_URL', 'http://admin.com'),
     'aplication_og_url' => env('APP_URL', 'http://admin.com'),
     'aplication_tw_card' => 'summary_large_image',

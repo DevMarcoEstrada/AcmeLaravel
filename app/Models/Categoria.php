@@ -26,7 +26,8 @@ class Categoria extends Model
 
     public static function Listar_Categorias()
     {
-        return Categoria::select('categorias.id', 'categorias.nombre_categoria')->get();
+        return Categoria::select('categorias.id', 'categorias.nombre_categoria', 'categorias.descripcion')->get();
+        
     }
     public static function Id2Nombre($id)
     {

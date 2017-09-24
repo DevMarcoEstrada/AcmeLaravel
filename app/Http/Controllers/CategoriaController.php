@@ -11,6 +11,13 @@ class CategoriaController extends Controller
     {
     	return view('adminlte::categoria.categoria');
     }
+    public function MostrarCategorias()
+    {
+
+        $categorias = Categoria::Listar_Categorias();
+        return view('adminlte::categoria.mostrarcategorias', compact('categorias'));
+
+    }
 
     public function GuardarCategoria(Request $request)
     {

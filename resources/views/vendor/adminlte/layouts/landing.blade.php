@@ -23,17 +23,14 @@ Landing page based on Pratt: http://blacktie.co/demo/pratt/
     <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
 
-    <link rel="icon" type="image/png" href="/img/ico.png" sizes="16x16">
+    <link rel="icon" type="image/png" href="/img/acme_logo.png" sizes="16x16">
 
     <style>
         
 
 
 
-        .asd
-        {
-            background-color: #616161;
-        }
+        
         .verde
         {
             color:green;
@@ -43,7 +40,7 @@ Landing page based on Pratt: http://blacktie.co/demo/pratt/
             color:#212121;
             font-size: 45rem;
         }
-        .fa-exclamation-circle,.fa-shopping-cart,.fa-bar-chart
+        .fa-cube,.fa-shopping-cart,.fa-bar-chart, .fa-btc, .fa-bars
         {
             /*color:#3c8dbc;*/
             color: #F5F5F5;
@@ -83,25 +80,19 @@ Landing page based on Pratt: http://blacktie.co/demo/pratt/
         }
 
 
-        div    { background: #616161; }
-        .default-primary-color { background: #9E9E9E; }
-        .light-primary-color   { background: #F5F5F5; }
-        .text-primary-color    { color: #212121; }
-        .accent-color          { background: #FF5252; }
-        .primary-text-color    { color: #212121; }
-        .secondary-text-color  { color: #757575; }
-        .divider-color         { border-color: #BDBDBD; }
+        div    { background: #3c8dbc; }
+       
 
     </style>
 </head> 
 
-<body data-spy="scroll" data-target="#navigation" data-offset="50">
+<body data-spy="scroll" data-target="#navigation" data-offset="50" class="skin-blue">
 
 <div id="app" v-cloak>
     <!-- Fixed navbar -->
-    <div id="navigation" class="navbar navbar-default navbar-fixed-top">
-        <div class="container-fluid">
-            <div class="navbar-header">
+    <div id="navigation" class="navbar navbar-default navbar-fixed-top" >
+        <div class="container-fluid " style="background-color: #0288D1;">
+            <div class="navbar-header" style="background-color: #0288D1;">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
@@ -109,22 +100,22 @@ Landing page based on Pratt: http://blacktie.co/demo/pratt/
                 </button>
                 <a class="navbar-brand" href="/"><b class="blanco">{{ trans('sociales.aplication_og_title')}}</b></a>
             </div>
-            <div class="navbar-collapse collapse ">
+            <div class="navbar-collapse collapse " style="background-color: #0288D1;">
                 <ul class="nav navbar-nav">
-                    <li class="active "><a href="#home" class="smoothScroll">{{ trans('adminlte_lang::message.home') }}</a></li>
-                    <li><a href="#desc" class="smoothScroll">{{ trans('adminlte_lang::message.description') }}</a></li>
-                    {{-- <li><a href="#showcase" class="smoothScroll">{{ trans('adminlte_lang::message.showcase') }}</a></li> --}}
-                    <li><a href="#contact" class="smoothScroll">{{ trans('adminlte_lang::message.contact') }}</a></li>
+                    <li class="active "><a href="#home" class="smoothScroll" style="color: #ffffff;">{{ trans('adminlte_lang::message.home') }}</a></li>
+                    <li><a href="#desc" class="smoothScroll" style="color: #ffffff;">{{ trans('adminlte_lang::message.description') }}</a></li>
+                    {{-- <li><a href="#showcase" class="smoothScroll" style="color: #ffffff;">{{ trans('adminlte_lang::message.showcase') }}</a></li> --}}
+                    <li><a href="#contact" class="smoothScroll" style="color: #ffffff;">{{ trans('adminlte_lang::message.contact') }}</a></li>
                     <!-- Borrar -->
                     <!-- <li><a href="{{url('admin/PersonaNatural')}}">R. Persona Natural</a></li> -->
                     <!-- Fin Borrar -->
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                     @if (Auth::guest())
-                        <li><a href="{{ url('/login') }}">{{ trans('adminlte_lang::message.login') }}</a></li>
-                        <li><a href="{{ url('/register') }}">{{ trans('adminlte_lang::message.register') }}</a></li>
+                        <li><a href="{{ url('/login') }}" style="color: #ffffff;">{{ trans('adminlte_lang::message.login') }}</a></li>
+                        <li><a href="{{ url('/register') }}" style="color: #ffffff;">{{ trans('adminlte_lang::message.register') }}</a></li>
                     @else
-                        <li><a href="/home">{{ Auth::user()->name }}</a></li>
+                        <li><a href="/home" style="color: #ffffff;">{{ Auth::user()->name }}</a></li>
                     @endif
                 </ul>
             </div><!--/.nav-collapse -->
@@ -172,7 +163,7 @@ Landing page based on Pratt: http://blacktie.co/demo/pratt/
         <div class="row">
             <div class="col-sm-12">
                 <div class="container-fluid" id="home" name="home">
-                    <h1 class="acme1 text-sm-center h1">
+                    <h1 class="acme1 text-sm-center h1 font-italic" style="color: #ffffff;">
                         ACME
                     </h1>
                     <h2 class="text-center blanco">Si no lo tenemos, solo pidalo</h2>
@@ -232,78 +223,81 @@ Landing page based on Pratt: http://blacktie.co/demo/pratt/
             <div class="container">
                 <div class="row centered">
                   
-                <div class="row centered">
-                    <div class="col-xs-12 col-sm-4">
-                        <h2 class="h2 blanco">
-                            ATENCION
-                        </h2>
-                    </div>
-                    <div class="col-xs-12 col-sm-4">
-                        <h2 class="h2 blanco">
-                            ATENCION
-                        </h2>
-                    </div>
-                    <div class="col-xs-12 col-sm-4">
-                        <h2 class="h2 blanco">
-                            ATENCION
-                        </h2>
-                    </div>
-
-                </div>
+                
 
 
                   <div class="col-xs-12 col-sm-4">
+                    <div style="color: #ffffff;">
+                        <span><h2 class="h2">
+                            <strong>Atención</strong>
+                        </h2></span>
+                    </div>
                     <strong></strong>
-                    <i class="fa fa-exclamation-circle fa-5x"></i>
-                    <h3>Si muere en el intento, no se preocupe...  <strong class="azul">lo reviviremos</strong> sin importar que. </h3>
-                    <p>Paremicos <strong class="azul">siempre disponibles</strong>  24/7/360.</p>
+                    <i class="fa fa-cube fa-5x"></i>
+                    <h3>Mas de  <strong class="azul">10000</strong> clientes no pueden estar equivocados </h3>
+                    <p style="color: #000000;">No confíes en nosotros, confía en mas<strong class="azul"> de 10000 personas conformes</strong>  de diferentes  paises.</p>
                   </div>
                   <div class="col-xs-12 col-sm-4">
-                    <i class="fa fa-area-chart fa-5x" aria-hidden="true"></i>
-                      <h3>Realiza tus <strong class="azul">Compras</strong> de manera segura y desde donde sea</h3>
-                      <p>Delivery <strong class="azul">incluso en zonas alejadas</strong>, sin importar en que desierto este.</p>
+                    <div style="color: #ffffff;">
+                        <span><h2 class="h2">
+                            <strong>Comodidad</strong>
+                        </h2></span>
+                    </div>
+                    <i class="fa fa-btc fa-5x" aria-hidden="true"></i>
+                      <h3> <strong class="azul">Muchos metodos pago.</strong> </h3>
+                      <p style="color: #000000;">Se acepta cualquier divisa e incluso <strong class="azul">BitCoins</strong>,</p>
                   </div>
                   <div class="col-xs-12 col-sm-4">
-                    <i class="fa fa-bar-chart fa-5x"></i>
-                    <h3>Reporte de sus <strong class="azul"> capturas</strong> diario, semanal y anual.</h3>
-                    <p>Seguimiento <strong class="azul">cómodo</strong>. seguro y confiable como tú te lo mereces</p>
+                    <div style="color: #ffffff;">
+                        <span><h2 class="h2">
+                            <strong>Variedad</strong>
+                        </h2></span>
+                    </div>
+                    <i class="fa fa-bars fa-5x"></i>
+                    <h3>Mas de  <strong class="azul"> 100 categorías</strong> de productos.</h3>
+                    <p style="color: #000000;"> <strong class="azul">Desde Ropa a Informatica</strong></p>
                   </div>
                 </div>
-                <div class="row centered">
-                    <div class="row centered">
-                    <div class="col-xs-12 col-sm-4">
-                        <h2 class="h2 blanco">
-                            ATENCION
-                        </h2>
-                    </div>
-                    <div class="col-xs-12 col-sm-4">
-                        <h2 class="h2 blanco">
-                            ATENCION
-                        </h2>
-                    </div>
-                    <div class="col-xs-12 col-sm-4">
-                        <h2 class="h2 blanco">
-                            ATENCION
-                        </h2>
-                    </div>
 
+                <div class="row centered">
+                  
+                
+
+
+                  <div class="col-xs-12 col-sm-4">
+                    <div style="color: #ffffff;">
+                        <span><h2 class="h2">
+                            <strong>Atención</strong>
+                        </h2></span>
+                    </div>
+                    <strong></strong>
+                    <i class="fa fa-cube fa-5x"></i>
+                    <h3>Mas de  <strong class="azul">10000</strong> clientes no pueden estar equivocados </h3>
+                    <p style="color: #000000;">No confíes en nosotros, confía en mas<strong class="azul"> de 10000 personas conformes</strong>  de diferentes  paises.</p>
+                  </div>
+                  <div class="col-xs-12 col-sm-4">
+                    <div style="color: #ffffff;">
+                        <span><h2 class="h2">
+                            <strong>Comodidad</strong>
+                        </h2></span>
+                    </div>
+                    <i class="fa fa-btc fa-5x" aria-hidden="true"></i>
+                      <h3> <strong class="azul">Muchos metodos pago.</strong> </h3>
+                      <p style="color: #000000;">Se acepta cualquier divisa e incluso <strong class="azul">BitCoins</strong>,</p>
+                  </div>
+                  <div class="col-xs-12 col-sm-4">
+                    <div style="color: #ffffff;">
+                        <span><h2 class="h2">
+                            <strong>Variedad</strong>
+                        </h2></span>
+                    </div>
+                    <i class="fa fa-bars fa-5x"></i>
+                    <h3>Mas de  <strong class="azul"> 100 categorías</strong> de productos.</h3>
+                    <p style="color: #000000;"> <strong class="azul">Desde Ropa a Informatica</strong></p>
+                  </div>
                 </div>
-                  <div class="col-xs-12 col-sm-4">
-                    <i class="fa fa-exclamation-circle fa-5x"></i>
-                    <h3>Mas de  <strong class="azul">1000 clientes</strong> confian en nosotros </h3>
-                    <p>Un <strong class="azul">sistema</strong> seguro y confiable con las necesidades acordes al mercado</p>
-                  </div>
-                  <div class="col-xs-12 col-sm-4">
-                    <i class="fa fa-shopping-cart fa-5x" aria-hidden="true"></i>
-                      <h3>Realiza tus <strong class="azul">Ventas</strong> de manera segura</h3>
-                      <p>El registro de <strong class="azul">clientes</strong> es de manera rápida y confiable</p>
-                  </div>
-                  <div class="col-xs-12 col-sm-4">
-                    <i class="fa fa-bar-chart fa-5x"></i>
-                    <h3>Reporte de <strong class="azul">Ventas</strong> diario, semanal y anual.</h3>
-                    <p>Seguimiento <strong class="azul">cómodo</strong>. seguro y confiable como tú te lo mereces</p>
-                  </div>
-                </div>
+
+                <div class="row centered"></div>
             </div> <!--/ .container -->
         </div><!--/ #introwrap -->
     </section>
@@ -334,6 +328,8 @@ Landing page based on Pratt: http://blacktie.co/demo/pratt/
                         </div>
                     </div>
                 </div>
+
+
                 <br>
                 <br>
                 <br>
@@ -359,21 +355,22 @@ Landing page based on Pratt: http://blacktie.co/demo/pratt/
                 <div class="col-lg-7">
                     <h3><strong>{{ trans('adminlte_lang::message.dropus') }}</strong></h3>
                     <br>
-                    <form role="form" action="#" method="post" enctype="plain">
+                    <form role="form" action="{{url('/')}}" method="POST" enctype="plain" id="GuardarMensaje">
+                        <input name="_token" type="hidden" value="{{ csrf_token() }}">
                         <div class="form-group">
                             <label for="name1">{{ trans('adminlte_lang::message.yourname') }}</label>
-                            <input type="name" name="Name" class="form-control" id="name1" placeholder="{{ trans('adminlte_lang::message.yourname') }}">
+                            <input type="nombres" name="nombres" class="form-control" id="name1" placeholder="{{ trans('adminlte_lang::message.yourname') }}">
                         </div>
                         <div class="form-group">
                             <label for="email1">{{ trans('adminlte_lang::message.emailaddress') }}</label>
-                            <input type="email" name="Mail" class="form-control" id="email1" placeholder="{{ trans('adminlte_lang::message.enteremail') }}">
+                            <input type="email" name="correo_electronico" class="form-control" id="correo_electronico" placeholder="{{ trans('adminlte_lang::message.enteremail') }}">
                         </div>
                         <div class="form-group">
                             <label>{{ trans('adminlte_lang::message.yourtext') }}</label>
-                            <textarea class="form-control" name="Message" rows="3"></textarea>
+                            <textarea class="form-control" name="mensaje" id="mensaje" rows="3"></textarea>
                         </div>
                         <br>
-                        <button type="submit" class="btn btn-large btn-success">{{ trans('adminlte_lang::message.submit') }}</button>
+                        <button type="submit" class="btn btn-large btn-success" style="background-color: #009688; border: #009688;">{{ trans('adminlte_lang::message.submit') }}</button>
                     </form>
                 </div>
                 <div class="col-lg-3">
@@ -385,8 +382,8 @@ Landing page based on Pratt: http://blacktie.co/demo/pratt/
         </div>
     </section>
     <footer>
-            <div class="container centered">
-                <div itemscope itemtype="https://schema.org/FollowAction">
+            <div class="container-fluid centered" style="background-color: #B3E5FC;" >
+                <div itemscope itemtype="https://schema.org/FollowAction"  style="background-color: #B3E5FC;">
                 <a class="sociales" href="http://www.gooogle.com" target="_blank" title="Facebook" itemprop="followee"><i class="fa fa-facebook-square fa-3x" aria-hidden="true"></i></a>
                 <a  class="sociales" href="http://www.gooogle.com" target="_blank" title="Twitter" itemprop="followee"><i class="fa fa-twitter-square fa-3x" aria-hidden="true"></i></a>
                 <a class="sociales" href="http://www.gooogle.com" target="_blank" title ="YouTube" itemprop="followee"><i class="fa fa-youtube-square fa-3x" aria-hidden="true"></i></a>

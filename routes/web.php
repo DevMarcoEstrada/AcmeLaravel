@@ -26,6 +26,9 @@ Route::group(['middleware' => 'auth'], function () {
 
 Auth::routes();
 
+
+Route::get('/home2', 'HomeController@index2')->name('home');
+
 Route::get('/home', 'HomeController@index')->name('home');
 
 // Ruta para Acceder al Registro de Persona Natural
@@ -33,6 +36,14 @@ Route::get('admin/PersonaNatural', ['as' =>'admin/PersonaNatural', 'uses' => 'Pe
 
 // Ruta para Acceder al Registro de Categoria
 Route::get('admin/Categoria', ['as' =>'admin/Categoria', 'uses' => 'CategoriaController@AñadirCategoria']);
+// Ruta para mostrar mensajes
+Route::get('admin/MostrarMensajes', ['as' =>'admin/MostrarMensajes', 'uses' => 'MensajeController@MostrarMensajes']);
+
+// Ruta para guardar mensaje
+Route::get('admin/MostrarCategorias', ['as' =>'admin/MostrarCategorias', 'uses' => 'CategoriaController@MostrarCategorias']);
+
+// Ruta para guardar mensaje
+Route::post('/', ['as' =>'/', 'uses' => 'MensajeController@GuardarMensaje']);
 
 // Ruta para Acceder al Registro de Producto
 Route::get('admin/Producto', ['as' =>'admin/Producto', 'uses' => 'ProductoController@AñadirProducto']);
