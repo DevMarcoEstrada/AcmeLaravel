@@ -17,7 +17,7 @@
 			}
 		.color-azul
 			{
-				color: #009688;
+				color: #337ab7;
 			}
 		.fa-pencil-square
 			{
