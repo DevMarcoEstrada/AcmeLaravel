@@ -4,6 +4,10 @@
 	Añadir Producto
 @endsection
 
+@section('htmlheader_title')
+	Añadir Producto
+@endsection
+
 @section('contentheader_title')
 	Nuevo Producto
 @endsection
@@ -77,7 +81,7 @@
 	                                        <div class="col-sm-6 ">
 	                                          <label class="color-azul ">Nombre del Producto</label>
 
-	                                          <input type="text" class="form-control text-left"  id="cDescripcionProducto" name="cDescripcionProducto"  required placeholder="Nombre del Producto" maxlength="50" >
+	                                          <input type="text" class="form-control text-left"  id="cDescripcionProducto" name="cDescripcionProducto"  required placeholder="Nombre del Producto" maxlength="100" >
 	                                          <span  id ="ErrorMensaje-Nombre" class="help-block"></span>
 	                                        </div>
 
@@ -130,6 +134,7 @@
 	                                       <br>
 	                                       <br>
 	                                       <br>
+
 	                                       <br>
 	                                       <br>
 	                                      </div>
@@ -138,6 +143,7 @@
 	          </form>
         	</div>
 		</div>
+		
 	</div>
 
 @endsection

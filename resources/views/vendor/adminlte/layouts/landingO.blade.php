@@ -29,12 +29,7 @@ Landing page based on Pratt: http://blacktie.co/demo/pratt/
         
 
 
-        .acme2
-        {
-            color:#ffffff;
-            font-size: 45rem;
-            background-image: url({{ asset('/img/img22.png') }});
-        }
+
         
         .verde
         {
@@ -43,7 +38,7 @@ Landing page based on Pratt: http://blacktie.co/demo/pratt/
         .acme1
         {
             color:#212121;
-            font-size: 15rem;
+            font-size: 45rem;
         }
         .fa-cube,.fa-shopping-cart,.fa-bar-chart, .fa-btc, .fa-bars
         {
@@ -126,7 +121,7 @@ Landing page based on Pratt: http://blacktie.co/demo/pratt/
             </div><!--/.nav-collapse -->
         </div>
     </div>
- </div>
+
     <!-- <section id="home" name="home">
          <div id="jumbotron-landing" class="jumbotron">
       <div class="container">
@@ -138,7 +133,7 @@ Landing page based on Pratt: http://blacktie.co/demo/pratt/
       </div>
   </div>
 </div> -->
-{{-- </section> --}}
+</section>
 
     <!-- <section id="home" name="home">
         <div class="container-fluid jumnbotron" id="jumbotron-landing">
@@ -164,71 +159,11 @@ Landing page based on Pratt: http://blacktie.co/demo/pratt/
         </div>
 
     </section> -->
-
-  
-<div class="container-fluid">
-   <br>               
-         <div class="col-md-12"">
-           <div id="carousel-1" class="carousel slide" data-ride="carousel">
-            <!-- Indicadores -->
-                <ol class="carousel-indicators">
-                    <li data-target="#carousel-1" data-slider-to="0" class="active"></li>
-                    <li data-target="#carousel-1" data-slider-to="1"></li>
-                    <li data-target="#carousel-1" data-slider-to="2"></li>
-                </ol>
-
-            <!--Contenedor de los slide -->
-                <div class="carousel-inner" role="listbox">            
-                     <div class ="item active">
-                             <img src="/img/img11.jpg" class="img img-responsive" alt="">
-                         {{-- <div class="carousel-caption">
-                                <h3> Este es nuestro slide #1 </h3>
-                                <p> Lorem ipsum dolor sit amet.</p>
-                         </div> --}}
-                     </div>
-
-
-                     <div class ="item">
-                             <img src="/img/img22.jpg" class="img img-responsive" alt="">
-                      {{--   <div class="carousel-caption">
-                            <h3> Este es nuestro slide #2 </h3>
-                            <p> Lorem ipsum dolor sit amet.</p>
-                        </div> --}}
-                     </div>
-
-
-                     <div class ="item">
-                              <img src="/img/img33.jpg" class="img img-responsive" alt="">
-                             {{-- SOLO ES TEXTO --}}
-                       {{--  <div class="carousel-caption">
-                            <h3> Este es nuestro slide #3 </h3>
-                            <p> Lorem ipsum dolor sit amet.</p>
-                        </div> --}}
-                        {{-- SOLO TEXTO HASTA AQUÍ --}}
-                     </div>
-                            
-                </div>
-
-        <!-- Controles -->
-        <a href="#carousel-1" class="left carousel-control" role="button" data-slide="prev">
-            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-            <span class="sr-only">Anterior </span>
-        </a>
-
-       <a href="#carousel-1" class="right carousel-control" role="button" data-slide="next">
-            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-            <span class="sr-only">Siguiente </span>
-        </a>
-
-    </div>
-</div>
-
-
     <section>
         <div class="row">
             <div class="col-sm-12">
                 <div class="container-fluid" id="home" name="home">
-                    <h1 class="acme1 text-center h1 font-italic" style="color: #ffffff;">
+                    <h1 class="acme1 text-sm-center h1 font-italic" style="color: #ffffff;">
                         ACME
                     </h1>
                     <h2 class="text-center blanco">Si no lo tenemos, solo pidalo</h2>
