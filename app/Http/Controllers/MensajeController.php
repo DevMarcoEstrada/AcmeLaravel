@@ -11,8 +11,9 @@ class MensajeController extends Controller
     public function GuardarMensaje(Request $request)
     {
     	$data = $request->all();
-
+        // var_dump($data);
     	$resultado = Mensaje::GuardarMensaje($data);
+
 
     	if ($resultado)
     	{

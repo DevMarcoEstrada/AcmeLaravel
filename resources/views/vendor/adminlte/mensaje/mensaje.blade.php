@@ -110,6 +110,25 @@
 			
 		</div>
 
+
+
+		<div class="row">
+
+			<div class="col-sm-12 col-md-3" >
+				<h2 class="h2"><strong>Teléfono:</strong></h3>
+			</div>
+
+			<div class="col-sm-12 col-md-3 ">
+
+				<h2 class="h2 text-justify ">
+					{{$mensaje->telefono}}
+				</h2>
+					
+			</div>
+		
+			
+		</div>
+
 		<div class="row">
 
 			<div class="col-sm-12 col-md-3" >

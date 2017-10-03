@@ -11,9 +11,10 @@ class Mensaje extends Model
     {
     	$mensaje = new Mensaje();
 
-    	$mensaje->nombres = $data['nombres'];
-    	$mensaje->correo_electronico = $data['correo_electronico'];
-    	$mensaje->mensaje = $data['mensaje'];
+    	$mensaje->nombres = $data['name'];
+    	$mensaje->correo_electronico = $data['email'];
+    	$mensaje->mensaje = $data['message'];
+        $mensaje->telefono = $data['phone'];
         $mensaje->save();
     	return true;
     }
