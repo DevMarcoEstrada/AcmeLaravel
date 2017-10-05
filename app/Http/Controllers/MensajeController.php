@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Mensaje;
 
+
 class MensajeController extends Controller
 {
     //
@@ -27,5 +28,28 @@ class MensajeController extends Controller
     {
         $mensajes = Mensaje::ListarMensajes();
         return view('adminlte::mensaje.mensaje', compact('mensajes'));
+    }
+
+    public function crud(Request $request)
+    {
+        $mensajes = Mensaje::ListarMensajes();
+        if($request->ajax())
+        {
+            return view('adminlte::mensaje.mensajetable', compact('mensajes'));
+        }else{
+            return view('adminlte::mensaje.mensajecrud', compact('mensajes'));
+        }
+    }
+
+    public function CrudPro()
+    {
+        return view('adminlte::mensaje.mensajecrudpro');
+    }
+
+
+    public function ListarMensajes(Request $request)
+    {
+        $datos = $request->all();
+        return Mensaje::ListarMensajesCrud($datos);
     }
 }

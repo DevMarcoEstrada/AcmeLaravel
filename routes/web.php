@@ -55,6 +55,17 @@ Route::get('admin/PersonaJuridica', ['as' =>'admin/PersonaJuridica', 'uses' => '
 Route::get('admin/MostrarProductos', ['as' =>'admin/MostrarProductos', 'uses' => 'ProductoController@MostrarProductos']);
 
 
+
+//Mensajes Crud
+Route::get('Mensaje/Crud', ['as' => 'Mensaje/Crud', 'uses' => 'MensajeController@CrudPro']);
+
+//traer datos
+Route::post('Mensaje/Listar', ['as' => 'Mensaje/Listar' , 'uses' => 'MensajeController@ListarMensajes']);
+
+
+// Route::get('Mensaje/CrudBootGrid',['as' =>'Mensaje/CrudBootGrid', 'uses' => 'MensajeController@Crud']);
+
+
 // Ruta para Guardar Registro de Producto
 Route::post('admin/Producto', ['as' =>'admin/Producto', 'uses' => 'ProductoController@GuardarProducto']);
 
