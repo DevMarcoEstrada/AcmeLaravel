@@ -1,7 +1,7 @@
 @extends('adminlte::layouts.app')
 
 @section('contentheader_title')
-	Mensaje
+	Mensajes
 @endsection
 
 @section('htmlheader_title')
@@ -69,7 +69,7 @@
 
 @section('main-content')
 
-
+@foreach($mensajes as $mensaje)
 <div class="container">
 	
 		<div class="row">
@@ -81,7 +81,7 @@
 			<div class="col-sm-12 col-md-3 ">
 
 				<h3 class="h3 text-justify ">
-					{{$mensaje[0]->nombres}}
+					{{$mensaje->nombres}}
 				</h3>
 			</div>
 			
@@ -96,7 +96,7 @@
 			<div class="col-sm-12 col-md-3 ">
 
 				<h3 class="h3 text-justify ">
-					{{$mensaje[0]->correo_electronico}}
+					{{$mensaje->correo_electronico}}
 				</h3>
 					
 			</div>
@@ -114,7 +114,7 @@
 			<div class="col-sm-12 col-md-3 ">
 
 				<h3 class="h3 text-justify ">
-					{{$mensaje[0]->telefono}}
+					{{$mensaje->telefono}}
 				</h3>
 					
 			</div>
@@ -127,7 +127,7 @@
 
 			<div class="col-sm-12 col-md-6 ">
 				<h3 class="h3 text-justify ">
-					{{$mensaje[0]->mensaje}}
+					{{$mensaje->mensaje}}
 				</h3>
 			</div>
 
@@ -142,25 +142,20 @@
 			<div class="col-sm-12 col-md-3 ">
 
 				<h3 class="h3 text-justify ">
-					{{$mensaje[0]->created_at}}
+					{{$mensaje->created_at}}
 				</h3>
 					
 			</div>
 		</div>
 		
 
-		<div class="row">
-			<div class="col-xs-6 col-xs-offset-3">
-				<a href="/asdasd" class="btn btn-block pull-left boton-azul" role="button"><i class="fa fa-send fa-3x" aria-hidden="true"></i><span style="font-size:20px;">&nbsp; Responder Mensaje</span></a>
-	         
-	          
-	          </div>
-	          
-          
-        </div>
+		
 
 		
 </div>
+<hr>
+<hr>
+@endforeach
 
 
 

@@ -65,6 +65,17 @@
                     <!-- <li><a href="#">{{ trans('adminlte_lang::message.linklevel2') }}</a></li> -->
                 </ul>
             </li>
+
+            <li class="treeview">
+                <a href="#"><i class='fa fa-gear'></i> <span>CRUD´s</span> <i class="fa fa-angle-left pull-right"></i></a>
+                <ul class="treeview-menu">
+                    <li><a href="{{url('PersonaNatural/Crud')}}">Clientes</a></li>
+                    <li><a href="{{url('PersonaJuridica/Crud')}}">Proveedores</a></li>
+                    <li><a href="{{url('Mensaje/Crud')}}">Mensajes</a></li>
+                    
+                    <!-- <li><a href="#">{{ trans('adminlte_lang::message.linklevel2') }}</a></li> -->
+                </ul>
+            </li>
         </ul><!-- /.sidebar-menu -->
     </section>
     <!-- /.sidebar -->

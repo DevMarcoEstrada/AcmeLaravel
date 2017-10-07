@@ -27,6 +27,11 @@ class Mensaje extends Model
     {
     	return Mensaje::all();
     }
+    public static function ListarMensajeId($id)
+    {
+        return Mensaje::select('*')->where('mensajes.id', $id)->get();
+
+    }
     public static function ListarMensajesCrud($datos)
     {
          $query = '';
@@ -58,15 +63,17 @@ class Mensaje extends Model
         $start_from = ($current_page_number - 1) * $records_per_page;
         
         $query .= " SELECT  mensajes.id, mensajes.nombres, mensajes.correo_electronico, 
-                          mensajes.mensaje, mensajes.telefono 
+                           CONCAT(SUBSTR(mensajes.mensaje ,1 ,30), '...') as mensaje,
+                          mensajes.telefono, estados.nombre_estado
                          
-                    FROM mensajes";
-        //inner join estados on estados.id = personas.estado_id                    
+                    FROM mensajes
+                    inner join estados on estados.id = mensajes.estado_id";                    
 
         if(!empty($_POST["searchPhrase"]))
         {
-            $query .= ' WHERE (mensajes.id LIKE "%'.$_POST["searchPhrase"].'%" ';
-         $query .= ' WHERE (mensajes.nombres LIKE "%'.$_POST["searchPhrase"].'%" ';
+         $query .= ' WHERE (mensajes.id LIKE "%'.$_POST["searchPhrase"].'%" ';
+         $query .= 'OR mensajes.nombres LIKE "%'.$_POST["searchPhrase"].'%" ';
+         $query .= 'OR estados.nombre_estado LIKE "%'.$_POST["searchPhrase"].'%" ';
          $query .= 'OR mensajes.correo_electronico LIKE "%'.$_POST["searchPhrase"].'%" ';
          $query .= 'OR mensajes.mensaje LIKE "%'.$_POST["searchPhrase"].'%" ';
          $query .= 'OR mensajes.telefono LIKE "%'.$_POST["searchPhrase"].'%" )';

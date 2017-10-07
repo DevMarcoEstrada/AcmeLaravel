@@ -8,6 +8,7 @@ use App\Models\Sexo;
 use App\Models\EstadoCivil;
 use App\Models\Zona;
 use App\Models\PersonaNatural;
+use App\Models\PersonaJuridica;
 
 class PersonaController extends Controller
 {
@@ -39,5 +40,27 @@ class PersonaController extends Controller
 
         }
         
+    }
+
+    public function CrudProNatural()
+    {
+        return view('adminlte::persona.personanaturalcrudpro');
+    }
+
+    public function ListarPersonasNaturales(Request $request)
+    {
+        $datos = $request->all();
+        return PersonaNatural::ListarPersonasNaturales($datos);
+    }
+
+    public function CrudProJuridica()
+    {
+        return view('adminlte::persona.personajuridicacrudpro');
+    }
+
+    public function ListarPersonasJuridicas(Request $request)
+    {
+        $datos = $request->all();
+        return PersonaJuridica::ListarPersonasJuridicas($datos);
     }
 }

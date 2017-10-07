@@ -20,7 +20,7 @@ Route::group(['middleware' => 'auth'], function () {
 //        // Uses Auth Middleware
 //    });
 
-    //Please do not remove this if you want adminlte:route and adminlte:link commands to works correctly.
+    //Please do not remove this if you want adminlte:route and ad minlte:link commands to works correctly.
     #adminlte_routes
 });
 
@@ -61,6 +61,23 @@ Route::get('Mensaje/Crud', ['as' => 'Mensaje/Crud', 'uses' => 'MensajeController
 
 //traer datos
 Route::post('Mensaje/Listar', ['as' => 'Mensaje/Listar' , 'uses' => 'MensajeController@ListarMensajes']);
+// ejemplo --->  Route::get('PersonaNatural/Ver/{id}', ['as' =>'PersonaNatural/Crud', 'uses' => 'PersonaController@VerPersonaNatural']);-
+//ver
+Route::get('Mensaje/Ver/{id}', ['as' => 'Mensaje/Crud', 'uses' => 'MensajeController@VerMensaje']);
+
+
+//Personas Naturales
+
+Route::get('PersonaNatural/Crud', ['as' => 'PersonaNatural/Crud', 'uses' => 'PersonaController@CrudProNatural']);
+Route::post('PersonaNatural/Listar', ['as' => 'PersonaNatural/Crud', 'uses' => 'PersonaController@ListarPersonasNaturales']);
+
+//Fin Personas Naturales
+
+//Personas Juridicas
+Route::get('PersonaJuridica/Crud', ['as'=>'PersonaJuridica/Crud', 'uses' => 'PersonaController@CrudProJuridica']);
+Route::post('PersonaJuridica/Listar', ['as' => 'PersonaJuridica/Crud', 'uses' => 'PersonaController@ListarPersonasJuridicas']);
+
+//Fin Personas Juridicas
 
 
 // Route::get('Mensaje/CrudBootGrid',['as' =>'Mensaje/CrudBootGrid', 'uses' => 'MensajeController@Crud']);

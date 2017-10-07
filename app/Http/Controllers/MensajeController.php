@@ -27,7 +27,7 @@ class MensajeController extends Controller
     public function MostrarMensajes()
     {
         $mensajes = Mensaje::ListarMensajes();
-        return view('adminlte::mensaje.mensaje', compact('mensajes'));
+        return view('adminlte::mensaje.mensajestotales', compact('mensajes'));
     }
 
     public function crud(Request $request)
@@ -51,5 +51,11 @@ class MensajeController extends Controller
     {
         $datos = $request->all();
         return Mensaje::ListarMensajesCrud($datos);
+    }
+    public function VerMensaje($id)
+    {
+        $mensaje = Mensaje::ListarMensajeId($id);
+
+        return view('adminlte::mensaje.mensaje', compact('mensaje'));
     }
 }
