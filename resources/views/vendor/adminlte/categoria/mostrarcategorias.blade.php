@@ -76,7 +76,8 @@
 			<div class="col-sm-12 col-md-3 ">
 
 				<h4 class="h4 text-center ">
-					{{$categoria->nombre_categoria}}
+					<strong>Nombre:</strong>
+					<p>{{$categoria->nombre_categoria}}</p>
 				</h4>
 					
 			</div>
@@ -93,6 +94,7 @@
 			</div>
 			
 		</div>
+		<br>
 		@endforeach
 </div>
 

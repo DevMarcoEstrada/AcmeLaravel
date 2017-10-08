@@ -1,4 +1,11 @@
-<!-- Terms and conditions modal -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Terms and conditions modal -->
 <div class="modal fade" id="MensajeModal" tabindex="-1" role="dialog" aria-labelledby="Terms and conditions" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
@@ -17,3 +24,5 @@
         </div>
     </div>
 </div>
+</body>
+</html>

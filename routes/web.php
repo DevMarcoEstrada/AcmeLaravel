@@ -55,6 +55,14 @@ Route::get('admin/PersonaJuridica', ['as' =>'admin/PersonaJuridica', 'uses' => '
 Route::get('admin/MostrarProductos', ['as' =>'admin/MostrarProductos', 'uses' => 'ProductoController@MostrarProductos']);
 
 
+//Trasportes Crud
+
+
+Route::get('Transporte/Crud', ['as' => 'Transporte/Crud', 'uses' => 'TransporteController@CrudPro']);
+
+Route::post('Transporte/Listar', ['as' => 'Transporte/Crud', 'uses' => 'TransporteController@ListarMensajes']);
+
+
 
 //Mensajes Crud
 Route::get('Mensaje/Crud', ['as' => 'Mensaje/Crud', 'uses' => 'MensajeController@CrudPro']);

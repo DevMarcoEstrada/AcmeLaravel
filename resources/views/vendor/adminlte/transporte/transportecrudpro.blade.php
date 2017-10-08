@@ -1,7 +1,7 @@
 @extends('adminlte::layouts.app')
 
 @section('htmlheader_title')
-	Listado de Mensajes 
+	Listado de Transportes 
 @endsection
 
 @section('contentheader_title')
@@ -74,13 +74,13 @@
         		<h3 class="text-center color-azul"><strong><i class="fa fa-list" aria-hidden="true"></i>&nbsp; Listado de Mensajes&nbsp;<i class="fa fa-list" aria-hidden="true"></i></strong></h3>  
 					
                     <div class="table-responsive" id="lista-personanatural">
-                        <table class="table table-hover" id="tlb-mensajes">
+                        <table class="table table-hover" id="tlb-transportes">
 						  <thead>
 						     <tr>
 						      <th class="text-center" style="vertical-align:middle;" data-column-id="id" data-type="numeric">ID</th>
-						      <th class="text-center" style="vertical-align:middle;" data-column-id="nombres" data-type="numeric">Nombre</th>
-						      <th class="text-center" style="vertical-align:middle;" data-column-id="correo_electronico">Correo</th>
-						      <th class="text-center" style="vertical-align:middle;" data-column-id="mensaje">Mensaje</th>
+						      <th class="text-center" style="vertical-align:middle;" data-column-id="nombre_transporte" data-type="numeric">Nombre</th>
+						      <th class="text-center" style="vertical-align:middle;" data-column-id="demora">Demora:</th>
+						      <th class="text-center" style="vertical-align:middle;" data-column-id="precio">Precio:</th>
 						      <th class="text-center" style="vertical-align: :middle;" data-column-id="nombre_estado" >Estado</th>
 						      <th class="text-center" style="vertical-align:middle;" data-column-id="telefono">Telefono</th>
 						      <!-- <th class="text-center" style="vertical-align:middle;" data-column-id="nombre_estado">Estado</th> -->
@@ -94,9 +94,7 @@
 		</div>
 	</div>
 	
-	<div class="container">
-	<!-- <button type="button" class="btn btn-block btn-flat" data-toggle="modal" data-target="#MensajeModal"> -->
-</div>
+	
 
 @endsection
 
@@ -113,7 +111,7 @@ $(document).ready(function()
 	    }
 	});
 
-	var gridtable= $('#tlb-mensajes').bootgrid({
+	var gridtable= $('#tlb-transportes').bootgrid({
 			
 			ajax:true,
 			labels: {
@@ -129,7 +127,7 @@ $(document).ready(function()
 				            id: "b0df282a-0d67-40e5-8558-c9e93b7befed"
 				        };
 			},
-			url:"../Mensaje/Listar",
+			url:"../Transporte/Listar",
 
 			formatters: {
 
@@ -144,23 +142,9 @@ $(document).ready(function()
 	           		
 		        }
     		}
-	}).on("loaded.rs.jquery.bootgrid", function()
-{
-    /* Executes after data is loaded and rendered */
-    gridtable.find("asd").on("click", function(e)
-    {
+	})
 
-
-
-        // alert("You pressed edit on row: " + $(this).data("row-id"));
-
-        // $('#MensajeModal').show();
-    }).end().find(".btn-mensaje2").on("click", function(e)
-    {
-        alert("You pressed delete on row: " + $(this).data("row-id"));
-    });
 });
-    });
 
 
 
