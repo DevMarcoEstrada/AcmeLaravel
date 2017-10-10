@@ -13,6 +13,17 @@ class Producto extends Model
     public $primarykey = 'id';
 
 
+
+
+    public static function Listar_Productos()
+    {
+        return Producto::select("productos.id as idarticulo",
+                               "productos.precio as precio",
+                               "productos.stock as stock",
+                               "productos.cDescripcionProducto as cDescripcionProducto")
+                        ->get();
+    }
+
     public static function GuardarProducto($data)
     {
     	$producto = new Producto();

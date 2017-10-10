@@ -15,7 +15,7 @@
     <link href="landing/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Theme CSS -->
-    <link href="landing/css/clean-blog.min.css" rel="stylesheet">
+    <link href="landing/css/clean-blog.css" rel="stylesheet">
 
     <!-- Custom Fonts -->
     <link href="landing/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
@@ -80,8 +80,68 @@
 
     <!-- Page Header -->
     <!-- Set your background image for this header on the line below. -->
-    <header class="intro-header" style="background-image: url('landing/img/shop.jpg')">
-        <div id="Acme" class="container">
+    <!-- style="background-image: url('landing/img/shop.jpg')" -->
+    <header class="intro-header" style="background-color: blue;">
+
+
+        <div class="container-fluid">
+   <br>               
+         <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+           <div id="carousel-1" class="carousel slide" data-ride="carousel">
+            <!-- Indicadores -->
+                <ol class="carousel-indicators">
+                    <li data-target="#carousel-1" data-slider-to="0" class="active"></li>
+                    <li data-target="#carousel-1" data-slider-to="1"></li>
+                    <li data-target="#carousel-1" data-slider-to="2"></li>
+                </ol>
+
+            <!--Contenedor de los slide -->
+                <div class="carousel-inner" role="listbox">            
+                     <div class ="item active">
+                             <img src="/img/laptop.jpg" class="img img-responsive" alt="">
+                         <div class="carousel-caption">  
+                         <h3> 
+                            </h3>
+                          <p> Tecnologia.</p>
+                         </div>
+                     </div>
+
+
+                     <div class ="item" >
+                             <img src="/img/mueble.jpg" class="img img-responsive" alt="">
+                        <div class="carousel-caption">
+                             <h3> 
+                            </h3>
+                            <p> Muebles.</p>
+                        </div>
+                     </div>
+
+
+                     <div class ="item">
+                              <img src="/img/moda.jpg" class="img img-responsive" alt="">
+                        <div class="carousel-caption">
+                            <h3> 
+                            </h3>
+                            <p> Moda.</p>
+                        </div>
+                     </div>
+                            
+                </div>
+
+        <!-- Controles -->
+        <a href="#carousel-1" class="left carousel-control" role="button" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+            <span class="sr-only">Anterior </span>
+        </a>
+
+       <a href="#carousel-1" class="right carousel-control" role="button" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+            <span class="sr-only">Siguiente </span>
+        </a>
+
+    </div>
+</div>
+       <!--  <div id="Acme" class="container">
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                     <div class="site-heading">
@@ -100,8 +160,68 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> -->
     </header>
+
+    {{-- prueba --}}
+<div class="container-fluid">
+   <br>               
+         <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+           <div id="carousel-1" class="carousel slide" data-ride="carousel">
+            <!-- Indicadores -->
+                <ol class="carousel-indicators">
+                    <li data-target="#carousel-1" data-slider-to="0" class="active"></li>
+                    <li data-target="#carousel-1" data-slider-to="1"></li>
+                    <li data-target="#carousel-1" data-slider-to="2"></li>
+                </ol>
+
+            <!--Contenedor de los slide -->
+                <div class="carousel-inner" role="listbox">            
+                     <div class ="item active">
+                             <img src="/img/laptop.jpg" class="img img-responsive" alt="">
+                         <div class="carousel-caption">  
+                         <h3> 
+                            </h3>
+                          <p> Tecnologia.</p>
+                         </div>
+                     </div>
+
+
+                     <div class ="item" >
+                             <img src="/img/mueble.jpg" class="img img-responsive" alt="">
+                        <div class="carousel-caption">
+                             <h3> 
+                            </h3>
+                            <p> Muebles.</p>
+                        </div>
+                     </div>
+
+
+                     <div class ="item">
+                              <img src="/img/moda.jpg" class="img img-responsive" alt="">
+                        <div class="carousel-caption">
+                            <h3> 
+                            </h3>
+                            <p> Moda.</p>
+                        </div>
+                     </div>
+                            
+                </div>
+
+        <!-- Controles -->
+        <a href="#carousel-1" class="left carousel-control" role="button" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+            <span class="sr-only">Anterior </span>
+        </a>
+
+       <a href="#carousel-1" class="right carousel-control" role="button" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+            <span class="sr-only">Siguiente </span>
+        </a>
+
+    </div>
+</div>
+{{-- fin prueba --}}
 <!-- Main Content -->
 
 
@@ -236,7 +356,7 @@
     <hr>
 
     <section id="Contacto">
-        <div class="container">
+        <div class="container" >
             <div class="row">
                 <h2 class="text-center">Contáctanos</h2>
             </div>
@@ -262,45 +382,81 @@
                     <h3 class="text-center"><i class="fa fa-envelope"></i> <u>Envíanos un mensaje</u></h3>
                     <br>
                 </div>
-                <div class="col-sm-12 col-md-8 col-md-offset-2">
-                    <form name="sentMessage" id="contactForm" action="{{url('/')}}" method="POST" enctype="plain" novalidate>
-                    <input name="_token" type="hidden" value="{{ csrf_token() }}">
-                    <div class="row control-group">
-                        <div class="form-group col-xs-12 floating-label-form-group controls">
-                            <label>Nombre</label>
-                            <input type="text" class="form-control" placeholder="Nombre" id="name" name="name" required data-validation-required-message="Ingresa tu nombre.">
-                            <p class="help-block text-danger"></p>
-                        </div>
-                    </div>
-                    <div class="row control-group">
-                        <div class="form-group col-xs-12 floating-label-form-group controls">
-                            <label>Correo Electrónico</label>
-                            <input type="email" class="form-control" placeholder="Correo Electrónico" id="email" name="email" required data-validation-required-message="Ingresa tu correo electrónico address.">
-                            <p class="help-block text-danger"></p>
-                        </div>
-                    </div>
-                    <div class="row control-group">
-                        <div class="form-group col-xs-12 floating-label-form-group controls">
-                            <label>Numero de Telefono</label>
-                            <input type="tel" class="form-control" placeholder="Numero de Telefono" id="phone" name="phone" required data-validation-required-message="Ingresa tu número de teléfono.">
-                            <p class="help-block text-danger"></p>
-                        </div>
-                    </div>
-                    <div class="row control-group">
-                        <div class="form-group col-xs-12 floating-label-form-group controls">
-                            <label>Mensaje</label>
-                            <textarea rows="5" class="form-control" placeholder="Mensaje" id="message" name="message" required data-validation-required-message="Ingresa tu mensaje."></textarea>
-                            <p class="help-block text-danger"></p>
-                        </div>
-                    </div>
-                    <br>
-                    <div id="success"></div>
+            </div>
+
+
+            <div class="row">
+                <!-- style="background-color: #EAE8E8;" -->
+                <div class="col-sm-12 col-md-4 col-md-offset-1" style="background-image: url('landing/img/fondo-form.jpg')" >
                     <div class="row">
-                        <div class="form-group col-xs-12">
-                            <button type="submit" class="btn btn-default" >Enviar</button>
+                        <div class="col-sm-12 col-md-8 col-md-offset-1" >
+                            <form name="sentMessage" id="contactForm" action="{{url('/')}}" method="POST" enctype="plain" novalidate>
+                            <input name="_token" type="hidden" value="{{ csrf_token() }}">
+                            <div class="row control-group">
+                                <div class="form-group col-xs-12 floating-label-form-group controls">
+                                    <label>Nombre</label>
+                                    <input type="text" class="form-control" placeholder="Nombre" id="name" name="name" required data-validation-required-message="Ingresa tu nombre.">
+                                    <p class="help-block text-danger"></p>
+                                </div>
+                            </div>
+                            <div class="row control-group">
+                                <div class="form-group col-xs-12 floating-label-form-group controls">
+                                    <label>Correo Electrónico</label>
+                                    <input type="email" class="form-control" placeholder="Correo Electrónico" id="email" name="email" required data-validation-required-message="Ingresa tu correo electrónico address.">
+                                    <p class="help-block text-danger"></p>
+                                </div>
+                            </div>
+                            <div class="row control-group">
+                                <div class="form-group col-xs-12 floating-label-form-group controls">
+                                    <label>Numero de Telefono</label>
+                                    <input type="tel" class="form-control" placeholder="Numero de Telefono" id="phone" name="phone" required data-validation-required-message="Ingresa tu número de teléfono.">
+                                    <p class="help-block text-danger"></p>
+                                </div>
+                            </div>
+                            <div class="row control-group">
+                                <div class="form-group col-xs-12 floating-label-form-group controls">
+                                    <label>Mensaje</label>
+                                    <textarea rows="5" class="form-control" placeholder="Mensaje" id="message" name="message" required data-validation-required-message="Ingresa tu mensaje."></textarea>
+                                    <p class="help-block text-danger"></p>
+                                </div>
+                            </div>
+                            <br>
+                            <div id="success"></div>
+                            <div class="row">
+                                <div class="form-group col-xs-12">
+                                    <button type="submit" class="btn btn-default" style="color: #A4A4A4;">Enviar</button>
+                                </div>
+                            </div>
+                            </form>
                         </div>
                     </div>
-                </form>
+            </div>
+
+            <div class="col-sm-12 col-md-4 col-md-offset-1"  >
+                <div class="row">
+                    <div class="col-sm-12 col-md-6 col-md-offset-3">
+                        <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FACME-1500286046714471%2F&tabs=messages&width=340&height=500&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId" width="340" height="500" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="contaier">
+        <div class="row">
+            <div class="col-md-6 col-md-offset-3">
+                <a href="https://twitter.com/CrismnV?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-show-count="false">Follow @CrismnV</a><script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+            </div>
+            <div class="row">
+                <blockquote class="twitter-tweet"><p lang="es" dir="ltr">El Sueño de un Millar de Gatos <a href="https://t.co/0vQ2pVBYKo">https://t.co/0vQ2pVBYKo</a></p>&mdash; Cristian Ycochea (@CrismnV) <a href="https://twitter.com/CrismnV/status/873914504710672384?ref_src=twsrc%5Etfw">June 11, 2017</a></blockquote> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+                <blockquote class="twitter-tweet"><p lang="es" dir="ltr">El Sueño de un Millar de Gatos <a href="https://t.co/0vQ2pVBYKo">https://t.co/0vQ2pVBYKo</a></p>&mdash; Cristian Ycochea (@CrismnV) <a href="https://twitter.com/CrismnV/status/873914504710672384?ref_src=twsrc%5Etfw">June 11, 2017</a></blockquote> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6 col-md-6 col-md-offset-3">
+                <a class="twitter-timeline" href="https://twitter.com/CrismnV?ref_src=twsrc%5Etfw">Tweets by CrismnV</a> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
             </div>
         </div>
     </div>

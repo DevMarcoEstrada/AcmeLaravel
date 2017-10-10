@@ -88,6 +88,16 @@ Route::post('PersonaJuridica/Listar', ['as' => 'PersonaJuridica/Crud', 'uses' =>
 //Fin Personas Juridicas
 
 
+// factura
+
+
+Route::get('Venta/Factura', ['as' =>'Venta/Factura', 'uses' => 'VentaController@RegistrarFactura']);
+
+Route::post('Venta/Factura', ['as' =>'Venta/Factura', 'uses' => 'VentaController@GuardarFactura']);
+
+// fin factura
+
+
 // Route::get('Mensaje/CrudBootGrid',['as' =>'Mensaje/CrudBootGrid', 'uses' => 'MensajeController@Crud']);
 
 
