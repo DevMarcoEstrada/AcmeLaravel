@@ -33,6 +33,11 @@
 
 <body>
 
+
+
+
+
+
     <!-- Navigation -->
     <nav class="navbar navbar-default navbar-custom navbar-fixed-top">
         <div class="container-fluid">
@@ -224,7 +229,70 @@
 {{-- fin prueba --}}
 <!-- Main Content -->
 
+{{-- slidershow --}
 
+{{-- prueba --}}
+<div class="container-fluid">
+   <br>               
+         <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+           <div id="carousel-1" class="carousel slide" data-ride="carousel">
+            <!-- Indicadores -->
+                <ol class="carousel-indicators">
+                    <li data-target="#carousel-1" data-slider-to="0" class="active"></li>
+                    <li data-target="#carousel-1" data-slider-to="1"></li>
+                    <li data-target="#carousel-1" data-slider-to="2"></li>
+                </ol>
+
+            <!--Contenedor de los slide -->
+                <div class="carousel-inner" role="listbox">            
+                     <div class ="item active">
+                             <img src="/img/laptop.jpg" class="img img-responsive" alt="">
+                         <div class="carousel-caption">  
+                         <h3> 
+                            </h3>
+                          <p> Tecnologia.</p>
+                         </div>
+                     </div>
+
+
+                     <div class ="item" >
+                             <img src="/img/mueble.jpg" class="img img-responsive" alt="">
+                        <div class="carousel-caption">
+                             <h3> 
+                            </h3>
+                            <p> Muebles.</p>
+                        </div>
+                     </div>
+
+
+                     <div class ="item">
+                              <img src="/img/moda.jpg" class="img img-responsive" alt="">
+                        <div class="carousel-caption">
+                            <h3> 
+                            </h3>
+                            <p> Moda.</p>
+                        </div>
+                     </div>
+                            
+                </div>
+
+        <!-- Controles -->
+        <a href="#carousel-1" class="left carousel-control" role="button" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+            <span class="sr-only">Anterior </span>
+        </a>
+
+       <a href="#carousel-1" class="right carousel-control" role="button" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+            <span class="sr-only">Siguiente </span>
+        </a>
+
+    </div>
+</div>
+{{-- fin prueba --}}
+
+
+{{-- fin slidershow --}}
 
     <!--  <section id="Inicio">
         
@@ -254,6 +322,24 @@
     </section>
    <hr> -->
 
+
+
+    <section>
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="container-fluid" id="home" name="home">
+                    <h1 class="acme1 text-sm-center h1 font-italic" style="color: #ffffff;">
+                        ACME
+                    </h1>
+                    <h2 class="text-center blanco">Si no lo tenemos, solo pidalo</h2>
+                </div>
+            </div>
+            
+        </div>
+        
+
+    </section>
+    
 
     <section id="Caracteristicas">
         
