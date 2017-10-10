@@ -88,6 +88,14 @@ Route::post('PersonaJuridica/Listar', ['as' => 'PersonaJuridica/Crud', 'uses' =>
 //Fin Personas Juridicas
 
 
+// Persona Juridicas
+	// Mostar el Listado : GET
+	Route::get('Productos/Crud', ['as' =>'Productos/Crud', 'uses' => 'ProductoController@CrudProductos']);
+
+	// Traer los Datos.
+	Route::post('Productos/Listar', ['as' =>'Productos/Crud', 'uses' => 'ProductoController@ListarProductos']);
+
+
 // factura
 
 

@@ -27,7 +27,7 @@ class VentaController extends Controller
     	$tiposdocumentos = TipoDocumento::Listar_Tipo_Documento(1);
     	$tipospagos= TipoPago::Listar_Tipo_Pago();
     	$series = Serie::Listar_Series_Facturas();
-    	$articulos = Producto::Listar_Productos();
+    	$articulos = Producto::Listar_ProductosMostrar();
     	$anios = Anio::Listar_Anios();
     	$meses = Mes::Listar_Meses();
 

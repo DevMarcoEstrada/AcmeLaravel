@@ -15,7 +15,7 @@ class Producto extends Model
 
 
 
-    public static function Listar_Productos()
+    public static function Listar_ProductosMostrar()
     {
         return Producto::select("productos.id as idarticulo",
                                "productos.precio as precio",
@@ -142,7 +142,7 @@ public static function Listar_Productos()
         $results = DB::select($query);
 
 
-        $total_records = Mensaje::count();
+        $total_records = Producto::count();
 
 
         $output = array(
