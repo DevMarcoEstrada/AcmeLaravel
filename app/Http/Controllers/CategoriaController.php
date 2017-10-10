@@ -13,7 +13,6 @@ class CategoriaController extends Controller
     }
     public function MostrarCategorias()
     {
-
         $categorias = Categoria::Listar_Categorias();
         return view('adminlte::categoria.mostrarcategorias', compact('categorias'));
 
@@ -31,6 +30,22 @@ class CategoriaController extends Controller
     		return redirect()->back()->with('errors','Los Datos no han sido guardados correctamente');
     	}
     }
+    public function CrudPro()
+    {
+        return view('adminlte::categoria.categoriacrudpro');
+    }
 
+    public function ListarCategorias(Request $request)
+    {
+        $datos = $request->all();
+        return Categoria::ListarCategoriasCrud($datos);
+    }
+    public function VerCategorias($id)
+    {
+        $categorias = Categoria::ListarCategoriasId($id);
 
+        return view('adminlte::categoria.mostrarcategorias', compact('categorias'));
+    }
+
+  
 }

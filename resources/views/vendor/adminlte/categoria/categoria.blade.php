@@ -113,12 +113,12 @@
 @section('script-fin')
 <script>
 	$('#nombre_categoria').on("keypress", function(){
-		$("#ErrorMensaje-NombreCategoria").hide();
+		$("#ErrorCategoria-NombreCategoria").hide();
 
-	})
+	}) 
 
 	$('#descripcion').on("keypress", function(){
-		$("#ErrorMensaje-Descripcion").hide();
+		$("#ErrorCategoria-Descripcion").hide();
 	})
 
 	$('#btnAñadirCategoria').on("click", function(evt)
@@ -128,8 +128,8 @@
 		if( nombre_categoria == null || nombre_categoria.length == 0)
 		{
 			nombre_categoria = null;
-			$("#ErrorMensaje-NombreCategoria").text("El Nombre no puede ser vacio");
-			$("#ErrorMensaje-NombreCategoria").show();
+			$("#ErrorCategoria-NombreCategoria").text("El Nombre no puede ser vacio");
+			$("#ErrorCategoria-NombreCategoria").show();
 			$("#nombre_categoria").focus();	
 			return false;
 		}
@@ -138,8 +138,8 @@
 		if(descripcion == null || descripcion.length == 0)
 		{
 			
-			$("#ErrorMensaje-Descripcion").text("La descripcion no puede ser vacia");
-			$("#ErrorMensaje-Descripcion").show();
+			$("#ErrorCategoria-Descripcion").text("La descripcion no puede ser vacia");
+			$("#ErrorCategoria-Descripcion").show();
 			$("#descripcion").focus();
 			return false;
 		}

@@ -12,9 +12,7 @@ class Producto extends Model
     protected $table = 'productos';
     public $primarykey = 'id';
 
-
-
-
+   
     public static function Listar_ProductosMostrar()
     {
         return Producto::select("productos.id as idarticulo",
@@ -41,6 +39,14 @@ class Producto extends Model
     	$producto->save();
     	return true;
     }
+
+
+  public static function Listar_Producto_Id($id)
+    {
+        return Producto::select('*')->where('productos.id', $id)->get();
+
+    }
+
 
     public static function Listar_Productos_Categoria()
     {
@@ -93,25 +99,25 @@ public static function Listar_Productos()
         else
         {
          $current_page_number = 1;
-        }
+        }   
 
         $start_from = ($current_page_number - 1) * $records_per_page;
         
         $query .= " SELECT  productos.id, productos.cDescripcionProducto, productos.precio, 
-                          productos.stock, categorias.nombre_categoria 
+                          productos.stock, categorias.nombre_categoria, estados.nombre_estado
                          
         FROM productos 
-        inner join Categorias on Categorias.id = productos.categoria_id";
-
+        inner join Categorias on Categorias.id = productos.categoria_id
+        inner join estados on estados.id = productos.estado_id";   
 
         if(!empty($_POST["searchPhrase"]))
         {
          $query .= ' WHERE (productos.id LIKE "%'.$_POST["searchPhrase"].'%" ';
-         $query .= ' WHERE (productos.cDescripcionProducto LIKE "%'.$_POST["searchPhrase"].'%" ';
+         $query .= 'OR productos.cDescripcionProducto LIKE "%'.$_POST["searchPhrase"].'%" ';
          $query .= 'OR productos.precio LIKE "%'.$_POST["searchPhrase"].'%" ';
          $query .= 'OR productos.stock LIKE "%'.$_POST["searchPhrase"].'%" ';
-         $query .= 'OR categorias.nombre_categoria LIKE "%'.$_POST["searchPhrase"].'%" ';
-         // $query .= 'OR estados.nombre_estado LIKE "%'.$_POST["searchPhrase"].'%" )';
+         $query .= 'OR categorias.nombre_categoria LIKE "%'.$_POST["searchPhrase"].'%" )';
+         $query .= 'OR estados.nombre_estado LIKE "%'.$_POST["searchPhrase"].'%" )';
         }
 
         $order_by = '';
