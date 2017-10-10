@@ -12,7 +12,7 @@ class Producto extends Model
     protected $table = 'productos';
     public $primarykey = 'id';
 
-
+   
 
 
     public static function Listar_ProductosMostrar()
@@ -107,10 +107,10 @@ public static function Listar_Productos()
         if(!empty($_POST["searchPhrase"]))
         {
          $query .= ' WHERE (productos.id LIKE "%'.$_POST["searchPhrase"].'%" ';
-         $query .= ' WHERE (productos.cDescripcionProducto LIKE "%'.$_POST["searchPhrase"].'%" ';
+         $query .= 'OR productos.cDescripcionProducto LIKE "%'.$_POST["searchPhrase"].'%" ';
          $query .= 'OR productos.precio LIKE "%'.$_POST["searchPhrase"].'%" ';
          $query .= 'OR productos.stock LIKE "%'.$_POST["searchPhrase"].'%" ';
-         $query .= 'OR categorias.nombre_categoria LIKE "%'.$_POST["searchPhrase"].'%" ';
+         $query .= 'OR categorias.nombre_categoria LIKE "%'.$_POST["searchPhrase"].'%" )';
          // $query .= 'OR estados.nombre_estado LIKE "%'.$_POST["searchPhrase"].'%" )';
         }
 

@@ -16,6 +16,7 @@
 		}
 
 		/*verde*/
+		
 		.fa-eye,.fa-pencil
 		{
 			color: #fff;
