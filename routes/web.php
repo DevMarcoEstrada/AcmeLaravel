@@ -85,28 +85,33 @@ Route::post('PersonaNatural/Listar', ['as' => 'PersonaNatural/Crud', 'uses' => '
 Route::get('PersonaJuridica/Crud', ['as'=>'PersonaJuridica/Crud', 'uses' => 'PersonaController@CrudProJuridica']);
 Route::post('PersonaJuridica/Listar', ['as' => 'PersonaJuridica/Crud', 'uses' => 'PersonaController@ListarPersonasJuridicas']);
 
-//Fin Personas Juridicas
-
-
-// Persona Juridicas
 	// Mostar el Listado : GET
-	Route::get('Productos/Crud', ['as' =>'Productos/Crud', 'uses' => 'ProductoController@CrudProductos']);
+Route::get('Productos/Crud', ['as' =>'Productos/Crud', 'uses' => 'ProductoController@CrudProductos']);
 
-	// Traer los Datos.
-	Route::post('Productos/Listar', ['as' =>'Productos/Crud', 'uses' => 'ProductoController@ListarProductos']);
+// Traer los Datos.
+Route::post('Productos/Listar', ['as' =>'Productos/Crud', 'uses' => 'ProductoController@ListarProductos']);
+
+Route::get('Productos/Ver/{id}', ['as' => 'Productos/Crud', 'uses' => 'ProductoController@VerProducto']);
 
 
-// factura
 
 
+
+
+//Factura
 Route::get('Venta/Factura', ['as' =>'Venta/Factura', 'uses' => 'VentaController@RegistrarFactura']);
 
 Route::post('Venta/Factura', ['as' =>'Venta/Factura', 'uses' => 'VentaController@GuardarFactura']);
 
 // fin factura
 
+//CRUD CATEGORIA
+Route::get('Categoria/Crud', ['as' => 'Categoria/Crud', 'uses' => 'CategoriaController@CrudPro']);
 
-// Route::get('Mensaje/CrudBootGrid',['as' =>'Mensaje/CrudBootGrid', 'uses' => 'MensajeController@Crud']);
+//traer datos
+Route::post('Categoria/Listar', ['as' => 'Categoria/Listar' , 'uses' => 'CategoriaController@ListarCategorias']);
+
+Route::get('Categoria/Ver/{id}', ['as' => 'Categoria/Crud', 'uses' => 'CategoriaController@VerCategorias']);
 
 
 // Ruta para Guardar Registro de Producto

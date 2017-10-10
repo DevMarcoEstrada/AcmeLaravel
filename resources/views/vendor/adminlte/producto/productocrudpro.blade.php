@@ -76,6 +76,7 @@
 						      <th class="text-center" style="vertical-align:middle;" data-column-id="precio">precio</th>
 						      <th class="text-center" style="vertical-align:middle;" data-column-id="stock">stock</th>
 						      <th class="text-center" style="vertical-align:middle;" data-column-id="nombre_categoria">categoria</th>
+						      <th class="text-center" style="vertical-align:middle;" data-column-id="nombre_estado">estado</th>
 						    <th class="text-center" style="vertical-align:middle;" data-column-id="commands" data-formatter="commands" data-sortable="false">Acciones</th>
 						    </tr>
 						  </thead>

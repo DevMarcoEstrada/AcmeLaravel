@@ -15,8 +15,7 @@ class ProductoController extends Controller
         $categorias = Categoria::Listar_Categorias();
     	return view('adminlte::producto.producto', compact('categorias'));
     }
-
-
+    
     public function MostrarProductos()
     {
         $productos = Producto::Listar_Productos_Categoria();
@@ -64,31 +63,25 @@ public function ListarProductos(Request $request)
        
     }
 
+ // public function VerMensaje($id)
+ //    {
+ //        $mensaje = Mensaje::ListarMensajeId($id);
 
+ //        return view('adminlte::mensaje.mensaje', compact('mensaje'));
+ //    }
 
     public function VerProducto($id)
     {
         //$id : codigo de persona natural.
         //echo $id;
-        $productos = Producto::Listar_Producto($id);
+        $productos = Producto::Listar_Producto_ID($id);
 
         //dd($personasnataurales);
         
         return view('adminlte::producto.VerProducto',compact('productos'));
     }
 
-    // public function VerBootGridProducto($id)
-    // {
-    //     //$id : codigo de persona natural.
-    //     //echo $id;
-    //     $productos = Producto::Listar_Producto($id);
-
-    //     //dd($personasnataurales);
-        
-    //     return view('adminlte::producto.VerProducto',compact('productos'));
-    // }
-
-    public function EditarProducto($id)
+     public function EditarProducto($id)
     {
         $cDescripcionProducto = DescripcionProducto::Listar_DescripcionProducto();
         $precio = Precio::Listar_precio();
@@ -102,64 +95,4 @@ public function ListarProductos(Request $request)
 
         return view('adminlte::productos.EditarProducto',compact('cDescripcionProducto','precio','stock','categoria_id','categoria_id'));
     }
-
-//     public function EditarBootGridPersonaNatural($id)
-//     {
-//         $cDescripcionProducto = DescripcionProducto::Listar_DescripcionProducto();
-//         $precio = Precio::Listar_precio();
-//         $stock  = Stock::Listar_stock();
-//         $categoria_id = Categoria::Listar_categoria_id($id);
-//         $ruta_imagen = ImageController::Listar_Imagen($data['image'], $data['cDescripcionProducto']);
-        
-
-
-
-//         return view('adminlte::productos.EditarProducto',compact('cDescripcionProducto','precio','stock','categoria_id','categoria_id'));
-
-
-//     }
-//     public function EditarBootGridGuardarPersonaNatural(request $request)
-//     {
-
-//         $data= $request->all();
-
-//         // var_dump($data);
-
-//         $bresultado = Producto::EditarProducto($data);
-
-//         if ($bresultado) {
-            
-//             return redirect('Producto/CrudBootGrid')->with('status','Los Datos se actualizaron correctamente.');
-
-//         } else {
-            
-//             return redirect('Producto/CrudBootGrid')->with('errors','La Datos No se actualizaron correctamente.');
-
-//         }
-        
-//     }
-    
-//     public function EditarGuardarProducto(request $request)
-//     {
-
-//         $data= $request->all();
-
-//         // var_dump($data);
-
-//         $bresultado = Producto::EditarProducto($data);
-
-//         if ($bresultado) {
-            
-//             return redirect('Producto/Crud')->with('status','Los Datos se actualizaron correctamente.');
-
-//         } else {
-            
-//             return redirect('Producto/Crud')->with('errors','La Datos No se actualizaron correctamente.');
-
-//         }
-        
-//     }
-
-
-
 }
