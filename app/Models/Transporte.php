@@ -85,7 +85,7 @@ class Transporte extends Model
         $results = DB::select($query);
 
 
-        $total_records = Mensaje::count();
+        $total_records = Transporte::count();
 
 
         $output = array(
