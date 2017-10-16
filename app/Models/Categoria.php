@@ -31,7 +31,7 @@ class Categoria extends Model
   
     public static function ListarCategoriasId($id)
     {
-        return Categoria::select('categorias.nombre_categoria')->where('categorias.id', $id)->get();
+        return Categoria::select('*')->where('categorias.id', $id)->get();
     }
 
 

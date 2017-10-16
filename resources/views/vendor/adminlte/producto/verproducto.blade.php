@@ -1,7 +1,7 @@
 @extends('adminlte::layouts.app')
 
 @section('contentheader_title')
-	Producto
+	Productos
 @endsection
 
 @section('htmlheader_title')
@@ -44,7 +44,7 @@
 	  	{
 	    	width:600px; 
 	    	height:400px;
-	    	border: 1px solid #337ab7 !important;
+	    	border: 1px solid #f50057 !important;
 	  	}
 		.help-block
 		{
@@ -69,73 +69,63 @@
 
 @section('main-content')
 
-
 <div class="container">
 	
-	<div class="row">
-
-			<div class="col-sm-12 col-md-3 col-md-offset-2" >
-				<h3 class="h3 text-left"><strong>Descripción:</strong></h3>
-			</div>
-
-			{{-- <div class="col-sm-12 col-md-3 ">
-
-				<h3 class="h3 text-justify ">
-					{{$producto[0]->cDdescripcionProducto}}
-				</h3>
-			</div>
-			 --}}
-		</div>
-		 
+		@foreach($productos as $producto)
 		<div class="row">
 
-			<div class="col-sm-12 col-md-3 col-md-offset-2" >
-				<h3 class="h3"><strong>Precio:</strong></h3>
-			</div>
+			<!-- <div class="col-sm-12 col-md-3">
 
-			{{-- <div class="col-sm-12 col-md-3 ">
-
-				<h3 class="h3 text-justify ">
-					{{$producto[0]->precio}}
-				</h3>
+				<h2 class="h2 text-left ">
+					 
+					<i class="fa fa-hand-o-right " aria-hidden="true"></i>&nbsp;
 					
-			</div> --}}
-			
-		</div>
-
-
-		 
-		<div class="row">
-
-			<div class="col-sm-12 col-md-3 col-md-offset-2" >
-				<h3 class="h3"><strong>stock:</strong></h3>
-			</div>
-
-			{{-- <div class="col-sm-12 col-md-3 ">
-
-				<h3 class="h3 text-justify ">
-					{{$producto[0]->stock}}
-				</h3>
+				</h2>
 					
-			</div> --}}
-		</div>
+			</div> -->
+
+			<div class="col-sm-12 col-md-2 ">
+
+				<h4 class="h4 text-center ">
+					{{$producto->cDescripcionProducto}}
+				</h4>
+					
+			</div>
+			<div class="col-sm-3 col-sm-push-5 col-md-3 col-md-push-1">
+				<img src="{{ asset('/img/productos/' . $producto->ruta_imagen) }}" class="img-fluid img-rounded rounded mx-auto d-block" alt="Sample photo" width="150" height="150">
 				
-
-		<{{-- div class="row">
-			<div class="col-xs-6 col-xs-offset-3">
-				<a href="/asdasd" class="btn btn-block pull-left boton-azul" role="button"><i class="fa fa-send fa-3x" aria-hidden="true"></i><span style="font-size:20px;">&nbsp; Responder -----</span></a>
-	         
-	          
-	          </div>
-	           --}}
-          
-        </div>
-
-		
-</div> 
+			</div>
 
 
 
+			<div class="col-sm-12  col-md-2">
+				<h4 class="h4 text-center ">
+					<strong>Precio:</strong>
+					<p>{{$producto->precio}}</p>
+				</h4>
+				
+			</div>
+			
+			<div class="col-sm-12 col-md-2">
+				<h4 class="h4 text-center">
+					<strong>En Stock:</strong>
+					<p>{{$producto->stock}}</p>
+				</h4>
+			</div>
+
+			<div class="col-sm-12 col-md-2 ">
+				<h4 class="h4 text-center">
+					<strong>Categoria:</strong>
+					<p>{{$producto->nombre_categoria}}</p>
+				</h4>
+			</div>
+		</div>
+		<hr>
+		@endforeach
+</div>
 @endsection
+
+
+
 
 

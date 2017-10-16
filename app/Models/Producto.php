@@ -43,9 +43,11 @@ class Producto extends Model
 
   public static function Listar_Producto_Id($id)
     {
-        return Producto::select('*')->where('productos.id', $id)->get();
+         return Producto::select('*')
+         ->join('categorias', 'productos.categoria_id', '=', 'categorias.id')
+         ->where('productos.id', $id)->get();
 
-    }
+}
 
 
     public static function Listar_Productos_Categoria()
@@ -57,21 +59,7 @@ class Producto extends Model
                 ->get();
 
     }
-public static function Listar_Productos()
-    {
-        //return Producto::all();
-        return Producto::select("productos.id",
-                                       "productos.precio",
-                                       "productos.cDescripcionProducto",
-                                       "productos.cApellidoPaterno",
-                                       "productos.cApellidoMaterno",
-                                       "productos.Nombres",
-                                       "estados.nombre_estado",
-                                       "productos.persona_id")
-                                ->join('categorias', 'productos.categoria_id', '=', 'categorias.id')
-                                ->orderBy('productos.id','DESC')
-                                ->paginate(4); 
-    }
+
 
  public static function ListarProductosCrud($datos)
     {

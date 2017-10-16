@@ -44,7 +44,7 @@
 	  	{
 	    	width:600px; 
 	    	height:400px;
-	    	border: 1px solid #337ab7 !important;
+	    	border: 1px solid #f50057 !important;
 	  	}
 		.help-block
 		{
@@ -123,9 +123,6 @@
 		<hr>
 		@endforeach
 </div>
-
-
-
 @endsection
 
 
