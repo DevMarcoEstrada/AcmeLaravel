@@ -9,7 +9,7 @@
 	<style>
 		.fa-list
 		{
-			color: #00a65a;
+			color: #26a69a;
 		}
 		.fa-eye,.fa-pencil
 		{
@@ -43,7 +43,7 @@
 
 		tr:hover
 		{
-    		background-color: #00a65a !important;
+    		background-color: #e0e0e0 !important;
     		color: #fff !important;
 		}
 		
@@ -52,7 +52,7 @@
 		}
 		.color-white
 		{
-			color: #fff !important;
+			color: #000 !important;
 		}
 
 	</style>

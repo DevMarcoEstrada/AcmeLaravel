@@ -21,6 +21,15 @@ class ProductoController extends Controller
         $productos = Producto::Listar_Productos_Categoria();
         return view('adminlte::producto.mostrarproductos', compact('productos'));
     }
+    
+
+     public function VerProducto($id)
+    {
+        $productos = Producto::Listar_Producto_Id($id);
+        //$productos = Producto::Listar_Producto_ID($id);           
+        return view('adminlte::producto.Verproducto',compact('productos'));
+    }
+
     public  function GuardarProducto(Request $request)
     {
     	$data = $request->all();
@@ -63,23 +72,8 @@ public function ListarProductos(Request $request)
        
     }
 
- // public function VerMensaje($id)
- //    {
- //        $mensaje = Mensaje::ListarMensajeId($id);
 
- //        return view('adminlte::mensaje.mensaje', compact('mensaje'));
- //    }
-
-    public function VerProducto($id)
-    {
-        //$id : codigo de persona natural.
-        //echo $id;
-        $productos = Producto::Listar_Producto_ID($id);
-
-        //dd($personasnataurales);
-        
-        return view('adminlte::producto.VerProducto',compact('productos'));
-    }
+  
 
      public function EditarProducto($id)
     {
@@ -89,9 +83,6 @@ public function ListarProductos(Request $request)
         $categoria_id = Categoria::Listar_categoria_id($id);
         $ruta_imagen = ImageController::Listar_Imagen($data['image'], $data['cDescripcionProducto']);
         
-
-
-
 
         return view('adminlte::productos.EditarProducto',compact('cDescripcionProducto','precio','stock','categoria_id','categoria_id'));
     }

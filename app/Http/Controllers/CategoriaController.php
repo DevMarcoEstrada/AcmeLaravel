@@ -46,6 +46,6 @@ class CategoriaController extends Controller
 
         return view('adminlte::categoria.mostrarcategorias', compact('categorias'));
     }
-
+ 
   
 }
