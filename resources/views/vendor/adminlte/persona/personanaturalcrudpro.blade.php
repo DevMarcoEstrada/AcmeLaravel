@@ -31,7 +31,7 @@
 		}
 		.color-azul
 		{
-			color: #337ab7;
+			color: #009688;		
 		}
 
 		thead>tr
@@ -133,7 +133,7 @@ $(document).ready(function()
 		        	// return "<button type=\"button\" class=\"btn btn-block btn-flat\" data-toggle=\"modal\" data-target=\"#MensajeModal\"></button>";
 		            // return  "<a  class=\"btn btn-default btn-info\" href=\"../Mensaje/Ver/" +   row.id + "\"><i class=\"fa fa-eye\" aria-hidden=\"true\"></i>&nbsp;</a>";
 
-		            return  "<a  class=\"btn btn-default btn-info\" href=\"../PersonaJuridica/Ver/" +   row.id + "\"><i class=\"fa fa-eye\" aria-hidden=\"true\"></i>&nbsp;</a><a  class=\"btn btn-default btn-danger\" href=\"../PersonaJuridica/Editar/" +   row.id + "\"><i class=\"fa fa-pencil\" aria-hidden=\"true\"></i>&nbsp;</a>";
+		            return  "<a  class=\"btn btn-default btn-info\" href=\"../PersonaNatural/Ver/" +   row.id + "\"><i class=\"fa fa-eye\" aria-hidden=\"true\"></i>&nbsp;</a><a  class=\"btn btn-default btn-danger\" href=\"../PersonaNatural/Editar/" +   row.id + "\"><i class=\"fa fa-pencil\" aria-hidden=\"true\"></i>&nbsp;</a>";
 
 	           		
 		        }

@@ -151,7 +151,8 @@
 
 		<div class="row">
 			<div class="col-xs-6 col-xs-offset-3">
-				<a href="/asdasd" class="btn btn-block pull-left boton-azul" role="button"><i class="fa fa-send fa-3x" aria-hidden="true"></i><span style="font-size:20px;">&nbsp; Responder Mensaje</span></a>
+				{{-- Cuando habilites los mensajes, cambiar la etiqueta P por una etiqueta A --}}
+				<p href="" class="btn btn-block pull-left boton-azul" role="button" onclick="alert('Esta funcionalidad estará implementada pronto');"><i class="fa fa-send fa-3x" aria-hidden="true"></i><span style="font-size:20px;">&nbsp; Responder Mensaje</span></p>
 	         
 	          
 	          </div>

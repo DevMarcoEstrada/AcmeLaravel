@@ -118,11 +118,14 @@
                 @else
                     <!-- User Account Menu -->
                     <li class="dropdown user user-menu" id="user_menu">
+
                         <!-- Menu Toggle Button -->
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                             <!-- The user image in the navbar-->
                             {{-- <img src="{{ Gravatar::get($user->email) }}" class="user-image" alt="User Image"/> --}}
+                            
                              <img src="/img/avatar.png" class="user-image" alt="Imagen" />
+
                             <!-- hidden-xs hides the username on small devices so only the image appears. -->
                             <span class="hidden-xs">{{ Auth::user()->name }}</span>
                         </a>
@@ -135,6 +138,7 @@
                                     {{ Auth::user()->name }}
                                     <small>{{ Auth::user()->email }}</small>
                                 </p>
+                                
                             </li>
                             <!-- Menu Body -->
                             <li class="user-body">

@@ -1,6 +1,7 @@
 <?php
 return [
-    "layout" => "entrust-gui::app",
+    // "layout" => "entrust-gui::app",
+    "layout" => "adminlte::layouts.app",
     "route-prefix" => "admin",
     "pagination" => [
         "users" => 5,

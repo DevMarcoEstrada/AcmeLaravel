@@ -46,6 +46,7 @@ desired effect
         <section class="content">
             <!-- Your Page Content Here -->
             @yield('main-content')
+
         </section><!-- /.content -->
     </div><!-- /.content-wrapper -->
 
@@ -59,6 +60,7 @@ desired effect
     @include('adminlte::layouts.partials.scripts')
 @show
 @yield('script-fin')
+
 
 </body>
 </html>

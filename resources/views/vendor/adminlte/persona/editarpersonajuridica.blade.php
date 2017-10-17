@@ -1,11 +1,11 @@
 @extends('adminlte::layouts.app')
 
 @section('htmlheader_title')
-	Registro de Persona Juridica
+	Editar Provedor
 @endsection
 
 @section('contentheader_title')
-	Nuevo Proveedor
+	Editar Proveedor
 @endsection
 
 @section('css')
@@ -68,24 +68,24 @@
 	<div class="container-fluid spark-screen">
 		<div class="row">
 			<div class="col-md-10 col-md-offset-1">
-        		<h3 class="text-center color-azul"><strong><i class="fa fa-users" aria-hidden="true"></i>&nbsp; Nuevo Proveedor&nbsp;<i class="fa fa-users" aria-hidden="true"></i></strong></h3>  
-	        	<form method="POST" action="{{url('admin/PersonaJuridica')}}" accept-charset="UTF-8" class="" id="RegistroFormPersonaJuridica">
+        		<h3 class="text-center color-azul"><strong><i class="fa fa-users" aria-hidden="true"></i>&nbsp; Proveedor&nbsp;<i class="fa fa-users" aria-hidden="true"></i></strong></h3>  
+	        	<form method="POST" action="{{url('PersonaJuridica/Editar')}}" accept-charset="UTF-8" class="" id="RegistroFormPersonaJuridica">
 	        		<input name="_token" type="hidden" value="{{ csrf_token() }}">
 	                                    <div class="form-group row">
 	                                        <div class="col-sm-4">
 	                                          <label class="color-azul">RUC:</label>
-	                                          <input type="text" class="form-control text-center"  id="Ruc" name="Ruc"  required placeholder="12358132134" maxlength="11">
+	                                          <input type="text" value="{{ $personajuridica['0']->Ruc }}" class="form-control text-center"  id="Ruc" name="Ruc"  required placeholder="12358132134" maxlength="11">
 	                                          <span  id ="ErrorMensaje-Ruc" class="help-block"></span>
 	                                        </div>
 	                                        <div class="col-sm-4">
 	                                          <label class="color-azul">Razon Social:</label>
-	                                          <input type="text" class="form-control text-center"  id="RazonSocial" name="RazonSocial"  required placeholder="Ejemplo SAC" maxlength="100">
+	                                          <input type="text" value="{{$personajuridica['0']->RazonSocial }}" class="form-control text-center"  id="RazonSocial" name="RazonSocial"  required placeholder="Ejemplo SAC" maxlength="100">
 	                                          <span  id ="ErrorMensaje-RazonSocial" class="help-block"></span>
 	                                        </div>
 	                                        <div class="col-sm-4">
 	                                        	
 	                                          <label class="color-azul">Descripción:</label>
-	                                           <textarea name="cDescripcionEmpresa" id="cDescripcionEmpresa" cols="10" rows="2" class="form-control" maxlength="1000" placeholder="Empresa Dedicada a ..."></textarea>
+	                                           <textarea name="cDescripcionEmpresa" id="cDescripcionEmpresa" cols="10" rows="2" class="form-control" maxlength="1000" placeholder="Empresa Dedicada a ...">{{$personajuridica['0']->cDescripcionEmpresa}}</textarea>
 	                                          
 	                                          <span  id ="ErrorMensaje-cDescripcionEmpresa" class="help-block"></span>
 	                                        </div>
@@ -96,21 +96,40 @@
 	                                      <div class="col-sm-4">
 	                                        <label class="color-azul">Departamento:</label>
 	                                        <select class="form-control text-center" name="departamento_id" id="departamento_id">
-		                                        @foreach($departamentos as $departamento)
-				                                    <option value="{{ $departamento->id }}">{{ $departamento->cNomZona}}</option>
+		                                         @foreach($departamentos as $departamento)
+													@if($departamento->id == $personajuridica[0]->departamento_id)
+				                                    <option selected value="{{ $departamento->id }}">{{ $departamento->cNomZona}}</option>
+		                              				@else
+														<option value="{{ $departamento->id }}">{{ $departamento->cNomZona}}</option>
+		                              				@endif
 		                              			@endforeach
+		                              			
 	                            			</select>
 	                                        <span  id ="ErrorMensaje-departamento_id" class="help-block"></span>
 	                                      </div>
 	                                      <div class="col-sm-4">
 	                                        <label class="color-azul">Provincia:</label>
-											<select class="form-control text-center" name="provincia_id" id="provincia_id" style="display:none;">
+											<select class="form-control text-center" name="provincia_id" id="provincia_id">
+												@foreach($provincias as $provincia)
+													@if($provincia->id == $personajuridica[0]->provincia_id)
+				                                    	<option selected value="{{ $provincia->id }}">{{ $provincia->cNomZona}}</option>
+		                              				@else
+														<option value="{{ $provincia->id }}">{{ $provincia->cNomZona}}</option>
+		                              				@endif
+		                              			@endforeach
 											</select>
 	                                        <span  id ="ErrorMensaje-provincia_id" class="help-block"></span>
 	                                      </div>
 	                                      <div class="col-sm-4">
 	                                        <label class="color-azul">Distrito:</label>
-											<select class="form-control text-center" name="distrito_id" id="distrito_id" style="display:none;">
+											<select class="form-control text-center" name="distrito_id" id="distrito_id">
+												@foreach($distritos as $distrito)
+													@if($distrito->id == $personajuridica[0]->distrito_id)
+				                                    	<option selected value="{{ $distrito->id }}">{{ $distrito->cNomZona}}</option>
+		                              				@else
+														<option value="{{ $distrito->id }}">{{ $distrito->cNomZona}}</option>
+		                              				@endif
+		                              			@endforeach
 											</select>
 	                                        <span  id ="ErrorMensaje-distrito_id" class="help-block"></span>
 	                                      </div>
@@ -118,28 +137,28 @@
 	                                    <div class="form-group row">
 	                                      <div class="col-sm-6">
 	                                        <label class="color-azul">Dirección de Negocio:</label>
-	                                        <input type="text" class="form-control text-center" 
+	                                        <input type="text" value="{{ $personajuridica['0']->cDireccionNegocio }}" class="form-control text-center" 
 	                                        id="cDireccionNegocio" name="cDireccionNegocio"  required placeholder="Dirección de Negocio">
 	                                        <span  id ="ErrorMensaje-cDireccionNegocio" class="help-block"></span>
 	                                      </div>
 	                                      <div class="col-sm-6">
 	                                        <label class="color-azul">Pagina de Contacto:</label>
-	                                        <input type="text" class="form-control text-center"  id="cPaginaContacto" name="cPaginaContacto"  placeholder="www.ejemplo.com">
+	                                        <input type="text" value="{{ $personajuridica['0']->cPaginaContacto }}" class="form-control text-center"  id="cPaginaContacto" name="cPaginaContacto"  placeholder="www.ejemplo.com">
 	                                        <span  id ="ErrorMensaje-cPaginaContacto" class="help-block"></span>
 	                                      </div>
 
 
 	                                    </div>
 
+										
 										<div class="form-group">
 											<div class="row">
 		                                        <div class="col-sm-4">
-		                                        	lorem
 		                                        	<label class="color-azul">Estado:</label>
 													<select class="form-control text-center" name="estado_id" id="estado_id">
 														@foreach($estados as $estado)
-															@if($estado->id == $personasnataurales[0]->estado_id)
-						                                    <option selected value="{{ $estado->id }}">{{ $estado->nombre_estado}}</option>
+															@if($estado->id == $personajuridica[0]->estado_id)
+						                                    	<option selected value="{{ $estado->id }}">{{ $estado->nombre_estado}}</option>
 				                              				@else
 																<option value="{{ $estado->id }}">{{ $estado->nombre_estado}}</option>
 				                              				@endif
@@ -150,9 +169,10 @@
 											</div>
 	                                    </div>
 
-
 	                                    <div class="form-group">
-	                                        
+	                                        <input type="text" name="id" id="id" class="form-control text-center" value="{{$personajuridica[0]->id}}" style="display:none;">
+											<input type="text" name="persona_id" id="persona_id" class="form-control text-center" value="{{$personajuridica[0]->persona_id}}" style="display:none;">
+	          
 	                                    </div>
 	                                    <label class="color-azul">Ubicar su Negocio en el Mapa:</label>
 	                                    
@@ -160,11 +180,11 @@
 	                                      <div class="row">  
 	                                        <div class="col-xs-12 col-sm-6">
 	                                            <label class="color-azul">Latitud</label>
-	                                            <input type="text" name="nLatitudNegocio" id="nLatitudNegocio" class="form-control text-center" value="-12.10113608004072" required pattern="" title="" readonly>
+	                                            <input type="text" value="{{ $personajuridica['0']->nLatitudNegocio }}" name="nLatitudNegocio" id="nLatitudNegocio" class="form-control text-center" required pattern="" title="" readonly>
 	                                          </div>
 	                                        <div class="col-xs-12 col-sm-6">
 	                                          <label class="color-azul">Longitud</label>
-	                                          <input type="text" name="nLongitudNegocio" id="nLongitudNegocio" class="form-control text-center" value="-77.03570354187013" required pattern="" title="" readonly>
+	                                          <input type="text" value="{{ $personajuridica['0']->nLongitudNegocio }}" name="nLongitudNegocio" id="nLongitudNegocio" class="form-control text-center"  required pattern="" title="" readonly>
 	                                        </div>
 	                                      </div>
 	                                      <div class="form-group">
@@ -202,7 +222,7 @@ $(document).ready(function()
 {
 	$('#provincia_id option').remove();
 	jQuery.ajax({
-				  url: '../Zona/Listar_Provincias_x_Departamento/' + $('select[name=departamento_id]').val(),
+				  url: '../../Zona/Listar_Provincias_x_Departamento/' + $('select[name=departamento_id]').val(),
 				  type: 'POST',
 				  data: {id: $('select[name=departamento_id]').val(),
 						 "_token": "{{ csrf_token() }}",},
@@ -220,7 +240,7 @@ $(document).ready(function()
 				  		$('#provincia_id').show();
 				  		$('#distrito_id option').remove();
 							jQuery.ajax({
-										  url: '../Zona/Listar_Distritos_x_Provincia/' + $('select[name=provincia_id]').val(),
+										  url: '../../Zona/Listar_Distritos_x_Provincia/' + $('select[name=provincia_id]').val(),
 										  type: 'POST',
 										  data: {id: $('select[name=provincia_id]').val(),
 												 "_token": "{{ csrf_token() }}",},
@@ -249,7 +269,7 @@ $(document).ready(function()
 
 		$('#provincia_id option').remove();
 		jQuery.ajax({
-				  url: '../Zona/Listar_Provincias_x_Departamento/' + $('select[name=departamento_id]').val(),
+				  url: '../../Zona/Listar_Provincias_x_Departamento/' + $('select[name=departamento_id]').val(),
 				  type: 'POST',
 				  data: {id: $('select[name=departamento_id]').val(),
 						 "_token": "{{ csrf_token() }}",},
@@ -268,7 +288,7 @@ $(document).ready(function()
 
 				  		$('#distrito_id option').remove();
 						jQuery.ajax({
-								  url: '../Zona/Listar_Distritos_x_Provincia/' + $('select[name=provincia_id]').val(),
+								  url: '../../Zona/Listar_Distritos_x_Provincia/' + $('select[name=provincia_id]').val(),
 								  type: 'POST',
 								  data: {id: $('select[name=provincia_id]').val(),
 										 "_token": "{{ csrf_token() }}",},
@@ -300,7 +320,7 @@ $(document).ready(function()
 
 		$('#distrito_id option').remove();
 		jQuery.ajax({
-				  url: '../Zona/Listar_Distritos_x_Provincia/' + $('select[name=provincia_id]').val(),
+				  url: '../../Zona/Listar_Distritos_x_Provincia/' + $('select[name=provincia_id]').val(),
 				  type: 'POST',
 				  data: {id: $('select[name=provincia_id]').val(),
 						 "_token": "{{ csrf_token() }}",},
@@ -452,7 +472,7 @@ function ValidarEmail(email){
 }
 
 function initialize() {
-    var myLatlng = new google.maps.LatLng(-12.10113608004072, -77.03570354187013);
+    var myLatlng = new google.maps.LatLng( $('#nLatitudNegocio').val(), $('#nLongitudNegocio').val());
     var myOptions = {
       zoom: 12,
       center: myLatlng,
@@ -475,6 +495,7 @@ function initialize() {
     google.maps.event.addListener(marker, 'click', function(){ openInfoWindow(marker); });
 }
 });
+
 
 </script>
 @endsection
