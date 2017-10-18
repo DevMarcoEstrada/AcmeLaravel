@@ -4,7 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use App\Models\Categoria;
-use App\Http\Controllers\ImageController;
+use App\Http\Controllers\ImageController; 
 use Illuminate\Support\Facades\DB as DB;
 class Producto extends Model
 {
@@ -18,7 +18,7 @@ class Producto extends Model
         return Producto::select("productos.id as idarticulo",
                                "productos.precio as precio",
                                "productos.stock as stock",
-                               "productos.cDescripcionProducto as cDescripcionProducto")
+                               "productos.cDescripcionProducto as  cDescripcionProducto")
                         ->get();
     }
 
@@ -43,12 +43,12 @@ class Producto extends Model
 
   public static function Listar_Producto_Id($id)
     {
-         return Producto::select('*')
+         return Producto::select('productos.id', 'productos.cDescripcionProducto', 'productos.precio', 
+                          'productos.stock','categorias.nombre_categoria')
          ->join('categorias', 'productos.categoria_id', '=', 'categorias.id')
          ->where('productos.id', $id)->get();
-
+        // return Producto::all();
 }
-
 
     public static function Listar_Productos_Categoria()
     {
@@ -59,6 +59,46 @@ class Producto extends Model
                 ->get();
 
     }
+
+
+
+
+
+    public static function EditarProducto($data)
+    {
+        try {
+            
+            DB::beginTransaction();
+
+            echo "<script>alert('1');<\script>";
+            $productos = array('cDescripcionProducto'=>$data['cDescripcionProducto'],
+                                    'precio'=>$data['precio'],
+                                    'stock'=>$data['stock'],
+                                    'categoria_id'=>$data['categoria_id']
+                                    );
+
+
+           // $productos = array('precio' => 9999999);
+            Producto::where('id', $data['id'])
+                            ->update($productos);
+
+            DB::commit();
+
+            $productos = null;
+            // $categorias = null;
+                        
+            return true;
+
+        } catch (Exception $e) {
+            // echo "<script>alert('2');<\script>";
+
+            DB::rollback();
+            return false;
+
+        }
+    }
+
+
 
 
  public static function ListarProductosCrud($datos)

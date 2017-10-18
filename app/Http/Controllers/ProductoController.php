@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Producto;
 use App\Models\Categoria;
+
+
 class ProductoController extends Controller
 {
     
@@ -76,14 +78,34 @@ public function ListarProductos(Request $request)
   
 
      public function EditarProducto($id)
+   
     {
-        $cDescripcionProducto = DescripcionProducto::Listar_DescripcionProducto();
-        $precio = Precio::Listar_precio();
-        $stock  = Stock::Listar_stock();
-        $categoria_id = Categoria::Listar_categoria_id($id);
-        $ruta_imagen = ImageController::Listar_Imagen($data['image'], $data['cDescripcionProducto']);
-        
+        $productos = Producto::Listar_Producto_Id($id);
+        $categorias = Categoria::Listar_Categorias();
+       // var_dump($productos[0]);
+       
+    return view('adminlte::producto.EditarProducto',compact('productos','categorias'));
 
-        return view('adminlte::productos.EditarProducto',compact('cDescripcionProducto','precio','stock','categoria_id','categoria_id'));
     }
+public function EditarGuardarProducto(request $request)
+    {
+
+        $data= $request->all();
+
+        // var_dump($data);
+
+        $bresultado = Producto::EditarProducto($data);
+
+        if ($bresultado) {
+            
+            return redirect('Productos/Crud')->with('status','Los Datos se actualizaron correctamente.');
+
+        } else {
+            
+            return redirect('Productos/Crud')->with('errors','La Datos No se actualizaron correctamente.');
+
+        }
+        
+    }
+
 }

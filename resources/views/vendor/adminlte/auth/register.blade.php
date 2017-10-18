@@ -6,11 +6,13 @@
 
 @section('content')
 
-<body class="hold-transition register-page">
+<body class="hold-transition register-page"  style ="background-color: #ffffff;"> 
     <div id="app" v-cloak>
         <div class="register-box">
             <div class="register-logo">
-                <a href="{{ url('/') }}"><b>Sistema de </b>Facturacion</a>
+            <i style="color: #009688" class="fa fa-shopping-cart fa-2x" aria-hidden="true"></i>
+                <a href="{{ url('/') }}"><font color="#ffa000" face="Arial Black" size=20;>ACME</font></a>
+               {{--  <a href="{{ url('/') }}"><b>Registro de Usuario</a> --}}
             </div>
 
             @if (count($errors) > 0)
@@ -24,10 +26,10 @@
                 </div>
             @endif
 
-            <div class="register-box-body">
+            <div class="register-box-body" style="background-color: #dcedc8">
                 <p class="login-box-msg">{{ trans('adminlte_lang::message.registermember') }}</p>
 
-                <register-form></register-form>
+                <register-form ></register-form>
 
                {{--  @include('adminlte::auth.partials.social_login') --}}
 

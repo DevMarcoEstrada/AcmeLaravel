@@ -85,13 +85,17 @@ Route::post('PersonaNatural/Listar', ['as' => 'PersonaNatural/Crud', 'uses' => '
 Route::get('PersonaJuridica/Crud', ['as'=>'PersonaJuridica/Crud', 'uses' => 'PersonaController@CrudProJuridica']);
 Route::post('PersonaJuridica/Listar', ['as' => 'PersonaJuridica/Crud', 'uses' => 'PersonaController@ListarPersonasJuridicas']);
 
-	// Mostar el Listado : GET
+//PRODUCTO	// Mostar el Listado 
 Route::get('Productos/Crud', ['as' =>'Productos/Crud', 'uses' => 'ProductoController@CrudProductos']);
 
 // Traer los Datos.
 Route::post('Productos/Listar', ['as' =>'Productos/Crud', 'uses' => 'ProductoController@ListarProductos']);
 
 Route::get('Productos/Ver/{id}', ['as' => 'Productos/Crud', 'uses' => 'ProductoController@VerProducto']);
+
+Route::get('Productos/Editar/{id}', ['as' =>'Productos/Crud', 'uses' => 'ProductoController@EditarProducto']);
+
+Route::post('Productos/Editar', ['as' =>'Producto/Editar', 'uses' => 'ProductoController@EditarGuardarProducto']);
 
 
 
@@ -112,6 +116,12 @@ Route::get('Categoria/Crud', ['as' => 'Categoria/Crud', 'uses' => 'CategoriaCont
 Route::post('Categoria/Listar', ['as' => 'Categoria/Listar' , 'uses' => 'CategoriaController@ListarCategorias']);
 
 Route::get('Categoria/Ver/{id}', ['as' => 'Categoria/Crud', 'uses' => 'CategoriaController@VerCategorias']);
+Route::get('Categoria/Editar/{id}', ['as' => 'Categoria/Crud', 'uses' => 'CategoriaController@EditarCategorias']);
+
+Route::post('Categoria/Editar', ['as' => 'Categoria/Editar', 'uses' => 'CategoriaController@EditarGuardarCategorias']);
+
+
+
 
 
 // Ruta para Guardar Registro de Producto

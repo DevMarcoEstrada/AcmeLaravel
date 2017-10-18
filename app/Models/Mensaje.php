@@ -24,7 +24,7 @@ class Mensaje extends Model
     }
 
     public static function ListarMensajes()
-    {
+    { 
     	return Mensaje::all();
     }
     public static function ListarMensajeId($id)

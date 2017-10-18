@@ -97,7 +97,6 @@
 			</div>
 
 
-
 			<div class="col-sm-12  col-md-2">
 				<h4 class="h4 text-center ">
 					<strong>Precio:</strong>

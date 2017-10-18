@@ -35,7 +35,7 @@
 			color: #ffffff;
 		}
 		.form-control[readonly]{
-		    background-color: #ffffff;
+		    background-color: #ff9800;
 		    opacity: 1;
 		    }
 		#map_canvas
@@ -92,12 +92,9 @@
 	                                      
 	                                    </div>
 	                                   
-	                                    
-	                                    
-	                                   
+                                   
 	                                    <div class="row"> 
 	                                      <div class="col-xs-6 col-xs-push-3">
-	                                       {{-- <a href ="" id="btnContinuarPasoUno" class="btn btn-block pull-left btn-principal btn-continuar"><i class="fa fa-play-circle-o fa-3x" aria-hidden="true"></i><span style="font-size:40px;"> Continuar</span></a> --}}
 	                                       <button type="submit" id="btnAñadirCategoria" class="btn btn-block pull-left boton-azul"><i class="fa fa-plus fa-2x" aria-hidden="true"></i><span style="font-size:20px;">&nbsp; Añadir Categoria</span></button>
 	                                      
 	                                      </div>

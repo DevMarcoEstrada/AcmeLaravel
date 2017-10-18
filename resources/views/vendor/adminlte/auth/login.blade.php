@@ -5,11 +5,17 @@
 @endsection
 
 @section('content')
-<body class="hold-transition login-page">
+<body class="hold-transition login-page" style ="background-color: #ffffff;">
     <div id="app" v-cloak>
         <div class="login-box">
             <div class="login-logo">
-                <a href="{{ url('/') }}"><b>Sistema de </b>Facturacion</a>
+<i style="color: #009688" class="fa fa-shopping-cart fa-2x" aria-hidden="true"></i>
+                <a href="{{ url('/') }}"><font color="#ffa000" face="Arial Black" size=20;>ACME</font></a>
+
+
+{{-- <h2 style="color: #ff9800" align="center";><font face="Arial Black" size=10;>ACME</font><i  style="color: #00897b"; class="fa fa-shopping-cart fa-2x" aria-hidden="true"></i></h2> --}}
+
+
             </div><!-- /.login-logo -->
 
         @if (count($errors) > 0)
@@ -23,7 +29,7 @@
             </div>
         @endif
 
-        <div class="login-box-body">
+        <div class="login-box-body" style ="background-color: #dcedc8;">
         <p class="login-box-msg"> {{ trans('adminlte_lang::message.siginsession') }} </p>
 
         <login-form name="{{ config('auth.providers.users.field','email') }}"

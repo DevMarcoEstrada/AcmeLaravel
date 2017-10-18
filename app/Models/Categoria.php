@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\DB as DB;
+use App\Models\Categoria;
 class Categoria extends Model
 {
     //
@@ -32,6 +33,31 @@ class Categoria extends Model
     public static function ListarCategoriasId($id)
     {
         return Categoria::select('*')->where('categorias.id', $id)->get();
+    }
+    public static function EditarCategorias($data)
+    {
+        try {
+            
+            DB::beginTransaction();
+
+            $categorias = array('nombre_categoria'=>$data['nombre_categoria'],
+                                    'descripcion'=>$data['descripcion']
+                                    );
+
+            Categoria::where('id',$data['id'])->update($categorias);
+
+            DB::commit();
+
+            $categorias = null;
+            
+            return true;
+
+        } catch (Exception $e) {
+
+            DB::rollback();
+            return false;
+
+        }
     }
 
 

@@ -36,23 +36,24 @@
 
 		thead>tr
 		{
-			color: #337ab7;
+			color: #ff9800;
 		}
 
 		thead>tr
 		{
-			background-color: #009688 !important;
+			/*color de cabeza tab*/
+			background-color: #ff9800 !important;
     		color: #fff !important;	
 		}
 
 		tr:hover
 		{
-    		background-color: #009688 !important;
+    		background-color: #81c784 !important;
     		color: #fff !important;
 		}
 		
 		.bootgrid-table th:hover {
-    		 background: #009688; 
+    		 background: #ff9800; 
 		}
 		.color-white
 		{
@@ -128,10 +129,7 @@ $(document).ready(function()
 		        "commands": function(column, row)
 		        {
 
-		        	// return "<button type=\"button\" class=\"btn btn-block btn-flat\" data-toggle=\"modal\" data-target=\"#MensajeModal\"></button>";
-		            // return  "<a  class=\"btn btn-default btn-info\" href=\"../Mensaje/Ver/" +   row.id + "\"><i class=\"fa fa-eye\" aria-hidden=\"true\"></i>&nbsp;</a>";
-
-		            return  "<a  class=\"btn btn-default btn-info\" href=\"../Categoria/Ver/" +   row.id + "\"><i class=\"fa fa-eye\" aria-hidden=\"true\"></i>&nbsp;</a><a  class=\"btn btn-default btn-danger\" href=\"../Categoria/Editar/" +   row.id + "\"><i class=\"fa fa-pencil\" aria-hidden=\"true\"></i>&nbsp;</a>";
+		            return  "<a  class=\"btn btn-default btn-info\" href=\"../Categoria/Ver/" +   row.id + "\"><i class=\"fa fa-eye\" aria-hidden=\"true\"></i>&nbsp;</a> <a  class=\"btn btn-default btn-danger\" href=\"../Categoria/Editar/" +   row.id + "\"><i class=\"fa fa-pencil\" aria-hidden=\"true\"></i>&nbsp;</a> <a  class=\"btn btn-default btn-danger\" href=\"../admin/Categoria" + "\"><i class=\"fa fa-plus\" aria-hidden=\"true\"></i>&nbsp;</a>"
 
 	           		
 		        }
