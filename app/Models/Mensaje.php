@@ -19,12 +19,12 @@ class Mensaje extends Model
     	$mensaje->correo_electronico = $data['email'];
     	$mensaje->mensaje = $data['message'];
         $mensaje->telefono = $data['phone'];
-        $mensaje->save();
+        $mensaje->save(); 
     	return true;
     }
 
     public static function ListarMensajes()
-    {
+    { 
     	return Mensaje::all();
     }
     public static function ListarMensajeId($id)

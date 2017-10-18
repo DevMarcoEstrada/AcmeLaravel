@@ -113,7 +113,7 @@
 
 
                      <div class ="item" >
-                             <img src="/img/mueble.jpg" class="img img-responsive" alt="">
+                             <img src="/img/shop.jpg" class="img img-responsive" alt="">
                         <div class="carousel-caption">
                              <h3> 
                             </h3>

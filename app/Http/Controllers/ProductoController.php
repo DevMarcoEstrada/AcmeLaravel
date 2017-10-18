@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Producto;
 use App\Models\Categoria;
+
+
 class ProductoController extends Controller
 {
     
@@ -21,6 +23,15 @@ class ProductoController extends Controller
         $productos = Producto::Listar_Productos_Categoria();
         return view('adminlte::producto.mostrarproductos', compact('productos'));
     }
+    
+
+     public function VerProducto($id)
+    {
+        $productos = Producto::Listar_Producto_Id($id);
+        //$productos = Producto::Listar_Producto_ID($id);           
+        return view('adminlte::producto.Verproducto',compact('productos'));
+    }
+
     public  function GuardarProducto(Request $request)
     {
     	$data = $request->all();
@@ -63,36 +74,38 @@ public function ListarProductos(Request $request)
        
     }
 
- // public function VerMensaje($id)
- //    {
- //        $mensaje = Mensaje::ListarMensajeId($id);
 
- //        return view('adminlte::mensaje.mensaje', compact('mensaje'));
- //    }
-
-    public function VerProducto($id)
-    {
-        //$id : codigo de persona natural.
-        //echo $id;
-        $productos = Producto::Listar_Producto_ID($id);
-
-        //dd($personasnataurales);
-        
-        return view('adminlte::producto.VerProducto',compact('productos'));
-    }
+  
 
      public function EditarProducto($id)
+   
     {
-        $cDescripcionProducto = DescripcionProducto::Listar_DescripcionProducto();
-        $precio = Precio::Listar_precio();
-        $stock  = Stock::Listar_stock();
-        $categoria_id = Categoria::Listar_categoria_id($id);
-        $ruta_imagen = ImageController::Listar_Imagen($data['image'], $data['cDescripcionProducto']);
-        
+        $productos = Producto::Listar_Producto_Id($id);
+        $categorias = Categoria::Listar_Categorias();
+       // var_dump($productos[0]);
+       
+    return view('adminlte::producto.EditarProducto',compact('productos','categorias'));
 
-
-
-
-        return view('adminlte::productos.EditarProducto',compact('cDescripcionProducto','precio','stock','categoria_id','categoria_id'));
     }
+public function EditarGuardarProducto(request $request)
+    {
+
+        $data= $request->all();
+
+        // var_dump($data);
+
+        $bresultado = Producto::EditarProducto($data);
+
+        if ($bresultado) {
+            
+            return redirect('Productos/Crud')->with('status','Los Datos se actualizaron correctamente.');
+
+        } else {
+            
+            return redirect('Productos/Crud')->with('errors','La Datos No se actualizaron correctamente.');
+
+        }
+        
+    }
+
 }

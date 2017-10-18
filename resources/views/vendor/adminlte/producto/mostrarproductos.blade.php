@@ -44,7 +44,7 @@
 	  	{
 	    	width:600px; 
 	    	height:400px;
-	    	border: 1px solid #337ab7 !important;
+	    	border: 1px solid #f50057 !important;
 	  	}
 		.help-block
 		{
@@ -97,7 +97,6 @@
 			</div>
 
 
-
 			<div class="col-sm-12  col-md-2">
 				<h4 class="h4 text-center ">
 					<strong>Precio:</strong>
@@ -123,9 +122,6 @@
 		<hr>
 		@endforeach
 </div>
-
-
-
 @endsection
 
 

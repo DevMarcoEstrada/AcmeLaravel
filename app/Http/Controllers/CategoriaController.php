@@ -40,12 +40,41 @@ class CategoriaController extends Controller
         $datos = $request->all();
         return Categoria::ListarCategoriasCrud($datos);
     }
+
     public function VerCategorias($id)
     {
         $categorias = Categoria::ListarCategoriasId($id);
+        return view('adminlte::categoria.vercategorias', compact('categorias'));
 
-        return view('adminlte::categoria.mostrarcategorias', compact('categorias'));
     }
+    public function EditarCategorias($id)
+    {
+        $categorias = Categoria::ListarCategoriasId($id);
+        return view('adminlte::categoria.editarcategorias', compact('categorias'));
+
+    }
+    public function EditarGuardarCategorias(request $request)
+    {
+
+        $data= $request->all();
+        // var_dump($data);
+
+        $bresultado = Categoria::EditarCategorias($data);
+
+
+
+        if ($bresultado) {
+            
+            return redirect('Categoria/Crud')->with('status','Los Datos se actualizaron correctamente.');
+
+        } else {
+            
+            return redirect('Categoria/Crud')->with('errors','La Datos No se actualizaron correctamente.');
+
+        }
+        
+    }
+
 
   
 }
