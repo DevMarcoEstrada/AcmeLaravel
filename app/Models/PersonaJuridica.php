@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\DB as DB;
+use App\Models\Persona;
 class PersonaJuridica extends Model
 {
     //
@@ -62,7 +63,7 @@ class PersonaJuridica extends Model
     public static function ListarPersonasJuridicasAll()
     {
 
-        return PersonaJuridica::select("personasjuridicas.persona_id",
+        return PersonaJuridica::select("personasjuridicas.id",
                                        "personasjuridicas.RazonSocial")
                                 ->join("personas","personas.id","=","personasjuridicas.persona_id")
                                 ->join("estados","estados.id","=","personas.estado_id")
@@ -160,6 +161,75 @@ class PersonaJuridica extends Model
         $start_from = null;
 
         return json_encode($output);
+
+    }
+
+    public static function Listar_Persona_Juridica($id)
+    {
+        return PersonaJuridica::select(
+            "personasjuridicas.id",
+            "personasjuridicas.Ruc",
+            "personasjuridicas.RazonSocial",
+            "personasjuridicas.cDescripcionEmpresa",
+            "z1.cNomZona as nombre_departamento",
+            "z2.cNomZona as nombre_provincia",
+            "z3.cNomZona as nombre_distrito",
+            "personasjuridicas.cDireccionNegocio",
+            "personasjuridicas.cPaginaContacto",
+            "personasjuridicas.nLongitudNegocio",
+            "personasjuridicas.nLatitudNegocio",
+            "personasjuridicas.provincia_id",
+            "personasjuridicas.departamento_id",
+            "personas.estado_id",
+            "personas.id as persona_id"
+            )
+            ->join("personas", "personas.id", "=", "personasjuridicas.persona_id")
+            ->join("estados", "estados.id", "=", "personas.estado_id")
+            ->join("zonas as z1", "z1.id", "=", "personasjuridicas.departamento_id")
+            ->join("zonas as z2", "z2.id", "=", "personasjuridicas.provincia_id")
+            ->join("zonas as z3", "z3.id", "=", "personasjuridicas.distrito_id")
+            ->where("personasjuridicas.id", $id)
+            ->get();
+    } 
+
+    public static function EditarPersonaJuridica($data)
+    {
+      try {
+        DB::beginTransaction();
+
+            // Actualizar Persona Estado.
+
+            $persona = array('estado_id' => $data['estado_id']);
+
+            Persona::where('id',$data['persona_id'])
+                      ->update($persona);
+
+        $personajuridica = array(
+
+                          'Ruc' => $data['Ruc'],
+                          'RazonSocial' => $data['RazonSocial'],
+                          'cDescripcionEmpresa' => $data['cDescripcionEmpresa'],
+                          'departamento_id' => $data['departamento_id'],
+                          'provincia_id' => $data['provincia_id'],
+                          'distrito_id' => $data['distrito_id'],
+                          'nLatitudNegocio' => $data['nLatitudNegocio'],
+                          'nLongitudNegocio' => $data['nLongitudNegocio'],
+                          'cPaginaContacto' => $data['cPaginaContacto']
+
+
+                        );
+        PersonaJuridica::where('id',$data['id'])
+                        ->update($personajuridica);
+        DB::commit();
+        $persona = null;
+        $personajuridica = null;
+        return true;
+
+      } catch (Exception $e) {
+
+        DB::rollback();
+        return false;
+      }
 
     }
 }

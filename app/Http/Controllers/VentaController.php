@@ -5,8 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Anio;
 use App\Models\Mes;
-use App\Models\PersonaJuridica;
+use App\Models\PersonaNatural;
 use App\Models\TipoDocumento;
+use App\Models\Transporte;
 use App\Models\TipoPago;
 use App\Models\Serie;
 use App\Models\Producto;
@@ -22,16 +23,18 @@ class VentaController extends Controller
 
     public function RegistrarFactura()
     {
-    	$personas = PersonaJuridica::ListarPersonasJuridicasAll();
+    	$personas = PersonaNatural::ListarPersonasNaturalAll();
 
-    	$tiposdocumentos = TipoDocumento::Listar_Tipo_Documento(1);
+    	$tiposdocumentos = TipoDocumento::Listar_Tipo_Documento(2);
     	$tipospagos= TipoPago::Listar_Tipo_Pago();
     	$series = Serie::Listar_Series_Facturas();
     	$articulos = Producto::Listar_ProductosMostrar();
     	$anios = Anio::Listar_Anios();
     	$meses = Mes::Listar_Meses();
+        $transportes = Transporte::ListarTransportes();
 
-    	return view('adminlte::venta.factura',compact('personas','tiposdocumentos','tipospagos','series','articulos','anios','meses'));
+
+    	return view('adminlte::venta.factura',compact('personas','tiposdocumentos','tipospagos','series','articulos','anios','meses', 'transportes'));
 
 
     }

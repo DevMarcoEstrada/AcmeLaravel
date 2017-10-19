@@ -21,7 +21,7 @@ class CreateTablePedidos extends Migration
             $table->foreign('producto_id')->references('id')->on('productos');
             $table->date('fechaPedido');
             $table->date('fechaEntrega');
-            $table->unsignedInteger('cantidad');
+            $table->double('precio_total')->value(0);
             $table->timestamps();
         });
     }

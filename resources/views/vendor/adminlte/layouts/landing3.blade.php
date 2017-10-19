@@ -86,67 +86,12 @@
     <!-- Page Header -->
     <!-- Set your background image for this header on the line below. -->
     <!-- style="background-image: url('landing/img/shop.jpg')" -->
-    <header class="intro-header" style="background-color: blue;">
+    <header class="intro-header" style="background-image: url('landing/img/shop.jpg')">
 
 
-        <div class="container-fluid">
-   <br>               
-         <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-           <div id="carousel-1" class="carousel slide" data-ride="carousel">
-            <!-- Indicadores -->
-                <ol class="carousel-indicators">
-                    <li data-target="#carousel-1" data-slider-to="0" class="active"></li>
-                    <li data-target="#carousel-1" data-slider-to="1"></li>
-                    <li data-target="#carousel-1" data-slider-to="2"></li>
-                </ol>
-
-            <!--Contenedor de los slide -->
-                <div class="carousel-inner" role="listbox">            
-                     <div class ="item active">
-                             <img src="/img/laptop.jpg" class="img img-responsive" alt="">
-                         <div class="carousel-caption">  
-                         <h3> 
-                            </h3>
-                          <p> Tecnologia.</p>
-                         </div>
-                     </div>
 
 
-                     <div class ="item" >
-                             <img src="/img/shop.jpg" class="img img-responsive" alt="">
-                        <div class="carousel-caption">
-                             <h3> 
-                            </h3>
-                            <p> Muebles.</p>
-                        </div>
-                     </div>
-
-
-                     <div class ="item">
-                              <img src="/img/moda.jpg" class="img img-responsive" alt="">
-                        <div class="carousel-caption">
-                            <h3> 
-                            </h3>
-                            <p> Moda.</p>
-                        </div>
-                     </div>
-                            
-                </div>
-
-        <!-- Controles -->
-        <a href="#carousel-1" class="left carousel-control" role="button" data-slide="prev">
-            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-            <span class="sr-only">Anterior </span>
-        </a>
-
-       <a href="#carousel-1" class="right carousel-control" role="button" data-slide="next">
-            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-            <span class="sr-only">Siguiente </span>
-        </a>
-
-    </div>
-</div>
-       <!--  <div id="Acme" class="container">
+        <div id="Acme" class="container">
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                     <div class="site-heading">
@@ -165,7 +110,7 @@
                     </div>
                 </div>
             </div>
-        </div> -->
+        </div>
     </header>
 
     {{-- prueba --}}
@@ -202,6 +147,8 @@
         </div>
     </section>
    <hr> -->
+
+
 
 
 
@@ -322,6 +269,69 @@
 
     <hr>
 
+
+    <section id="carrusel">
+        <div class="container-fluid">
+                  
+         <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+           <div id="carousel-1" class="carousel slide" data-ride="carousel">
+            <!-- Indicadores -->
+                <ol class="carousel-indicators">
+                    <li data-target="#carousel-1" data-slider-to="0" class="active"></li>
+                    <li data-target="#carousel-1" data-slider-to="1"></li>
+                    <li data-target="#carousel-1" data-slider-to="2"></li>
+                </ol>
+
+            <!--Contenedor de los slide -->
+                <div class="carousel-inner" role="listbox">            
+                     <div class ="item active">
+                             <img src="/img/laptop.jpg" class="img img-responsive" alt="">
+                         <div class="carousel-caption">  
+                         <h3> 
+                            </h3>
+                          <p> Tecnologia.</p>
+                         </div>
+                     </div>
+
+
+                     <div class ="item" >
+                             <img src="/img/mueble.jpg" class="img img-responsive" alt="">
+                        <div class="carousel-caption">
+                             <h3> 
+                            </h3>
+                            <p> Muebles.</p>
+                        </div>
+                     </div>
+
+
+                     <div class ="item">
+                              <img src="/img/moda.jpg" class="img img-responsive" alt="">
+                        <div class="carousel-caption">
+                            <h3> 
+                            </h3>
+                            <p> Moda.</p>
+                        </div>
+                     </div>
+                            
+                </div>
+
+        <!-- Controles -->
+        <a href="#carousel-1" class="left carousel-control" role="button" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+            <span class="sr-only">Anterior </span>
+        </a>
+
+       <a href="#carousel-1" class="right carousel-control" role="button" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+            <span class="sr-only">Siguiente </span>
+        </a>
+
+    </div>
+</div>
+</div>
+        
+    </section>
+
     <section id="Contacto">
         <div class="container" >
             <div class="row">
@@ -409,7 +419,7 @@
         </div>
     </div>
 
-    <div class="contaier">
+    {{-- <div class="contaier">
         <div class="row">
             <div class="col-md-6 col-md-offset-3">
                 <a href="https://twitter.com/CrismnV?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-show-count="false">Follow @CrismnV</a><script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
@@ -426,7 +436,7 @@
                 <a class="twitter-timeline" href="https://twitter.com/CrismnV?ref_src=twsrc%5Etfw">Tweets by CrismnV</a> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
             </div>
         </div>
-    </div>
+    </div> --}}
                 
 
     </section>

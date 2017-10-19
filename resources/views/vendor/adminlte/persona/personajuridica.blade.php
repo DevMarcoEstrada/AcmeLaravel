@@ -131,7 +131,24 @@
 
 	                                    </div>
 
-										
+										<div class="form-group">
+											<div class="row">
+		                                        <div class="col-sm-4">
+		                                        	lorem
+		                                        	<label class="color-azul">Estado:</label>
+													<select class="form-control text-center" name="estado_id" id="estado_id">
+														@foreach($estados as $estado)
+															@if($estado->id == $personasnataurales[0]->estado_id)
+						                                    <option selected value="{{ $estado->id }}">{{ $estado->nombre_estado}}</option>
+				                              				@else
+																<option value="{{ $estado->id }}">{{ $estado->nombre_estado}}</option>
+				                              				@endif
+				                              			@endforeach
+													</select>
+		                                        	<span  id ="ErrorMensaje-estado_id" class="help-block"></span>
+		                                      	</div>
+											</div>
+	                                    </div>
 
 
 	                                    <div class="form-group">

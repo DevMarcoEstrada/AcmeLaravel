@@ -1,37 +1,63 @@
 @extends('adminlte::layouts.app')
 
 @section('htmlheader_title')
-	Registrar Facturas
+	Nueva Boleta
+@endsection
+
+@section('contentheader_title')
+	
 @endsection
 
 @section('css')
-<style>
-	.color-azul {
-	    color: #337ab7;
-	}
-	.content-wrapper
+	<style>
+		.content-wrapper
+			{
+    			background-color: #ffffff;
+			}
+		.color-azul
+			{
+				color: #009688;
+			}
+		.fa-pencil-square
+			{
+				color: #00a65a;
+			}
+		.form-control
+			{
+				border-radius:4px;
+			}
+		.fa-pencil-square
+	    {
+			color: #009688;
+	    }
+	    .boton-azul
 		{
-    		background-color: #ffffff;
+			background-color: #E64A19;
+			color: #ffffff;
 		}
-	.fa-pencil-square
+		.form-control[readonly]{
+		    background-color: #ffffff;
+		    opacity: 1;
+		    }
+		#map_canvas
+	  	{
+	    	width:600px; 
+	    	height:400px;
+	    	border: 1px solid #337ab7 !important;
+	  	}
+		.help-block
 		{
-			color: #00a65a;
+	  	    color: red;
 		}
-	.form-control
-		{
-			border-radius:4px;
-		}
-	.panel-primary 
-		{
-    		border-color: #00a65a;
-		}
-	.btn-primary 
-		{
-    		background-color: #00a65a;
-    		border-color: #00a65a;
-		}
+	 @media(max-width: 768px) 
+	 	{
+			#map_canvas
+		  	{
+		    	width:320px;
+		  	}
 
-</style>
+		}
+	</style>
 @endsection
 
 @section('script-inicio')
@@ -41,22 +67,43 @@
 	<div class="container-fluid spark-screen">
 		<div class="row">
 			<div class="col-md-10 col-md-offset-1">
-				<h3 class="text-center color-azul"><strong><i class="fa fa-pencil-square" aria-hidden="true"></i>&nbsp; Registrar Facturas&nbsp;<i class="fa fa-pencil-square" aria-hidden="true"></i></strong></h3>  
+				<h3 class="text-center color-azul"><strong><i class="fa fa-pencil-square" aria-hidden="true"></i>&nbsp; Registrar Boletas&nbsp;<i class="fa fa-pencil-square" aria-hidden="true"></i></strong></h3>  
 
 				<form method="POST" action="{{url('Venta/Factura')}}" accept-charset="UTF-8" class="" id="RegistroFormFactura">
 	        		<input name="_token" type="hidden" value="{{ csrf_token() }}">
 
 				<div class="row">
-					<div class="col-xs-12">
+					<div class="col-md-6 col-sm-12">
 						<div class="form-group">
 							<label class="color-azul">Cliente</label>
 							<select name="persona_id"  id="persona_id" class="form-control selectpicker" data-live-search="true">
 			            	 	@foreach($personas as $persona)
-			            		<option value="{{$persona->persona_id}}">{{$persona->RazonSocial}}</option>
+			            			<option value="{{$persona->persona_id}}">{{$persona->Nombres . " " .$persona->cApellidoPaterno . " " .$persona->cApellidoMaterno}}</option>
 			            		@endforeach
 			            	</select>
 						</div>
 					</div>
+					<div class="col-md-6 col-sm-12">
+						<div class="form-group">
+							<label class="color-azul">Transportes</label>
+							<select name="transporte_id"  id="transporte_id" class="form-control selectpicker" data-live-search="true">
+			            	 	@foreach($transportes as $transporte)
+			            			<option value="{{$transporte->id}}">{{$transporte->nombre_transporte}}</option>
+			            		@endforeach
+			            	</select>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-6 col-sm-12">
+						<div class="form-group">
+							<label class="color-azul">Dirección del Envío</label>
+							
+			            	 	<input type="text" name="direccion_envio" id="direccion_envio" class="form-control" value="" required="required">
+			            	
+						</div>
+					</div>
+					
 				</div>
 				<div class="form-group row">
 	                <div class="col-sm-4">

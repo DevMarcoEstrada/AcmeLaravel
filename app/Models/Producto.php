@@ -29,11 +29,13 @@ class Producto extends Model
     	// $id_categoria = Categoria::Nombre2Id($data['categoria_id']);
 
 
+
+
     	$producto->cDescripcionProducto = $data['cDescripcionProducto'];
     	$producto->precio = $data['precio'];
     	$producto->stock = $data['stock'];
         $producto->categoria_id = $data['categoria_id'];
-        $producto->ruta_imagen = ImageController::GuardarImagen($data['image'], $data['cDescripcionProducto']);
+        $producto->ruta_imagen = ImageController::GuardarImagen($data['imagen'], $data['cDescripcionProducto']);
         $producto->created_at = date_create()->format('Y-m-d H:i:s');
         $producto->updated_at = date_create()->format('Y-m-d H:i:s');
     	$producto->save();
@@ -194,6 +196,41 @@ class Producto extends Model
 
         return json_encode($output);
 
+    }
+    public static Function ActualizarStockProducto($id,$stock)
+    {
+        $cantidad = Producto::select("productos.stock")
+                      ->where("productos.id",$id)
+                      ->get();
+
+
+         $valores=array('stock'=>intval($cantidad[0]->stock) - $stock );
+
+            Producto::where('id',$id)
+                ->update($valores);
+
+            $valores = null;
+            $cantidad = null;
+      
+    }
+
+    public static Function ActualizarStockProducto2($id,$cantidad)
+    {
+        $cantidad_base = Producto::select("productos.stock")
+                      ->where("productos.id",$id)
+                      ->get();
+
+        // dd($cantidad_base);
+         $incrementar = $cantidad_base[0]->stock + $cantidad;
+         // dd($cantidad);
+         $valores=array('stock' => $incrementar );
+
+            Producto::where('id',$id)
+                ->update($valores);
+
+            $valores = null;
+            $cantidad = null;
+      
     }
 }
  

@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\DB as DB;
 use App\Models\Persona;
+use App\Http\Controllers\ImageController;
 
 class PersonaNatural extends Model
 {
@@ -200,5 +201,134 @@ class PersonaNatural extends Model
 
         return json_encode($output);
 
+    }
+
+    public static function Listar_Persona_Natural($id)
+    {
+        return PersonaNatural::select("personasnaturales.id",
+                                       "personasnaturales.Nombres",
+                                       "personasnaturales.cApellidoPaterno",
+                                       "personasnaturales.cApellidoMaterno",
+                                       "personasnaturales.cCorreoElectronico",
+                                       "personasnaturales.cCelular",
+                                       "personasnaturales.cTelefonoFijo",
+                                       "sexos.nombre_sexo",
+                                       "estadosciviles.nombre_estado_civil",
+                                       "z1.cNomZona as nombre_departamento",
+                                       "z2.cNomZona as nombre_provincia",
+                                       "z3.cNomZona as nombre_distrito",
+                                       "personasnaturales.cDireccionNegocio",
+                                       "personasnaturales.nLatitudNegocio",
+                                       "personasnaturales.nLongitudNegocio",
+                                       "personasnaturales.cPaginaContacto",
+                                       "estados.nombre_estado",
+                                       "personasnaturales.persona_id",
+                                       "personasnaturales.dni",
+                                       "personasnaturales.sexo_id",
+                                       "personasnaturales.estado_civil_id",
+                                       "personasnaturales.departamento_id",
+                                       "personasnaturales.provincia_id",
+                                       "personasnaturales.distrtio_id",
+                                       "personasnaturales.foto",
+                                       "personas.estado_id"    
+                                      )
+                                ->join("personas","personas.id","=","personasnaturales.persona_id")
+                                ->join("estados","estados.id","=","personas.estado_id")
+                                ->join("zonas as z1","z1.id","=","personasnaturales.departamento_id")
+                                ->join("zonas as z2","z2.id","=","personasnaturales.provincia_id")
+                                ->join("zonas as z3","z3.id","=","personasnaturales.distrtio_id")
+                                ->join("sexos","sexos.id","=","personasnaturales.sexo_id")
+                                ->join("estadosciviles","estadosciviles.id","=","personasnaturales.estado_civil_id")
+                                ->where("personasnaturales.id",$id)
+                                ->get();
+    }
+    public static function EditarPersonaNatural($data)
+    {
+        try {
+            
+            DB::beginTransaction();
+
+            // Actualizar Persona Estado.
+
+            $persona = array('estado_id' => $data['estado_id']);
+
+            Persona::where('id',$data['persona_id'])
+                      ->update($persona);
+
+
+            // Actualizando Persona Natural.
+           
+
+
+            if(isset($data['foto']))
+            {
+                 $ruta_imagen = ImageController::GuardarImagen150($data['foto'], $data['Nombres']);
+                $personanatural = array('Nombres'=>$data['Nombres'],
+                                    'cApellidoPaterno'=>$data['cApellidoPaterno'],
+                                    'cApellidoMaterno'=>$data['cApellidoMaterno'],
+                                    'sexo_id'=>$data['sexo_id'],
+                                    'estado_civil_id'=>$data['estado_civil_id'],
+                                    'dni'=>$data['dni'],
+                                    'cTelefonoFijo'=>$data['cTelefonoFijo'],
+                                    'cCelular'=>$data['cCelular'],
+                                    'cCorreoElectronico'=>$data['cCorreoElectronico'],
+                                    'departamento_id'=>$data['departamento_id'],
+                                    'provincia_id'=>$data['provincia_id'],
+                                    'distrtio_id'=>$data['distrito_id'],
+                                    'cDireccionNegocio'=>$data['cDireccionNegocio'],
+                                    'cPaginaContacto'=>$data['cPaginaContacto'],
+                                    'nLatitudNegocio'=>$data['nLatitudNegocio'],
+                                    'nLongitudNegocio'=>$data['nLongitudNegocio'],
+                                    'foto'=>$ruta_imagen
+                                    );
+            }else{
+                $personanatural = array('Nombres'=>$data['Nombres'],
+                                    'cApellidoPaterno'=>$data['cApellidoPaterno'],
+                                    'cApellidoMaterno'=>$data['cApellidoMaterno'],
+                                    'sexo_id'=>$data['sexo_id'],
+                                    'estado_civil_id'=>$data['estado_civil_id'],
+                                    'dni'=>$data['dni'],
+                                    'cTelefonoFijo'=>$data['cTelefonoFijo'],
+                                    'cCelular'=>$data['cCelular'],
+                                    'cCorreoElectronico'=>$data['cCorreoElectronico'],
+                                    'departamento_id'=>$data['departamento_id'],
+                                    'provincia_id'=>$data['provincia_id'],
+                                    'distrtio_id'=>$data['distrito_id'],
+                                    'cDireccionNegocio'=>$data['cDireccionNegocio'],
+                                    'cPaginaContacto'=>$data['cPaginaContacto'],
+                                    'nLatitudNegocio'=>$data['nLatitudNegocio'],
+                                    'nLongitudNegocio'=>$data['nLongitudNegocio']);
+            }
+            
+
+            PersonaNatural::where('id',$data['id'])
+                            ->update($personanatural);
+
+            DB::commit();
+
+            $persona = null;
+            $personanatural = null;
+            
+            return true;
+
+        } catch (Exception $e) {
+
+            DB::rollback();
+            return false;
+
+        }
+    }
+
+    public static function ListarPersonasNaturalAll()
+    {
+        return PersonaNatural::select("personasnaturales.persona_id",
+                                       "personasnaturales.Nombres",
+                                        "cApellidoMaterno",
+                                        "cApellidoPaterno"
+                                        )
+                                ->join("personas","personas.id","=","personasnaturales.persona_id")
+                                ->join("estados","estados.id","=","personas.estado_id")
+                                ->where("personas.estado_id",1)
+                                ->get();
     }
 }	

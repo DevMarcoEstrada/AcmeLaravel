@@ -55,6 +55,15 @@ Route::get('admin/PersonaJuridica', ['as' =>'admin/PersonaJuridica', 'uses' => '
 Route::get('admin/MostrarProductos', ['as' =>'admin/MostrarProductos', 'uses' => 'ProductoController@MostrarProductos']);
 
 
+//Perfiles
+
+Route::get('admin/Perfil', ['as' => 'admin/Perfil', 'uses' => 'PersonaController@VerPersona']);
+
+//Boleta Pedido
+
+Route::get('Boleta/Pedido', ['as' => 'Boleta/Pedido', 'uses' => 'BoletaController@GenerarBoleta']);
+Route::post('Boleta/Pedido', ['as' => 'Boleta/Pedido', 'uses' => 'BoletaController@RegistrarBoleta']);
+
 //Trasportes Crud
 
 
@@ -74,18 +83,26 @@ Route::post('Mensaje/Listar', ['as' => 'Mensaje/Listar' , 'uses' => 'MensajeCont
 Route::get('Mensaje/Ver/{id}', ['as' => 'Mensaje/Crud', 'uses' => 'MensajeController@VerMensaje']);
 
 
-//Personas Naturales
+//CRUD Personas Naturales
 
 Route::get('PersonaNatural/Crud', ['as' => 'PersonaNatural/Crud', 'uses' => 'PersonaController@CrudProNatural']);
 Route::post('PersonaNatural/Listar', ['as' => 'PersonaNatural/Crud', 'uses' => 'PersonaController@ListarPersonasNaturales']);
+Route::get('PersonaNatural/Ver/{id}', ['as' =>'PersonaNatural/Ver', 'uses' => 'PersonaController@VerPersonaNatural']);
+Route::get('PersonaNatural/Editar/{id}',['as' => 'PersonaNatural/editar', 'uses' => 'PersonaController@EditarPersonaNatural']);
+Route::post('PersonaNatural/Editar', ['as' =>'PersonaNatural/Editar', 'uses' => 'PersonaController@EditarGuardarPersonaNatural']);
 
 //Fin Personas Naturales
 
 //Personas Juridicas
 Route::get('PersonaJuridica/Crud', ['as'=>'PersonaJuridica/Crud', 'uses' => 'PersonaController@CrudProJuridica']);
 Route::post('PersonaJuridica/Listar', ['as' => 'PersonaJuridica/Crud', 'uses' => 'PersonaController@ListarPersonasJuridicas']);
+Route::get('PersonaJuridica/Ver/{id}', ['as' => 'PersonaJuridica/Ver', 'uses' => 'PersonaController@VerPersonaJuridica']);
+Route::get('PersonaJuridica/Editar/{id}', ['as' => 'PersonaJuridica/Editar', 'uses' => 'PersonaController@EditarPersonaJuridica']);
+Route::post('PersonaJuridica/Editar', ['as' => 'PersonaJuridica/Editar', 'uses' => 'PersonaController@EditarGuardarPersonaJuridica']);
 
-//PRODUCTO	// Mostar el Listado 
+
+// Mostar el Listado : GET
+
 Route::get('Productos/Crud', ['as' =>'Productos/Crud', 'uses' => 'ProductoController@CrudProductos']);
 
 // Traer los Datos.

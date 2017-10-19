@@ -103,4 +103,10 @@ class Transporte extends Model
 
         return json_encode($output);
     }
+
+
+    public static function ListarTransportes()
+    {
+         return DB::table('transportes')->get();
+    }
 }
