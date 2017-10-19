@@ -69,9 +69,28 @@
 		<div class="row">
 			<div class="col-md-10 col-md-offset-1">
         		<h3 class="text-center color-azul"><strong><i class="fa fa-pencil-square" aria-hidden="true"></i>&nbsp; Editar Persona Natural&nbsp;<i class="fa fa-pencil-square" aria-hidden="true"></i></strong></h3>  
-	        	<form method="POST" action="{{url('PersonaNatural/Editar')}}" accept-charset="UTF-8" class="" id="EditarFormPersonaNatural">
+	        	<form method="POST" action="{{url('PersonaNatural/Editar')}}" accept-charset="UTF-8" class="" id="EditarFormPersonaNatural" enctype="multipart/form-data">
 	        		<input name="_token" type="hidden" value="{{ csrf_token() }}">
+
+										
+
+
+	        							<div class="row">
+	        								<div class="col-md-4 col-md-offset-4">
+	        									
+
+	        									<label class="color-azul">Avatar:</label><br>
+	        									<img src="{{ asset('/img/personas/' . $personasnataurales['0']->foto) }}" class="img-fluid img-rounded rounded mx-auto d-block" alt="Sample photo" name="imagen-vista" id="imagen-vista" width="150" height="150"><br>
+
+										    	<input type="file" name="foto" id="foto" accept="image/*">
+										        <br />
+												<span  id ="ErrorMensaje-imagen" class="help-block"></span>
+	        								</div>
+	        							</div>
 	                                    <div class="form-group row">
+
+
+
 	                                        <div class="col-sm-4">
 	                                          <label class="color-azul">Nombres:</label>
 	                                          <input type="text" class="form-control text-center"  id="Nombres" name="Nombres"  required placeholder="Nombres" maxlength="20" value="{{ $personasnataurales[0]->Nombres}}">
@@ -567,6 +586,23 @@ function initialize() {
     google.maps.event.addListener(marker, 'click', function(){ openInfoWindow(marker); });
 }
 });
+
+
+//actualizar imagen
+		  function mostrarImagen(input) {
+			 if (input.files && input.files[0]) {
+			  var reader = new FileReader();
+			  reader.onload = function (e) {
+			   $('#imagen-vista').attr('src', e.target.result);
+			  }
+			  reader.readAsDataURL(input.files[0]);
+			 }
+			}
+ 
+$("#foto").change(function(){
+ mostrarImagen(this);
+});
+
 
 </script>
 @endsection

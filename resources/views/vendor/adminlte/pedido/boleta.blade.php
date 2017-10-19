@@ -69,8 +69,9 @@
 			<div class="col-md-10 col-md-offset-1">
 				<h3 class="text-center color-azul"><strong><i class="fa fa-pencil-square" aria-hidden="true"></i>&nbsp; Registrar Boletas&nbsp;<i class="fa fa-pencil-square" aria-hidden="true"></i></strong></h3>  
 
-				<form method="POST" action="{{url('Venta/Factura')}}" accept-charset="UTF-8" class="" id="RegistroFormFactura">
+				<form method="POST" action="{{url('Boleta/Pedido')}}" accept-charset="UTF-8" class="" id="RegistroFormFactura">
 	        		<input name="_token" type="hidden" value="{{ csrf_token() }}">
+				
 
 				<div class="row">
 					<div class="col-md-6 col-sm-12">
@@ -78,79 +79,69 @@
 							<label class="color-azul">Cliente</label>
 							<select name="persona_id"  id="persona_id" class="form-control selectpicker" data-live-search="true">
 			            	 	@foreach($personas as $persona)
-			            			<option value="{{$persona->persona_id}}">{{$persona->Nombres . " " .$persona->cApellidoPaterno . " " .$persona->cApellidoMaterno}}</option>
+			            			<option value="{{$persona->id}}">{{$persona->RazonSocial}}</option>
 			            		@endforeach
 			            	</select>
-						</div>
-					</div>
-					<div class="col-md-6 col-sm-12">
-						<div class="form-group">
-							<label class="color-azul">Transportes</label>
-							<select name="transporte_id"  id="transporte_id" class="form-control selectpicker" data-live-search="true">
-			            	 	@foreach($transportes as $transporte)
-			            			<option value="{{$transporte->id}}">{{$transporte->nombre_transporte}}</option>
-			            		@endforeach
-			            	</select>
-						</div>
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-md-6 col-sm-12">
-						<div class="form-group">
-							<label class="color-azul">Dirección del Envío</label>
-							
-			            	 	<input type="text" name="direccion_envio" id="direccion_envio" class="form-control" value="" required="required">
-			            	
 						</div>
 					</div>
 					
 				</div>
+				
+
 				<div class="form-group row">
-	                <div class="col-sm-4">
-	                    <label class="color-azul">Tipo de Documento:</label>
-	                    <select class="form-control text-center" name="tipo_documento_id" id="tipo_documento_id">
-		                    @foreach($tiposdocumentos as $tiposdocumento)
-				            <option value="{{ $tiposdocumento->tipo_documento_id }}" >{{ $tiposdocumento->descripcion_tipo_documento}}</option>
-		                    @endforeach
-	                    </select>
-	                </div>
-	                <div class="col-sm-4">
-	                    <label class="color-azul">Tipo de Pago:</label>
-	                    <select class="form-control text-center" name="tipo_pago_id" id="tipo_pago_id">
-		                    @foreach($tipospagos as $tipospago)
-				            <option value="{{ $tipospago->tipo_pago_id }}" >{{ $tipospago->nombre_tipo_pago}}</option>
-		                    @endforeach
-	                    </select>
-	                </div>
-	                <div class="col-sm-4">
-	                    <label class="color-azul">Serie:</label>
-	                    <select class="form-control text-center" name="serie_id" id="serie_id">
-		                    @foreach($series as $serie)
-				            <option value="{{ $serie->serie_id }}" >{{ $serie->cDenominacionSerie}}</option>
-		                    @endforeach
-	                    </select>
-	                </div>                          
-	            </div>
-<div class="form-group row">
+					<div class="col-sm-12">
+						<label  class="color-azul">Fecha de Pedido</label>
+					</div>
 	                <div class="col-sm-4">
 	                    <label class="color-azul">Año:</label>
-	                    <select class="form-control text-center" name="anio_id" id="anio_id">
+	                    <select class="form-control text-center" name="anio_pedido" id="anio_pedido">
 		                    @foreach($anios as $anio)
-				            <option value="{{ $anio->id }}" >{{ $anio->numero_anio}}</option>
+				            	<option value="{{ $anio->id }}" >{{ $anio->numero_anio}}</option>
 		                    @endforeach
 	                    </select>
 	                </div>
 	                <div class="col-sm-4">
 	                    <label class="color-azul">Mes:</label>
-	                    <select class="form-control text-center" name="mes_id" id="mes_id">
+	                    <select class="form-control text-center" name="mes_pedido" id="mes_pedido">
 		                    @foreach($meses as $mes)
-				            <option value="{{ $mes->id }}" >{{ $mes->nombre_mes}}</option>
+				            	<option value="{{ $mes->id }}" >{{ $mes->nombre_mes}}</option>
 		                    @endforeach
 	                    </select>
 	                </div>
 	                <div class="col-sm-4">
 	                    <label class="color-azul">Dia</label>
-	                    <input type="number" name="pago_dia" id="pago_dia" value="7" class="form-control text-center" />
+	                    <input type="number" name="dia_pedido" id="dia_pedido" value="7" class="form-control text-center" />
+	                </div>
+	            </div>                         
+					
+					
+
+
+				
+				
+				<div class="form-group row">
+					<div class="col-sm-12">
+						<label  class="color-azul">Fecha de Entrega</label>
+					</div>
+	                <div class="col-sm-4">
+	                    <label class="color-azul">Año:</label>
+	                    <select class="form-control text-center" name="anio_entrega" id="anio_entrega">
+		                    @foreach($anios as $anio)
+				            	<option value="{{ $anio->id }}" >{{ $anio->numero_anio}}</option>
+		                    @endforeach
+	                    </select>
+	                </div>
+	                <div class="col-sm-4">
+	                    <label class="color-azul">Mes:</label>
+	                    <select class="form-control text-center" name="mes_entrega" id="mes_entrega">
+		                    @foreach($meses as $mes)
+				            	<option value="{{ $mes->id }}" >{{ $mes->nombre_mes}}</option>
+		                    @endforeach
+	                    </select>
+	                </div>
+	                <div class="col-sm-4">
+	                    <label class="color-azul">Dia</label>
+	                    <input type="number" name="dia_entrega" id="dia_entrega" value="7" class="form-control text-center" />
 	                </div>                          
 	            </div>
 
@@ -170,45 +161,34 @@
 								</div>
 							</div>
 						
-
-
-
-						<div class="col-lg-2 col-sm-2 col-xs-12">
+						<div class="col-lg-3 col-sm-3 col-xs-12">
 							<div class="form-group">
 				            	<label class="color-azul">Cantidad</label>
 				            	<input type="number" name="pcantidad" id="pcantidad" class="form-control text-center" placeholder="Cantidad">
 				            </div>
 						</div>
 
-						<div class="col-lg-2 col-sm-2 col-xs-12">
-							<div class="form-group">
-				            	<label class="color-azul">Stock</label>
-				            	<input type="number" name="pstock" id="pstock" disabled class="form-control text-center" placeholder="Stock ...">
-				            </div>
-						</div>
+					
 							
 
-						<div class="col-lg-2 col-sm-2 col-xs-12">
+						<div class="col-lg-3 col-sm-3 col-xs-12">
 							<div class="form-group">
 				            	<label class="color-azul">Precio</label>
-				            	<input type="number" disabled name="pprecio_venta" id="pprecio_venta" class="form-control text-center" placeholder="Precio Venta ...">
+				            	<input type="number"  name="pprecio_venta" id="pprecio_venta" class="form-control text-center" placeholder="Precio Venta ...">
 				            </div>
 						</div>
 					
-					 <div class="col-lg-2 col-sm-2 col-xs-12">
-							<div class="form-group">
-				            	<label class="color-azul">Descuento</label>
-				            	<input type="number" name="pdescuento" id="pdescuento" class="form-control text-center"  value="0" readonly placeholder="Descuento">
-							</div>
-					 </div>
+					 
 
 					 <div class="col-lg-2 col-sm-2 col-xs-12">
+					 	<br>
 						<div class="form-group">
 				            	<button class="btn btn-primary" type="button" id="bt_add">Agregar</button>
 				            	<span class="help-block" id="mensaje-validacion"></span>
 				            	
 				          </div>
 						</div>
+
 
 				 
 						<div class="col-lg-12 col-sm-12  col-md-12 col-xs-12 table-responsive">
@@ -310,8 +290,8 @@ function agregar(){
 	
 
 	if (idarticulo!="" && cantidad != "" && cantidad>0 && descuento!="" && precio_venta!="") {
-		if (parseInt(stock)>=parseInt(cantidad)) {
-		subtotal[cont]=(cantidad*precio_venta-descuento);
+		
+		subtotal[cont]=(cantidad*precio_venta);
     	total=total+subtotal[cont];
     	var fila='<tr class="selected text-center" id="fila'+cont+'"><td><button type="button" class="btn btn-warning" onclick="eliminar('+cont+');">X</button></td><td><input type="hidden" name="idarticulo[]" value="'+idarticulo+'" class="filaagregada">'+articulo+'</td><td><input type="number" name="cantidad[]" value="'+cantidad+'" class="text-center" readonly></td><td><input type="number"  name="precio_venta[]" value="'+precio_venta+'" readonly class="text-center"></td><td><input type="number" name="descuento[]" value="'+descuento+'" readonly class="text-center"></td><td>'+subtotal[cont]+'</td></tr>';
     	cont++;
@@ -320,9 +300,7 @@ function agregar(){
     	$('#total_venta').val(total);
     	evaluar();
     	$('#detalles').append(fila);
-		}else{
-			alert("La cantidad supera el stock");
-		}
+		
     	
     }else{
     	alert('Error al Ingresar Datos');

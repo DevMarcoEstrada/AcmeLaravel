@@ -26,7 +26,7 @@ class PersonaController extends Controller
     {
         $data =$request->all();
 
-        // var_dump($data)
+        var_dump($data);
 
         $bresultado = PersonaNatural::GuardarPersonaNatural2($data);
 
@@ -96,7 +96,7 @@ class PersonaController extends Controller
 
         $data= $request->all();
 
-        // var_dump($data);
+        var_dump($data);
 
         $bresultado = PersonaNatural::EditarPersonaNatural($data);
 

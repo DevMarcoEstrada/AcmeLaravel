@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\DB as DB;
 use App\Models\Persona;
+use App\Http\Controllers\ImageController;
 
 class PersonaNatural extends Model
 {
@@ -228,6 +229,7 @@ class PersonaNatural extends Model
                                        "personasnaturales.departamento_id",
                                        "personasnaturales.provincia_id",
                                        "personasnaturales.distrtio_id",
+                                       "personasnaturales.foto",
                                        "personas.estado_id"    
                                       )
                                 ->join("personas","personas.id","=","personasnaturales.persona_id")
@@ -255,8 +257,13 @@ class PersonaNatural extends Model
 
 
             // Actualizando Persona Natural.
+           
 
-            $personanatural = array('Nombres'=>$data['Nombres'],
+
+            if(isset($data['foto']))
+            {
+                 $ruta_imagen = ImageController::GuardarImagen150($data['foto'], $data['Nombres']);
+                $personanatural = array('Nombres'=>$data['Nombres'],
                                     'cApellidoPaterno'=>$data['cApellidoPaterno'],
                                     'cApellidoMaterno'=>$data['cApellidoMaterno'],
                                     'sexo_id'=>$data['sexo_id'],
@@ -271,8 +278,28 @@ class PersonaNatural extends Model
                                     'cDireccionNegocio'=>$data['cDireccionNegocio'],
                                     'cPaginaContacto'=>$data['cPaginaContacto'],
                                     'nLatitudNegocio'=>$data['nLatitudNegocio'],
-                                    'nLongitudNegocio'=>$data['nLongitudNegocio']
+                                    'nLongitudNegocio'=>$data['nLongitudNegocio'],
+                                    'foto'=>$ruta_imagen
                                     );
+            }else{
+                $personanatural = array('Nombres'=>$data['Nombres'],
+                                    'cApellidoPaterno'=>$data['cApellidoPaterno'],
+                                    'cApellidoMaterno'=>$data['cApellidoMaterno'],
+                                    'sexo_id'=>$data['sexo_id'],
+                                    'estado_civil_id'=>$data['estado_civil_id'],
+                                    'dni'=>$data['dni'],
+                                    'cTelefonoFijo'=>$data['cTelefonoFijo'],
+                                    'cCelular'=>$data['cCelular'],
+                                    'cCorreoElectronico'=>$data['cCorreoElectronico'],
+                                    'departamento_id'=>$data['departamento_id'],
+                                    'provincia_id'=>$data['provincia_id'],
+                                    'distrtio_id'=>$data['distrito_id'],
+                                    'cDireccionNegocio'=>$data['cDireccionNegocio'],
+                                    'cPaginaContacto'=>$data['cPaginaContacto'],
+                                    'nLatitudNegocio'=>$data['nLatitudNegocio'],
+                                    'nLongitudNegocio'=>$data['nLongitudNegocio']);
+            }
+            
 
             PersonaNatural::where('id',$data['id'])
                             ->update($personanatural);
@@ -290,5 +317,18 @@ class PersonaNatural extends Model
             return false;
 
         }
+    }
+
+    public static function ListarPersonasNaturalAll()
+    {
+        return PersonaNatural::select("personasnaturales.persona_id",
+                                       "personasnaturales.Nombres",
+                                        "cApellidoMaterno",
+                                        "cApellidoPaterno"
+                                        )
+                                ->join("personas","personas.id","=","personasnaturales.persona_id")
+                                ->join("estados","estados.id","=","personas.estado_id")
+                                ->where("personas.estado_id",1)
+                                ->get();
     }
 }	

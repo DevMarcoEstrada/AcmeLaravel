@@ -63,7 +63,7 @@ class PersonaJuridica extends Model
     public static function ListarPersonasJuridicasAll()
     {
 
-        return PersonaJuridica::select("personasjuridicas.persona_id",
+        return PersonaJuridica::select("personasjuridicas.id",
                                        "personasjuridicas.RazonSocial")
                                 ->join("personas","personas.id","=","personasjuridicas.persona_id")
                                 ->join("estados","estados.id","=","personas.estado_id")

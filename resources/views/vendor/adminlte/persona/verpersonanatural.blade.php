@@ -68,8 +68,22 @@
 	<div class="container-fluid spark-screen">
 		<div class="row">
 			<div class="col-md-10 col-md-offset-1">
-        		<h3 class="text-center color-azul"><strong><i class="fa fa-pencil-square" aria-hidden="true"></i>&nbsp; Ver Persona Natural&nbsp;<i class="fa fa-pencil-square" aria-hidden="true"></i></strong></h3>  
+        		<h3 class="text-center color-azul"><strong><i class="fa fa-pencil-square" aria-hidden="true"></i>&nbsp; {{ $personasnataurales[0]->Nombres}}&nbsp;<i class="fa fa-pencil-square" aria-hidden="true"></i></strong></h3>  
 	        		<input name="_token" type="hidden" value="{{ csrf_token() }}">
+
+										<div class="form-group row">
+	                                        <div class="col-sm-3 col-sm-push-5 col-md-2 col-md-push-5">
+												<img src="{{ asset('/img/personas/' . $personasnataurales['0']->foto) }}" class="img-fluid img-rounded rounded mx-auto d-block" alt="Sample photo" width="150" height="150">
+												
+											</div>
+	                                    </div>
+
+
+
+
+
+
+
 	                                    <div class="form-group row">
 	                                        <div class="col-sm-4">
 	                                          <label class="color-azul">Nombres:</label>
