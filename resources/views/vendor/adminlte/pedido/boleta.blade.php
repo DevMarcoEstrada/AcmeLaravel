@@ -67,7 +67,7 @@
 	<div class="container-fluid spark-screen">
 		<div class="row">
 			<div class="col-md-10 col-md-offset-1">
-				<h3 class="text-center color-azul"><strong><i class="fa fa-pencil-square" aria-hidden="true"></i>&nbsp; Registrar Boletas&nbsp;<i class="fa fa-pencil-square" aria-hidden="true"></i></strong></h3>  
+				<h3 class="text-center color-azul"><strong><i class="fa fa-pencil-square" aria-hidden="true"></i>&nbsp; Registrar Orden de Pedido&nbsp;<i class="fa fa-pencil-square" aria-hidden="true"></i></strong></h3>  
 
 				<form method="POST" action="{{url('Boleta/Pedido')}}" accept-charset="UTF-8" class="" id="RegistroFormFactura">
 	        		<input name="_token" type="hidden" value="{{ csrf_token() }}">
