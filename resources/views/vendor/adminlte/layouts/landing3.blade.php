@@ -273,7 +273,8 @@
     <section id="carrusel">
         <div class="container-fluid">
                   
-         <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+         {{--  <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">  --}}
+         <div class="col-sm-10 col-sm-offset-1">
            <div id="carousel-1" class="carousel slide" data-ride="carousel">
             <!-- Indicadores -->
                 <ol class="carousel-indicators">
@@ -285,7 +286,7 @@
             <!--Contenedor de los slide -->
                 <div class="carousel-inner" role="listbox">            
                      <div class ="item active">
-                             <img src="/img/laptop.jpg" class="img img-responsive" alt="">
+                             <img src="/landing/img/carrusel4.jpg" class="img img-responsive"  width="1600" height="900" alt="Tecnologia">
                          <div class="carousel-caption">  
                          <h3> 
                             </h3>
@@ -295,7 +296,7 @@
 
 
                      <div class ="item" >
-                             <img src="/img/mueble.jpg" class="img img-responsive" alt="">
+                             <img src="/landing/img/carrusel5.jpg" class="img img-responsive"  width="1600" height="900" alt="Moda">
                         <div class="carousel-caption">
                              <h3> 
                             </h3>
@@ -305,7 +306,7 @@
 
 
                      <div class ="item">
-                              <img src="/img/moda.jpg" class="img img-responsive" alt="">
+                              <img src="/landing/img/carrusel6.jpg" class="img img-responsive"  width="1600" height="900" alt="Muebles">
                         <div class="carousel-caption">
                             <h3> 
                             </h3>
