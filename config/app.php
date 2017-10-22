@@ -181,6 +181,10 @@ return [
 
         //Intervention/image
         Intervention\Image\ImageServiceProvider::class,
+        
+        //DomPDF
+        Barryvdh\DomPDF\ServiceProvider::class,
+        
 
         
     ],
@@ -234,7 +238,8 @@ return [
         'AdminLTE' => Acacha\AdminLTETemplateLaravel\Facades\AdminLTE::class, 
         'Entrust'   => Zizaco\Entrust\EntrustFacade::class,
         'Image' => Intervention\Image\Facades\Image::class,
-
+        'PDF' => Barryvdh\DomPDF\Facade::class,
+        
     ],
 
 ];

@@ -159,6 +159,8 @@ Route::post('Zona/Listar_Provincias_x_Departamento/{id}',['as' => 'Zona/Listar_P
 Route::post('Zona/Listar_Distritos_x_Provincia/{id}',['as' => 'Zona/Listar_Distritos_x_Provincia', 'uses' => 'ZonaController@Listar_Distritos_x_Provincia']);
 
 //Reportes
+
+Route::get('Reportes', ['as' =>'Reportes', 'uses' => 'PDFController@reportes']);
 Route::get('reporte_usuarios/{tipo}', 'PDFController@crear_reporte_usuarios');
 Route::get('listado_graficas',['as' =>'listado_graficas','uses' =>  'GraficasController@Personas']);
 Route::get('grafica_registros/{anio}/{mes}',['as' =>'grafica_registros' ,'uses' => 'GraficasController@registros_mes']);
