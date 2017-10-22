@@ -100,7 +100,8 @@
 							<label class="color-azul">Dirección del Envío</label>
 							
 			            	 	<input type="text" name="direccion_envio" id="direccion_envio" class="form-control" value="" required="required">
-			            	
+			            		<span  id ="ErrorMensaje-Direccion" style="color: red; display: none;"  class="help-block"></span>
+
 						</div>
 					</div>
 					
@@ -150,7 +151,7 @@
 	                </div>
 	                <div class="col-sm-4">
 	                    <label class="color-azul">Dia</label>
-	                    <input type="number" name="pago_dia" id="pago_dia" value="7" class="form-control text-center" />
+	                    <input type="number" name="pago_dia" id="pago_dia" value="7" min="1" max="31" class="form-control text-center" />
 	                </div>                          
 	            </div>
 
@@ -238,7 +239,7 @@
 					</div>
 				</div>
 				<div class="row">
-					<div class="col-lg-6 col-sm-6 col-xs-12" id="guardar">
+					<div class="col-lg-6 col-sm-6 col-xs-12" id="guardar" name="guardar">
 						<div class="form-group">
 				            	<button class="btn btn-primary" type="submit">Guardar</button>
 				        </div>
@@ -252,6 +253,67 @@
 @section('script-fin')
 <script>
 	$(document).ready(function(){
+		$('#RegistroFormFactura').submit( function() 
+		{
+			if(total <= 0)
+			{
+				alert('Para realizar una compra necesita haber seleccionado algun producto');
+				return false;
+			}
+		});
+		$('#mes_id').change( function()
+		{
+			var numero_mes = $('#mes_id').val();
+			$('#pago_dia').val('1');
+			switch(numero_mes)
+			{
+				case '2':
+					$('#pago_dia').attr("max", 29);
+					break;
+				case '1':
+				case '3':
+				case '5':
+				case '7':
+				case '8':
+				case '10':
+				case '12':
+					$('#pago_dia').attr("max", 31);
+					break;
+				default:
+					$('#pago_dia').attr("max", 30);
+				
+			}
+			numero_mes = null;
+		});
+		$('#pago_dia').change( function()
+		{
+			var dia = $('#pago_dia').val();
+			var max = $('#pago_dia').attr("max");
+			var min = $('#pago_dia').attr("min");
+			if( parseInt(dia) > parseInt(max) )
+			{
+				$('#pago_dia').val(max);
+			}else if( parseInt(dia) < parseInt(min)){
+				$('#pago_dia').val(min);
+			}
+			dia = null;
+			max = null;
+			min = null;
+		});
+		$('#direccion_envio').keypress(function() {
+			$('#ErrorMensaje-Direccion').hide();
+		});
+		$('#guardar').click(function()
+		{
+			var direccion_envio = $('#direccion_envio').val();
+			if (direccion_envio == null || direccion_envio.length == 0)
+			{
+				$('#ErrorMensaje-Direccion').text('Este campo no puede estar vacio.');
+				$('#ErrorMensaje-Direccion').show();
+				return false;
+			}
+			$('RegistroFormPersonaNatural').submit();
+		});
 	    $('#bt_add').click(function(){
 	    	data=document.getElementById('pidarticulo').value.split('_');
 	    	

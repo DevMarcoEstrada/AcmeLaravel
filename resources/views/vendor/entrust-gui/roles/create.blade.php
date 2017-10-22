@@ -2,7 +2,7 @@
 
 @section('heading', 'Create Role')
 
-@section('content')
+@section('main-content')
 <form action="{{ route('entrust-gui::roles.store') }}" method="post" role="form">
     @include('entrust-gui::roles.partials.form')
     <button type="submit" class="btn btn-labeled btn-primary"><span class="btn-label"><i class="fa fa-plus"></i></span>{{ trans('entrust-gui::button.create') }}</button>

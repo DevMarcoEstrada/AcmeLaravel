@@ -2,7 +2,7 @@
 
 @section('heading', 'Edit Role')
 
-@section('content')
+@section('main-content')
 <form action="{{ route('entrust-gui::roles.update', $model->id) }}" method="post" role="form">
 <input type="hidden" name="_method" value="put">
   @include('entrust-gui::roles.partials.form')

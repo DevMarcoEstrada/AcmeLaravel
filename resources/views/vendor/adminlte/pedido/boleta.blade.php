@@ -232,6 +232,97 @@
 @section('script-fin')
 <script>
 	$(document).ready(function(){
+		$('#RegistroFormFactura').submit( function() 
+		{
+			if(total <= 0)
+			{
+				alert('Para realizar una orden de pedido necesita haber seleccionado algun producto');
+				return false;
+			}
+		});
+
+		$('#mes_pedido').change( function()
+		{
+			var numero_mes = $('#mes_pedido').val();
+			$('#dia_pedido').val('1');
+			switch(numero_mes)
+			{
+				case '2':
+					$('#dia_pedido').attr("max", 29);
+					break;
+				case '1':
+				case '3':
+				case '5':
+				case '7':
+				case '8':
+				case '10':
+				case '12':
+					$('#dia_pedido').attr("max", 31);
+					break;
+				default:
+					$('#dia_pedido').attr("max", 30);
+				
+			}
+			numero_mes = null;
+		});
+		$('#dia_pedido').change( function()
+		{
+			var dia = $('#dia_pedido').val();
+			var max = $('#dia_pedido').attr("max");
+			var min = $('#dia_pedido').attr("min");
+			if( parseInt(dia) > parseInt(max) )
+			{
+				$('#dia_pedido').val(max);
+			}else if( parseInt(dia) < parseInt(min)){
+				$('#dia_pedido').val(min);
+			}
+			dia = null;
+			max = null;
+			min = null;
+		});
+
+		$('#mes_entrega').change( function()
+		{
+			var numero_mes = $('#mes_entrega').val();
+			$('#dia_entrega').val('1');
+			switch(numero_mes)
+			{
+				case '2':
+					$('#dia_entrega').attr("max", 29);
+					break;
+				case '1':
+				case '3':
+				case '5':
+				case '7':
+				case '8':
+				case '10':
+				case '12':
+					$('#dia_entrega').attr("max", 31);
+					break;
+				default:
+					$('#dia_entrega').attr("max", 30);
+				
+			}
+			numero_mes = null;
+		});
+		$('#dia_entrega').change( function()
+		{
+			var dia = $('#dia_entrega').val();
+			var max = $('#dia_entrega').attr("max");
+			var min = $('#dia_entrega').attr("min");
+			if( parseInt(dia) > parseInt(max) )
+			{
+				$('#dia_entrega').val(max);
+			}else if( parseInt(dia) < parseInt(min)){
+				$('#dia_entrega').val(min);
+			}
+			dia = null;
+			max = null;
+			min = null;
+		});
+
+
+
 	    $('#bt_add').click(function(){
 	    	data=document.getElementById('pidarticulo').value.split('_');
 	    	

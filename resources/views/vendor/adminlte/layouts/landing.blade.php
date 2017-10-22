@@ -1,174 +1,280 @@
 <!DOCTYPE html>
-<!--
-Landing page based on Pratt: http://blacktie.co/demo/pratt/
--->
-<html lang="es">
+<html lang="en">
+
 <head>
+
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="{{ trans('sociales.aplication_og_description')}}">
-    <meta name="author" content="Departamento de Tecnología de Información">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
 
-    @include('adminlte::layouts.partials.sociales')
+    <title>Acme</title>
 
-    <title>ACME</title>
+    <!-- Bootstrap Core CSS -->
+    <link href="landing/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
-    <!-- Custom styles for this template -->
-    <link href="{{ asset('/css/all-landing.css') }}" rel="stylesheet">
+    <!-- Theme CSS -->
+    <link href="landing/css/clean-blog.css" rel="stylesheet">
 
-    <link href='https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic' rel='stylesheet' type='text/css'>
+    <!-- Custom Fonts -->
+    <link href="landing/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
 
-    <link href='https://fonts.googleapis.com/css?family=Raleway:400,300,700' rel='stylesheet' type='text/css'>
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
 
-    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
 
-
-    <link rel="icon" type="image/png" href="/img/acme_logo.png" sizes="16x16">
-
-    <style>
-        
-
-
-        .acme2
-        {
-            color:#ffffff;
-            font-size: 45rem;
-            background-image: url({{ asset('/img/img22.png') }});
-        }
-        
-        .verde
-        {
-            color:green;
-        }
-        .acme1
-        {
-            color:#212121;
-            font-size: 15rem;
-        }
-        .fa-cube,.fa-shopping-cart,.fa-bar-chart, .fa-btc, .fa-bars
-        {
-            /*color:#3c8dbc;*/
-            color: #F5F5F5;
-        }
-        .azul
-        {
-            /*color:#3c8dbc;   */
-            color: #212121;
-        }
-        .blanco
-        {
-            color: #F5F5F5; 
-        }
-        .blanco-bg
-        {
-            background: #F5F5F5;
-        }
-        .fa-facebook-square,.fa-facebook-square:hover
-        {
-            color:#3b5998;
-        }
-        .fa-youtube-square
-        {
-            color:red;
-        }
-        .fa-twitter-square,.fa-twitter-square:hover
-        {
-            color:#3c8dbc;
-        }
-        #jumbotron-landing
-        {background-image: url({{ asset('/img/acme2.png') }});
-        background-repeat: no-repeat;
-        }
-
-        #footerwrap {
-                background-color:  #F5F5F5;
-        }
+<body>
 
 
-        div    { background: #3c8dbc; }
-       
 
-    </style>
-</head> 
 
-<body data-spy="scroll" data-target="#navigation" data-offset="50" class="skin-blue">
 
-<div id="app" v-cloak>
-    <!-- Fixed navbar -->
-    <div id="navigation" class="navbar navbar-default navbar-fixed-top" >
-        <div class="container-fluid " style="background-color: #0288D1;">
-            <div class="navbar-header" style="background-color: #0288D1;">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    Menu <i class="fa fa-bars"></i>
                 </button>
-                <a class="navbar-brand" href="/"><b class="blanco">{{ trans('sociales.aplication_og_title')}}</b></a>
+                <a id="LinkAcme" name="LinkAcme" class="navbar-brand" href="#"><i class="fa fa-shopping-cart"></i> <span class="light"></span> ACME</a>
+
+                @if(Auth::guest())
+                    <a id="LinkAcme" name="LinkAcme" class="navbar-brand" href="{{ url('/login') }}"></span> Iniciar Sesión</a>
+                    <a id="LinkAcme" name="LinkAcme" class="navbar-brand" href="{{ url('/register') }}"></span> Registrarse</a>
+                @else
+                    <a id="LinkAcme" name="LinkAcme" class="navbar-brand" href="/home"></i> <span class="light"></span> {{Auth::user()->name}}</a>
+                @endif
+
+
             </div>
-            <div class="navbar-collapse collapse " style="background-color: #0288D1;">
-                <ul class="nav navbar-nav">
-                    <li class="active "><a href="#home" class="smoothScroll" style="color: #ffffff;">{{ trans('adminlte_lang::message.home') }}</a></li>
-                    <li><a href="#desc" class="smoothScroll" style="color: #ffffff;">{{ trans('adminlte_lang::message.description') }}</a></li>
-                    {{-- <li><a href="#showcase" class="smoothScroll" style="color: #ffffff;">{{ trans('adminlte_lang::message.showcase') }}</a></li> --}}
-                    <li><a href="#contact" class="smoothScroll" style="color: #ffffff;">{{ trans('adminlte_lang::message.contact') }}</a></li>
-                    <!-- Borrar -->
-                    <!-- <li><a href="{{url('admin/PersonaNatural')}}">R. Persona Natural</a></li> -->
-                    <!-- Fin Borrar -->
-                </ul>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                
+
+
                 <ul class="nav navbar-nav navbar-right">
-                    @if (Auth::guest())
-                        <li><a href="{{ url('/login') }}" style="color: #ffffff;">{{ trans('adminlte_lang::message.login') }}</a></li>
-                        <li><a href="{{ url('/register') }}" style="color: #ffffff;">{{ trans('adminlte_lang::message.register') }}</a></li>
-                    @else
-                        <li><a href="/home" style="color: #ffffff;">{{ Auth::user()->name }}</a></li>
-                    @endif
+                    <li  id="LinkNossotros" name="LinkInicio">
+                        <a id="LinkInicio" name="LinkInicio" href="#">Inicio</a>
+                    </li>
+                    <li>
+                        <a id="LinkCaracteristicas"  name="LinkCaracteristicas" href="#">Nosotros</a>
+                    </li>
+                    <li>
+                        <a id="LinkContacto"  name="LinkContacto" href="#">Contáctanos</a>
+                    </li>
+                    
                 </ul>
-            </div><!--/.nav-collapse -->
+
+            </div>
+            <!-- /.navbar-collapse -->
         </div>
-    </div>
- </div>
-    <!-- <section id="home" name="home">
-         <div id="jumbotron-landing" class="jumbotron">
-      <div class="container">
+        <!-- /.container -->
+    </nav>
+
+    <!-- Page Header -->
+    <!-- Set your background image for this header on the line below. -->
+    <!-- style="background-image: url('landing/img/shop.jpg')" -->
+    <header class="intro-header" style="background-image: url('landing/img/shop.jpg')">
+
+
+
+
+        <div id="Acme" class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <div class="site-heading">
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <h1>ACME</h1>
+                        <hr class="small">
+                        <span class="subheading">Si no lo tenemos, solo pidalo.</span>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    {{-- prueba --}}
+
+{{-- fin prueba --}}
+
+
+{{-- fin slidershow --}}
+
+    <!--  <section id="Inicio">
+        
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12" >
+                    <h2 class="text-center"></h2>
+                </div>
+            </div>
+            <br>
+            <br>
+           
+            <div class="row">
+                <div class="col-sm-7 col-md-7">
+                    <h3 class="text-left"><u>Una firma global con un enfoque local</u> </h3>
+                    <p class="text-justify">  En <strong>Rockfield Capital Management</strong>, tenemos un claro propósito, ayudar a mejorar la vida financiera de nuestros clientes a     través del poder de cada transacción. 
+                    </p>
+                    <p class="text-justify">  Cumplimos este objetivo proveyendo una <strong>amplia gama de servicios financieros</strong>; de esta manera, aspiramos a ser el principal asesor y financiador de confianza de nuestros afiliados</p>
+
+                    <p class="text-justify">Cada día, estamos <strong>orgullosos de los resultados</strong> obtenidos por nuestros altamente capacitados traders y con las decisiones de inversión de sus clientes.</p> 
+                </div>
+                <div class="col-sm-12 col-md-5">
+                    
+                </div>
+            </div>
+        </div>
+    </section>
+   <hr> -->
+
+
+
+
+
+    <section>
         <div class="row">
-          <div class="pull-left">
-            {{-- <img src="images/logjo.png" alt="Logooo"> --}}
-            br*
-          </div>
-      </div>
-  </div>
-</div> -->
-{{-- </section> --}}
+            <div class="col-sm-12">
+                <div class="container-fluid" id="home" name="home">
+                    <h1 class="acme1 text-sm-center h1 font-italic" style="color: #ffffff;">
+                        ACME
+                    </h1>
+                    <h2 class="text-center blanco">Si no lo tenemos, solo pidalo</h2>
+                </div>
+            </div>
+            
+        </div>
+        
 
-    <!-- <section id="home" name="home">
-        <div class="container-fluid jumnbotron" id="jumbotron-landing">
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
+    </section>
+    
+
+    <section id="Caracteristicas">
+        
+        <div class="row">
+            <div class="col-sm-12 col-md-4">
+                <h2 class="text-center">Atención</h2>
+                <p class="text-center"><i class="fa fa-5x fa-cube"></i></p>
+                <div class="row">
+                    <div class="col-sm-8 col-sm-push-2">
+                        <p class="text-justify">
+                            <i class="fa fa-check-circle-o"></i> Mas de <strong>1000 clientes</strong> no pueden estar equivocados.
+
+                        </p>
+                        <p class="text-justify">
+                            <i class="fa fa-check-circle-o"></i> No confíes en nosotros, confía en miles de personas
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-12 col-md-4">
+                <h2 class="text-center">Comodidad</h2>
+                <p class="text-center"><i class="fa fa-5x fa-btc"></i></p>
+                <div class="row">
+                    <div class="col-sm-8 col-sm-push-2">
+                        <p class="text-justify">
+                            <i class="fa fa-check-circle-o"></i> Multiples <strong>Metodos de Pago.</strong>
+                            
+                        </p>
+                        <p class="text-justify">
+                            <i class="fa fa-check-circle-o"></i> Monedas virtuales como <strong>Bitcoin y Ethereum.</strong>
+                        </p>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-12 col-md-4">
+                <h2 class="text-center">Variedad</h2>
+                <p class="text-center"><i class="fa fa-5x fa-bars"></i></p>
+                <div class="row">
+                    <div class="col-sm-8 col-sm-push-2">
+                        <p class="text-justify">
+                            <i class="fa fa-check-circle-o"></i> <strong>Muchas Categorías</strong>, para que encuentres lo que andas buscando.
+                        </p>
+                    </div>
+                </div>
+            </div>
         </div>
 
-    </section> -->
+        <div class="row">
+            <div class="col-sm-12 col-md-4">
+                <h2 class="text-center">Atención</h2>
+                <p class="text-center"><i class="fa fa-5x fa-cube"></i></p>
+                <div class="row">
+                    <div class="col-sm-8 col-sm-push-2">
+                        <p class="text-justify">
+                            <i class="fa fa-check-circle-o"></i> Mas de <strong>1000 clientes</strong> no pueden estar equivocados.
 
-  
-<div class="container-fluid">
-   <br>               
-         <div class="col-md-12"">
+                        </p>
+                        <p class="text-justify">
+                            <i class="fa fa-check-circle-o"></i> No confíes en nosotros, confía en miles de personas.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-12 col-md-4">
+                <h2 class="text-center">Comodidad</h2>
+                <p class="text-center"><i class="fa fa-5x fa-btc"></i></p>
+                <div class="row">
+                    <div class="col-sm-8 col-sm-push-2">
+                        <p class="text-justify">
+                            <i class="fa fa-check-circle-o"></i> Multiples <strong>Metodos de Pago.</strong>
+                            
+                        </p>
+                        <p class="text-justify">
+                            <i class="fa fa-check-circle-o"></i> Monedas virtuales como <strong>Bitcoin y Ethereum.</strong>
+                        </p>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-12 col-md-4">
+                <h2 class="text-center">Variedad</h2>
+                <p class="text-center"><i class="fa fa-5x fa-bars"></i></p>
+                <div class="row">
+                    <div class="col-sm-8 col-sm-push-2">
+                        <p class="text-justify">
+                            <i class="fa fa-check-circle-o"></i> <strong>Muchas Categorías</strong>, para que encuentres lo que andas buscando.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+    </section>
+
+   
+
+    <hr>
+
+
+    <section id="carrusel">
+        <div class="container-fluid">
+                  
+         {{--  <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">  --}}
+         <div class="col-sm-10 col-sm-offset-1">
            <div id="carousel-1" class="carousel slide" data-ride="carousel">
             <!-- Indicadores -->
                 <ol class="carousel-indicators">
@@ -180,31 +286,32 @@ Landing page based on Pratt: http://blacktie.co/demo/pratt/
             <!--Contenedor de los slide -->
                 <div class="carousel-inner" role="listbox">            
                      <div class ="item active">
-                             <img src="/img/img11.jpg" class="img img-responsive" alt="">
-                         {{-- <div class="carousel-caption">
-                                <h3> Este es nuestro slide #1 </h3>
-                                <p> Lorem ipsum dolor sit amet.</p>
-                         </div> --}}
+                             <img src="/landing/img/carrusel4.jpg" class="img img-responsive"  width="1600" height="900" alt="Tecnologia">
+                         <div class="carousel-caption">  
+                         <h3> 
+                            </h3>
+                          <p> Tecnologia.</p>
+                         </div>
+                     </div>
+
+
+                     <div class ="item" >
+                             <img src="/landing/img/carrusel5.jpg" class="img img-responsive"  width="1600" height="900" alt="Muebles">
+                        <div class="carousel-caption">
+                             <h3> 
+                            </h3>
+                            <p> Muebles.</p>
+                        </div>
                      </div>
 
 
                      <div class ="item">
-                             <img src="/img/img22.jpg" class="img img-responsive" alt="">
-                      {{--   <div class="carousel-caption">
-                            <h3> Este es nuestro slide #2 </h3>
-                            <p> Lorem ipsum dolor sit amet.</p>
-                        </div> --}}
-                     </div>
-
-
-                     <div class ="item">
-                              <img src="/img/img33.jpg" class="img img-responsive" alt="">
-                             {{-- SOLO ES TEXTO --}}
-                       {{--  <div class="carousel-caption">
-                            <h3> Este es nuestro slide #3 </h3>
-                            <p> Lorem ipsum dolor sit amet.</p>
-                        </div> --}}
-                        {{-- SOLO TEXTO HASTA AQUÍ --}}
+                              <img src="/landing/img/carrusel6.jpg" class="img img-responsive"  width="1600" height="900" alt="Moda">
+                        <div class="carousel-caption">
+                            <h3> 
+                            </h3>
+                            <p> Moda.</p>
+                        </div>
                      </div>
                             
                 </div>
@@ -222,250 +329,211 @@ Landing page based on Pratt: http://blacktie.co/demo/pratt/
 
     </div>
 </div>
+</div>
+        
+    </section>
 
+    <section id="Contacto">
+        <div class="container" >
+            <div class="row">
+                <h2 class="text-center">Contáctanos</h2>
+            </div>
+            <br>
+            <br>
+            
+            <div class="row">
+                <div class="col-sm-12 col-md-6">
+                    <h3 class="text-center"> <i class="fa fa-clock-o"></i> <u>Horario de Atención</u></h3>
+                    <p class="text-justify"><i class="fa fa-check-circle-o"></i>Los mensajes mandados por la aplicación se responderán en horario de oficina.</p>
+                    <p class="text-justify"><i class="fa fa-check-circle-o"></i>Los mensajes en nuestras redes sociales se responderán cada vez que se pueda.</p>
+                </div>
 
-    <section>
-        <div class="row">
-            <div class="col-sm-12">
-                <div class="container-fluid" id="home" name="home">
-                    <h1 class="acme1 text-center h1 font-italic" style="color: #ffffff;">
-                        ACME
-                    </h1>
-                    <h2 class="text-center blanco">Si no lo tenemos, solo pidalo</h2>
+                <div class="col-sm-12 col-md-6">
+                    <h3 class="text-center"> <i class="fa fa-dot-circle-o"></i> <u>Nuestras Redes Sociales</u></h3>
+                   <p class="text-center"> <a class="sociales" href="https://www.facebook.com/centrocomputouns/" target="_blank" title="Facebook" itemprop="followee"><i class="fa fa-facebook-square fa-4x" aria-hidden="true"></i></a>
+                    <a  class="sociales" href="https://www.facebook.com/centrocomputouns/" target="_blank" title="Twitter" itemprop="followee"><i class="fa fa-twitter-square fa-4x" aria-hidden="true"></i></a>
+                    <a class="sociales" href="https://www.facebook.com/centrocomputouns/" target="_blank" title ="YouTube" itemprop="followee"><i class="fa fa-youtube-square fa-4x" aria-hidden="true"></i></a> </p>
                 </div>
             </div>
-            
-        </div>
-        
-
-    </section>
-    
-    
-   <!--  <section id="home" name="home">
-         <div id="jumbotron-landing" class="jumbotron">
-      <div class="container">
-        <div class="row">
-          <div class="pull-left">
-            {{-- <img src="images/logjo.png" alt="Logooo"> --}}
-          </div>
-          <div class="pull-right">
-            <div itemscope itemtype="https://schema.org/FollowAction">
-                <a class="sociales" href="http://www.gooogle.com" target="_blank" title="Facebook" itemprop="followee"><i class="fa fa-facebook-square fa-3x" aria-hidden="true"></i></a>
-                <a  class="sociales" href="http://www.gooogle.com" target="_blank" title="Twitter" itemprop="followee"><i class="fa fa-twitter-square fa-3x" aria-hidden="true"></i></a>
-                <a class="sociales" href="http://www.gooogle.com" target="_blank" title ="YouTube" itemprop="followee"><i class="fa fa-youtube-square fa-3x" aria-hidden="true"></i></a>
-                </div>
-          </div>
-        </div>
-        <div class="row text-center">
-          <div class="col-xs-12">
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br> -->
-            <!-- <h1><strong class="acme1">ACME</strong></h1> -->
-            <!-- <h3><strong  class="acme1">SI QUIERES ATRAPAR AL CORRECAMINOS, COMPRA AQUÍ</strong></h3> -->
-        <!--   </div>
-        </div>
-
-              
-      </div>
-   </div>
-    </section> -->
-
-<section id="desc" name="desc">
-        <!-- INTRO WRAP -->
-        <div id="intro">
-            <div class="container">
-                <div class="row centered">
-                  
-                
-
-
-                  <div class="col-xs-12 col-sm-4">
-                    <div style="color: #ffffff;">
-                        <span><h2 class="h2">
-                            <strong>Atención</strong>
-                        </h2></span>
-                    </div>
-                    <strong></strong>
-                    <i class="fa fa-cube fa-5x"></i>
-                    <h3>Mas de  <strong class="azul">10000</strong> clientes no pueden estar equivocados </h3>
-                    <p style="color: #000000;">No confíes en nosotros, confía en mas<strong class="azul"> de 10000 personas conformes</strong>  de diferentes  paises.</p>
-                  </div>
-                  <div class="col-xs-12 col-sm-4">
-                    <div style="color: #ffffff;">
-                        <span><h2 class="h2">
-                            <strong>Comodidad</strong>
-                        </h2></span>
-                    </div>
-                    <i class="fa fa-btc fa-5x" aria-hidden="true"></i>
-                      <h3> <strong class="azul">Muchos metodos pago.</strong> </h3>
-                      <p style="color: #000000;">Se acepta cualquier divisa e incluso <strong class="azul">BitCoins</strong>,</p>
-                  </div>
-                  <div class="col-xs-12 col-sm-4">
-                    <div style="color: #ffffff;">
-                        <span><h2 class="h2">
-                            <strong>Variedad</strong>
-                        </h2></span>
-                    </div>
-                    <i class="fa fa-bars fa-5x"></i>
-                    <h3>Mas de  <strong class="azul"> 100 categorías</strong> de productos.</h3>
-                    <p style="color: #000000;"> <strong class="azul">Desde Ropa a Informatica</strong></p>
-                  </div>
-                </div>
-
-                <div class="row centered">
-                  
-                
-
-
-                  <div class="col-xs-12 col-sm-4">
-                    <div style="color: #ffffff;">
-                        <span><h2 class="h2">
-                            <strong>Atención</strong>
-                        </h2></span>
-                    </div>
-                    <strong></strong>
-                    <i class="fa fa-cube fa-5x"></i>
-                    <h3>Mas de  <strong class="azul">10000</strong> clientes no pueden estar equivocados </h3>
-                    <p style="color: #000000;">No confíes en nosotros, confía en mas<strong class="azul"> de 10000 personas conformes</strong>  de diferentes  paises.</p>
-                  </div>
-                  <div class="col-xs-12 col-sm-4">
-                    <div style="color: #ffffff;">
-                        <span><h2 class="h2">
-                            <strong>Comodidad</strong>
-                        </h2></span>
-                    </div>
-                    <i class="fa fa-btc fa-5x" aria-hidden="true"></i>
-                      <h3> <strong class="azul">Muchos metodos pago.</strong> </h3>
-                      <p style="color: #000000;">Se acepta cualquier divisa e incluso <strong class="azul">BitCoins</strong>,</p>
-                  </div>
-                  <div class="col-xs-12 col-sm-4">
-                    <div style="color: #ffffff;">
-                        <span><h2 class="h2">
-                            <strong>Variedad</strong>
-                        </h2></span>
-                    </div>
-                    <i class="fa fa-bars fa-5x"></i>
-                    <h3>Mas de  <strong class="azul"> 100 categorías</strong> de productos.</h3>
-                    <p style="color: #000000;"> <strong class="azul">Desde Ropa a Informatica</strong></p>
-                  </div>
-                </div>
-
-                <div class="row centered"></div>
-            </div> <!--/ .container -->
-        </div><!--/ #introwrap -->
-    </section>
-    
-   {{--  <section id="showcase" name="showcase">
-        <div id="showcase">
-            <div class="container">
-                <div class="row">
-                    <h1 class="centered">{{ trans('adminlte_lang::message.screenshots') }}</h1>
+            <div class="row">
+                <div class="col-sm-12">
+                    <h3 class="text-center"><i class="fa fa-envelope"></i> <u>Envíanos un mensaje</u></h3>
                     <br>
-                    <div class="col-lg-8 col-lg-offset-2">
-                        <div id="carousel-example-generic" class="carousel slide">
-                            <!-- Indicators -->
-                            <ol class="carousel-indicators">
-                                <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-                                <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-                            </ol>
+                </div>
+            </div>
 
-                            <!-- Wrapper for slides -->
-                            <div class="carousel-inner">
-                                <div class="item active">
-                                    <img src="{{ asset('/img/item-01.png') }}" alt="">
-                                </div>
-                                <div class="item">
-                                    <img src="{{ asset('/img/item-02.png') }}" alt="">
+
+            <div class="row">
+                <!-- style="background-color: #EAE8E8;" -->
+                <div class="col-sm-12 col-md-4 col-md-offset-1" style="background-image: url('landing/img/fondo-form.jpg')" >
+                    <div class="row">
+                        <div class="col-sm-12 col-md-8 col-md-offset-1" >
+                            <form name="sentMessage" id="contactForm" action="{{url('/')}}" method="POST" enctype="plain" novalidate>
+                            <input name="_token" type="hidden" value="{{ csrf_token() }}">
+                            <div class="row control-group">
+                                <div class="form-group col-xs-12 floating-label-form-group controls">
+                                    <label>Nombre</label>
+                                    <input type="text" class="form-control" placeholder="Nombre" id="name" name="name" required data-validation-required-message="Ingresa tu nombre.">
+                                    <p class="help-block text-danger"></p>
                                 </div>
                             </div>
+                            <div class="row control-group">
+                                <div class="form-group col-xs-12 floating-label-form-group controls">
+                                    <label>Correo Electrónico</label>
+                                    <input type="email" class="form-control" placeholder="Correo Electrónico" id="email" name="email" required data-validation-required-message="Ingresa tu correo electrónico address.">
+                                    <p class="help-block text-danger"></p>
+                                </div>
+                            </div>
+                            <div class="row control-group">
+                                <div class="form-group col-xs-12 floating-label-form-group controls">
+                                    <label>Numero de Telefono</label>
+                                    <input type="tel" class="form-control" placeholder="Numero de Telefono" id="phone" name="phone" required data-validation-required-message="Ingresa tu número de teléfono.">
+                                    <p class="help-block text-danger"></p>
+                                </div>
+                            </div>
+                            <div class="row control-group">
+                                <div class="form-group col-xs-12 floating-label-form-group controls">
+                                    <label>Mensaje</label>
+                                    <textarea rows="5" class="form-control" placeholder="Mensaje" id="message" name="message" required data-validation-required-message="Ingresa tu mensaje."></textarea>
+                                    <p class="help-block text-danger"></p>
+                                </div>
+                            </div>
+                            <br>
+                            <div id="success"></div>
+                            <div class="row">
+                                <div class="form-group col-xs-12">
+                                    <button type="submit" class="btn btn-default" style="color: #A4A4A4;">Enviar</button>
+                                </div>
+                            </div>
+                            </form>
                         </div>
                     </div>
-                </div>
+            </div>
 
-
-                <br>
-                <br>
-                <br>
-            </div><!-- /container -->
-        </div>
-    </section> --}}
-
-    <section id="contact" name="contact" >
-
-        <div id="footerwrap" >
-
-            <div class="container-fluid ">
-                <div class="col-lg-2">
-                    <h3><strong>{{ trans('adminlte_lang::message.address') }}</strong></h3>
-                    <p>
-                        Urb. Bellamar S/N,<br/>
-                        Nuevo Chimbote,<br/>
-                        0051<br/>
-                        Perú
-                    </p>
-                </div>
-
-                <div class="col-lg-7">
-                    <h3><strong>{{ trans('adminlte_lang::message.dropus') }}</strong></h3>
-                    <br>
-                    <form role="form" action="{{url('/')}}" method="POST" enctype="plain" id="GuardarMensaje">
-                        <input name="_token" type="hidden" value="{{ csrf_token() }}">
-                        <div class="form-group">
-                            <label for="name1">{{ trans('adminlte_lang::message.yourname') }}</label>
-                            <input type="nombres" name="nombres" class="form-control" id="name1" placeholder="{{ trans('adminlte_lang::message.yourname') }}">
-                        </div>
-                        <div class="form-group">
-                            <label for="email1">{{ trans('adminlte_lang::message.emailaddress') }}</label>
-                            <input type="email" name="correo_electronico" class="form-control" id="correo_electronico" placeholder="{{ trans('adminlte_lang::message.enteremail') }}">
-                        </div>
-                        <div class="form-group">
-                            <label>{{ trans('adminlte_lang::message.yourtext') }}</label>
-                            <textarea class="form-control" name="mensaje" id="mensaje" rows="3"></textarea>
-                        </div>
-                        <br>
-                        <button type="submit" class="btn btn-large btn-success" style="background-color: #009688; border: #009688;">{{ trans('adminlte_lang::message.submit') }}</button>
-                    </form>
-                </div>
-                <div class="col-lg-3">
-                    <br>
-                    <br>
-                    <img src="/img/emailcall.jpg" class="img img-responsive" style="margin:0 auto; border: solid 5px white;" alt="Contáctanos">
+            <div class="col-sm-12 col-md-4 col-md-offset-1"  >
+                <div class="row">
+                    <div class="col-sm-12 col-md-6 col-md-offset-3">
+                        <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FACME-1500286046714471%2F&tabs=messages&width=340&height=500&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId" width="340" height="500" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"></iframe>
+                    </div>
                 </div>
             </div>
         </div>
+    </div>
+
+    {{-- <div class="contaier">
+        <div class="row">
+            <div class="col-md-6 col-md-offset-3">
+                <a href="https://twitter.com/CrismnV?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-show-count="false">Follow @CrismnV</a><script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+            </div>
+            <div class="row">
+                <blockquote class="twitter-tweet"><p lang="es" dir="ltr">El Sueño de un Millar de Gatos <a href="https://t.co/0vQ2pVBYKo">https://t.co/0vQ2pVBYKo</a></p>&mdash; Cristian Ycochea (@CrismnV) <a href="https://twitter.com/CrismnV/status/873914504710672384?ref_src=twsrc%5Etfw">June 11, 2017</a></blockquote> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+                <blockquote class="twitter-tweet"><p lang="es" dir="ltr">El Sueño de un Millar de Gatos <a href="https://t.co/0vQ2pVBYKo">https://t.co/0vQ2pVBYKo</a></p>&mdash; Cristian Ycochea (@CrismnV) <a href="https://twitter.com/CrismnV/status/873914504710672384?ref_src=twsrc%5Etfw">June 11, 2017</a></blockquote> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6 col-md-6 col-md-offset-3">
+                <a class="twitter-timeline" href="https://twitter.com/CrismnV?ref_src=twsrc%5Etfw">Tweets by CrismnV</a> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+            </div>
+        </div>
+    </div> --}}
+                
+
     </section>
+    <hr>
+
+
+    <!-- Footer -->
     <footer>
-            <div class="container-fluid centered" style="background-color: #B3E5FC;" >
-                <div itemscope itemtype="https://schema.org/FollowAction"  style="background-color: #B3E5FC;">
-                <a class="sociales" href="http://www.gooogle.com" target="_blank" title="Facebook" itemprop="followee"><i class="fa fa-facebook-square fa-3x" aria-hidden="true"></i></a>
-                <a  class="sociales" href="http://www.gooogle.com" target="_blank" title="Twitter" itemprop="followee"><i class="fa fa-twitter-square fa-3x" aria-hidden="true"></i></a>
-                <a class="sociales" href="http://www.gooogle.com" target="_blank" title ="YouTube" itemprop="followee"><i class="fa fa-youtube-square fa-3x" aria-hidden="true"></i></a>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <ul class="list-inline text-center">
+                        <li>
+                            <a target="_blank" href="https://www.facebook.com/centrocomputouns/">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a target="_blank" href="https://www.facebook.com/centrocomputouns/">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a target="_blank" href="https://www.facebook.com/centrocomputouns/">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                    </ul>
+                    <p class="copyright text-muted">Copyright &copy; Your Website 2016</p>
                 </div>
             </div>
+        </div>
     </footer>
 
-</div>
+   
+    
 
-<!-- Bootstrap core JavaScript
-================================================== -->
-<!-- Placed at the end of the document so the pages load faster -->
-<script src="{{ url (mix('/js/app-landing.js')) }}"></script>
-<script>
-    $('.carousel').carousel({
-        interval: 3500
-    })
-</script>
+  <!--   <script type="text/javascript">
+        $(document).on("ready",function(){
+            $("#LinkInicio").on("click", function(){
+                $("html,body").animate({ scrollTop : $("#Inicio").offset().top  }, 1500 );
+            });
+        });
+    </script> -->
+
+    <!-- jQuery -->
+    <script src="landing/vendor/jquery/jquery.min.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="landing/vendor/bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- Contact Form JavaScript -->
+    <script src="landing/js/jqBootstrapValidation.js"></script>
+    <!-- <script src="landing/js/contact_me.js"></script> -->
+
+    <!-- Theme JavaScript -->
+    <script src="landing/js/clean-blog.min.js"></script>
+
+     <script type="text/javascript">
+        $(document).ready(function()
+        {
+            $('#LinkInicio').on("click", function(evt) {
+            
+                $("html,body").animate({ scrollTop : $("#Acme").offset().top  }, 1500 );
+                
+            })
+
+            $('#LinkCaracteristicas').on("click", function(evt) {
+            
+                $("html,body").animate({ scrollTop : $("#Caracteristicas").offset().top  }, 1500 );
+                
+            })
+
+            $('#LinkContacto').on("click", function(evt) {
+            
+                $("html,body").animate({ scrollTop : $("#Contacto").offset().top  }, 1500 );
+                
+            })
+
+            $('#LinkAcme').on("click", function(evt) {
+            
+                $("html,body").animate({ scrollTop : $("#Acme").offset().top  }, 1500 );
+                
+            })
+        })
+    </script>
+
 </body>
+
 </html>

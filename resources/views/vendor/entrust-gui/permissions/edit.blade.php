@@ -2,7 +2,7 @@
 
 @section('heading', 'Edit Permission')
 
-@section('content')
+@section('main-content')
 <form action="{{ route('entrust-gui::permissions.update', $model->id) }}" method="post" role="form">
 <input type="hidden" name="_method" value="put">
   @include('entrust-gui::permissions.partials.form')
