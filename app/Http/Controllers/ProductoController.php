@@ -35,16 +35,16 @@ class ProductoController extends Controller
     public  function GuardarProducto(Request $request)
     {
     	$data = $request->all();
-
-    	 // $resultado = Producto::GuardarProducto($data);
         var_dump($data);
+    	 $resultado = Producto::GuardarProducto($data);
+        
 
-    	// if($resultado)
-    	// {
-    	// 	return redirect()->back()->with('status', 'Los Datos se han guardado con exito');
-    	// }else{
-    	// 	return redirect()->back()->with('errors', 'Los Datos no han sido guardados ');
-    	// }
+    	if($resultado)
+    	{
+    		return redirect()->back()->with('status', 'Los Datos se han guardado con exito');
+    	}else{
+    		return redirect()->back()->with('errors', 'Los Datos no han sido guardados ');
+    	}
     }
 //
     public function crud(request $request )

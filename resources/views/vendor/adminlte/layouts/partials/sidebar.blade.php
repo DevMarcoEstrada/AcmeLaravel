@@ -20,7 +20,7 @@
                         
                     
                     <!-- Status -->
-                    <a href="#"><i class="fa fa-circle text-success"></i> {{ trans('adminlte_lang::message.online') }}</a>
+                    <a href="#"><i class="fa fa-circle text-success" ></i> {{ trans('adminlte_lang::message.online') }}</a>
                 </div>
             </div>
         @endif
@@ -47,10 +47,10 @@
                 @endrole
             </li>
             <!-- Optionally, you can add icons to the links -->
-            <li class="active"><a href="{{ url('home') }}"><i class='fa fa-hand-o-right'></i> <span>{{ trans('adminlte_lang::message.home') }}</span></a></li>
+            <li class="active"><a href="{{ url('home') }}"><i class='sidebar-home fa fa-hand-o-right'></i> <span>{{ trans('adminlte_lang::message.home') }}</span></a></li>
             <!-- <li><a href="#"><i class='fa fa-link'></i> <span>{{ trans('adminlte_lang::message.anotherlink') }}</span></a></li> -->
             <li class="treeview">
-                <a href="#"><i class='fa fa-plus'></i> <span>Añadir</span> <i class="fa fa-angle-left pull-right"></i></a>
+                <a href="#"><i class='sidebar-añadir fa fa-plus'></i> <span>Añadir</span> <i class="fa fa-angle-left pull-right"></i></a>
                 <ul class="treeview-menu">
                     <li><a href="{{url('admin/PersonaNatural')}}">Cliente</a></li>
                     <li><a href="{{url('admin/PersonaJuridica')}}">Proveedor</a></li>
@@ -68,7 +68,7 @@
             <li><a href="{{url('admin/MostrarProductos')}}">Mostrar Productos</a></li> -->
             
             <li class="treeview">
-                <a href="#"><i class='fa fa-search'></i> <span>Mostrar</span> <i class="fa fa-angle-left pull-right"></i></a>
+                <a href="#"><i class='sidebar-mostrar  fa fa-search'></i> <span>Mostrar</span> <i class="fa fa-angle-left pull-right"></i></a>
                 <ul class="treeview-menu">
                     <li><a href="{{url('admin/MostrarProductos')}}">Productos</a></li>
                     <li><a href="{{url('admin/MostrarMensajes')}}">Mensajes</a></li>
@@ -77,7 +77,7 @@
                 </ul>
             </li>
             <li class="treeview">
-                <a href="#"><i class='fa fa-unlock'></i> <span>Seguridad</span> <i class="fa fa-angle-left pull-right"></i></a>
+                <a href="#"><i class='sidebar-seguridad fa fa-unlock'></i> <span>Seguridad</span> <i class="fa fa-angle-left pull-right"></i></a>
                 <ul class="treeview-menu">
                     <li><a href="{{url('admin/users')}}">Usuarios</a></li>
                     <li><a href="{{url('admin/roles')}}">Roles</a></li>
@@ -87,15 +87,15 @@
             </li>
 
             <li class="treeview">
-                <a href="#"><i class='fa fa-bar-chart'></i> <span>Reportes</span> <i class="fa fa-angle-left pull-right"></i></a>
+                <a href="#"><i class='sidebar-reportes fa fa-area-chart'></i> <span>Reportes</span> <i class="fa fa-angle-left pull-right"></i></a>
                 <ul class="treeview-menu">
-                    <li><a href="{{url('admin/users')}}">Reportes</a></li>
+                    <li><a href="{{url('Reportes')}}">Reportes</a></li>
                     <li><a href="{{url('listado_graficas')}}">Graficas</a></li>
                 </ul>
             </li>
 
             <li class="treeview">
-                <a href="#"><i class='fa fa-folder-open'></i> <span>Ventas/Pedidos</span> <i class="fa fa-angle-left pull-right"></i></a>
+                <a href="#"><i class='sidebar-ventas fa fa-folder-open'></i> <span>Ventas/Pedidos</span> <i class="fa fa-angle-left pull-right"></i></a>
                 <ul class="treeview-menu">
                     <li><a href="{{url('Venta/Factura')}}">Boleta</a></li>
                     <li><a href="{{url('Boleta/Pedido')}}">Pedido</a></li>
@@ -103,7 +103,7 @@
             </li>
 
             <li class="treeview">
-                <a href="#"><i class='fa fa-gear'></i> <span>CRUD´s</span> <i class="fa fa-angle-left pull-right"></i></a>
+                <a href="#"><i class='sidebar-cruds fa fa-gear'></i> <span>CRUD´s</span> <i class="fa fa-angle-left pull-right"></i></a>
                 <ul class="treeview-menu">
                     <li><a href="{{url('PersonaNatural/Crud')}}">Clientes</a></li>
                     <li><a href="{{url('PersonaJuridica/Crud')}}">Proveedores</a></li>

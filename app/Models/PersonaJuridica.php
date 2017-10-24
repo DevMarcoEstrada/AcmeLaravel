@@ -32,19 +32,19 @@ class PersonaJuridica extends Model
 		    	$persona_juridica = new PersonaJuridica();
 
 		    	$persona_juridica->Ruc = $data['Ruc'];
-				$persona_juridica->RazonSocial = $data['RazonSocial'];
-				$persona_juridica->cDescripcionEmpresa = $data['cDescripcionEmpresa'];
-				$persona_juridica->departamento_id = $data['departamento_id'];
-				$persona_juridica->provincia_id = $data['provincia_id'];
-				$persona_juridica->distrtio_id = $data['distrito_id'];
-				$persona_juridica->cDireccionNegocio = $data['cDireccionNegocio'];
-				$persona_juridica->nLatitudNegocio = $data['nLatitudNegocio'];
-				$persona_juridica->nLongitudNegocio = $data['nLongitudNegocio'];
-				$persona_juridica->cPaginaContacto = $data['cPaginaContacto'];
-				$persona_juridica->persona_id = $codigo_persona_generado;
-				$persona_juridica->created_at = date_create()->format('Y-m-d H:i:s');
-				$persona_juridica->updated_at = date_create()->format('Y-m-d H:i:s');
-				$persona_juridica->save();
+  				$persona_juridica->RazonSocial = $data['RazonSocial'];
+  				$persona_juridica->cDescripcionEmpresa = $data['cDescripcionEmpresa'];
+  				$persona_juridica->departamento_id = $data['departamento_id'];
+  				$persona_juridica->provincia_id = $data['provincia_id'];
+  				$persona_juridica->distrito_id = $data['distrito_id'];
+  				$persona_juridica->cDireccionNegocio = $data['cDireccionNegocio'];
+  				$persona_juridica->nLatitudNegocio = $data['nLatitudNegocio'];
+  				$persona_juridica->nLongitudNegocio = $data['nLongitudNegocio'];
+  				$persona_juridica->cPaginaContacto = $data['cPaginaContacto'];
+  				$persona_juridica->persona_id = $codigo_persona_generado;
+  				$persona_juridica->created_at = date_create()->format('Y-m-d H:i:s');
+  				$persona_juridica->updated_at = date_create()->format('Y-m-d H:i:s');
+  				$persona_juridica->save();
 
           	DB::commit();
 

@@ -11,6 +11,10 @@
 @section('css')
 <link rel="stylesheet" href="/css/jquery.bootgrid.min.css" type="text/css"> 
 	<style>
+		.sidebar-cruds
+	        {
+	            color: #f39c12;
+	        }
 		.fa-list
 		{
 			color: #009688;
@@ -70,7 +74,7 @@
 	<div class="container-fluid spark-screen">
 		<div class="row">
 			<div class="col-md-10 col-md-offset-1">
-        		<h3 class="text-center color-azul"><strong><i class="fa fa-list" aria-hidden="true"></i>&nbsp; Listado de Mensajes&nbsp;<i class="fa fa-list" aria-hidden="true"></i></strong></h3>  
+        		<h3 class="text-center color-azul"><strong><i class="fa fa-list" aria-hidden="true"></i>&nbsp; Listado de Clientes&nbsp;<i class="fa fa-list" aria-hidden="true"></i></strong></h3>  
 					
                     <div class="table-responsive" id="lista-personanatural">
                         <table class="table table-hover" id="tbl-personanatural">

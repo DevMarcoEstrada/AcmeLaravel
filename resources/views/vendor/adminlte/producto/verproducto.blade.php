@@ -11,6 +11,7 @@
 
 @section('css')
 	<style>
+	
 		.content-wrapper
 			{
     			background-color: #ffffff;

@@ -140,7 +140,7 @@ class PersonaNatural extends Model
         $start_from = ($current_page_number - 1) * $records_per_page;
         
         $query .= " SELECT personasnaturales.id, personasnaturales.dni, 
-                          personasnaturales.cCorreoElectronico, personasnaturales.Nombres,
+                          personasnaturales.cCorreoElectronico, CONCAT(personasnaturales.Nombres,' ', personasnaturales.cApellidoPaterno,' ',  personasnaturales.cApellidoMaterno) as Nombres,
                           estados.nombre_estado
                     FROM personasnaturales 
                         inner join personas on personas.id = personasnaturales.persona_id 

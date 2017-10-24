@@ -10,6 +10,10 @@
 
 @section('css')
 	<style>
+		.sidebar-añadir
+		{
+			color: #f39c12;
+		}
 		.content-wrapper
 			{
     			background-color: #ffffff;
@@ -65,7 +69,9 @@
 @endsection
 
 @section('main-content')
+	
 	<div class="container-fluid spark-screen">
+
 		<div class="row">
 			<div class="col-md-10 col-md-offset-1">
         		<h3 class="text-center color-azul"><strong><i class="fa fa-users" aria-hidden="true"></i>&nbsp; Nuevo Proveedor&nbsp;<i class="fa fa-users" aria-hidden="true"></i></strong></h3>  
@@ -73,6 +79,7 @@
 	        		<input name="_token" type="hidden" value="{{ csrf_token() }}">
 	                                    <div class="form-group row">
 	                                        <div class="col-sm-4">
+																							{{-- <h1>Pelotas</h1> --}}
 	                                          <label class="color-azul">RUC:</label>
 	                                          <input type="text" class="form-control text-center"  id="Ruc" name="Ruc"  required placeholder="12358132134" maxlength="11">
 	                                          <span  id ="ErrorMensaje-Ruc" class="help-block"></span>
@@ -131,10 +138,10 @@
 
 	                                    </div>
 
-										<div class="form-group">
+										{{-- <div class="form-group">
 											<div class="row">
 		                                        <div class="col-sm-4">
-		                                        	lorem
+		                                        	
 		                                        	<label class="color-azul">Estado:</label>
 													<select class="form-control text-center" name="estado_id" id="estado_id">
 														@foreach($estados as $estado)
@@ -148,7 +155,7 @@
 		                                        	<span  id ="ErrorMensaje-estado_id" class="help-block"></span>
 		                                      	</div>
 											</div>
-	                                    </div>
+	                                    </div> --}}
 
 
 	                                    <div class="form-group">

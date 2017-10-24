@@ -10,6 +10,10 @@
 
 @section('css')
 	<style>
+	.sidebar-reportes
+        {
+            color: #f39c12;
+        }
 		.content-wrapper
 			{
     			background-color: #ffffff;

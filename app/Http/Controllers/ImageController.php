@@ -36,6 +36,16 @@ class ImageController extends Controller
     	$image->save($path);
     	return $random.$nombre;
     }
+    public static function GuardarImagenProducto($imagen, $nombre)
+    {
+        $random = str_random(10);
+        $path = 'img/productos/'.$random.$nombre;
+        
+        $image = Image::make($imagen->getRealPath());
+        $image->resize(90, 90);
+        $image->save($path);
+        return $random.$nombre;
+    }
 
     public static function GuardarImagen150($imagen, $nombre)
     {

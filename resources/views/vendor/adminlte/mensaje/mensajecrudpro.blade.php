@@ -10,6 +10,10 @@
 @section('css')
 <link rel="stylesheet" href="/css/jquery.bootgrid.min.css" type="text/css"> 
 	<style>
+	.sidebar-cruds
+	        {
+	            color: #f39c12;
+	        }
 		.fa-list
 		{
 			color: #009688; 

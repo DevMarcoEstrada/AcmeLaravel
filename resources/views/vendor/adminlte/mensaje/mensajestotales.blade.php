@@ -11,6 +11,10 @@
 
 @section('css')
 	<style>
+	.sidebar-mostrar
+	        {
+	            color: #f39c12;
+	        }
 		.content-wrapper
 			{
     			background-color: #ffffff;
