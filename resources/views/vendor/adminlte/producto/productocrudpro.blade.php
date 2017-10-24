@@ -126,7 +126,7 @@ $(document).ready(function()
 		        "commands": function(column, row)
 		        {
 
-		            return  "<a  class=\"btn btn-default btn-info\" href=\"../Productos/Ver/" +   row.id + "\"><i class=\"fa fa-eye\" aria-hidden=\"true\"></i>&nbsp;</a><a  class=\"btn btn-default btn-danger\" href=\"../Productos/Editar/" +   row.id + "\"><i class=\"fa fa-pencil\" aria-hidden=\"true\"></i>&nbsp;</a>";
+		            return  "<div class =\"row\"><a  class=\"btn btn-default btn-info\" href=\"../Productos/Ver/" +   row.id + "\"><i class=\"fa fa-eye\" aria-hidden=\"true\"></i>&nbsp;</a><a  class=\"btn btn-default btn-danger\" href=\"../Productos/Editar/" +   row.id + "\"><i class=\"fa fa-pencil\" aria-hidden=\"true\"></i>&nbsp;</a><a  class=\"btn btn-default btn-danger\" href=\"../admin/Producto" + "\"><i class=\"fa fa-plus\" aria-hidden=\"true\"></i>&nbsp;</a></div>";
 
 	           		    
 		        }
