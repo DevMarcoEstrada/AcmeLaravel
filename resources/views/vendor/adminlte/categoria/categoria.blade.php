@@ -133,6 +133,7 @@
 			$("#ErrorCategoria-NombreCategoria").text("El Nombre no puede ser vacio");
 			$("#ErrorCategoria-NombreCategoria").show();
 			$("#nombre_categoria").focus();	
+			// alert();
 			return false;
 		}
 

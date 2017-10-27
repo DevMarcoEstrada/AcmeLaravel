@@ -35,7 +35,19 @@
             </h3>
 
             <div class="row">
-                <div class="col-md-6">
+                 <div class="col-md-4">
+                    <label class="color-azul">Grafica</label>
+                    <select class="form-control" id="grafica_sel" onchange="cambiar_fecha_grafica();">
+
+                        <option value="personas">Personas</option>
+                        <option value="ventas">Ventas</option>
+                    </select>
+
+                </div>
+
+
+
+                <div class="col-md-4">
                     <label class="color-azul">Año</label>
                     <select class="form-control" id="anio_sel" onchange="cambiar_fecha_grafica();">
 
@@ -47,7 +59,7 @@
                 </div>
 
 
-                <div class="col-md-6">
+                <div class="col-md-4">
                     <label class="color-azul">Mes</label>
                     <select class="form-control" id="mes_sel" onchange="cambiar_fecha_grafica();">
                         @foreach($meses as $mes)
