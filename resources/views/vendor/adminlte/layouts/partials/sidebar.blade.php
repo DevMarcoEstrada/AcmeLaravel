@@ -14,7 +14,7 @@
                 
                 </div>
                 <div class="pull-left info">
-                    <p><strong>{{ Auth::user()->name }}</strong>|
+                    <p><strong>{{ Auth::user()->name }}</strong>
                     </p>
                     
                         
