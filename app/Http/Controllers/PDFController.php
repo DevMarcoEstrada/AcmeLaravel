@@ -28,6 +28,15 @@ class PDFController extends Controller
 
     }
 
+    public function crear_reporte_ventas($tipo)
+    {
+        $vistaurl="adminlte::reporte.reporte_ventas";
+        $usuarios=User::all();
+     
+     return $this->CrearUsuarioPDF($usuarios, $vistaurl,$tipo);
+
+    }
+
     private function CrearUsuarioPDF($datos,$vistaurl,$tipo)
     {
 
@@ -39,6 +48,20 @@ class PDFController extends Controller
         
         if($tipo==1){return $pdf->stream('reporte');}
         if($tipo==2){return $pdf->download('reporte_usuarios.pdf'); }
+
     }
 
+private function CrearVentaPDF($datos,$vistaurl,$tipo)
+    {
+
+        $data = $datos;
+        $date = date('Y-m-d');
+        $view =  \View::make($vistaurl, compact('data', 'date'))->render();
+        $pdf = \App::make('dompdf.wrapper');
+        $pdf->loadHTML($view);
+        
+        if($tipo==3){return $pdf->stream('reporte');}
+        if($tipo==4){return $pdf->download('reporte_ventas.pdf'); }
+        
+    }
 }

@@ -46,6 +46,7 @@
 		<div class="row">
 			<div class="col-md-10 col-md-offset-1">
 				<h3 class="text-center color-azul"><strong><i class="fa fa-bar-chart" aria-hidden="true"></i>&nbsp; Reportes del Sistema&nbsp;<i class="fa fa-bar-chart" aria-hidden="true"></i></strong></h3>  
+
 				@if(count($reportes)>0)
 				<div class="table-responsive">
                   <table class="table table-hover">
@@ -57,17 +58,25 @@
                     <tbody>
                     
                     
-	                    @foreach($reportes as $reporte)
+	                    @foreach($reportes as $reporte_usuario)
 	                    <tr>
-	                      <td  class="color-negro text-center" style="font-weight:300; vertical-align:middle;">{{$reporte->nombre_reporte}}</td>
+	                      <td  class="color-negro text-center" style="font-weight:300; vertical-align:middle;">Lista de Usuarios</td>
 	                      <td  class="color-negro text-center" style="font-weight:300; vertical-align:middle;"><a href="{{url('reporte_usuarios'). '/1'}}" target="_blank" ><button class="btn btn-block btn-primary btn-xs">Ver</button></a></td>
 	                      <td  class="color-negro text-center" style="font-weight:300; vertical-align:middle;"><a href="{{url('reporte_usuarios'). '/2'}}" target="_blank" ><button class="btn btn-block btn-danger btn-xs">Descargar</button></a></td>
 	                    
 	                    </tr>
-                    @endforeach
-					
-
+ @endforeach
+		@foreach($reportes as $reporte_venta)
+                      <tr>
+	                      <td  class="color-negro text-center" style="font-weight:300; vertical-align:middle;">Lista de Ventas</td>
+	                      <td  class="color-negro text-center" style="font-weight:300; vertical-align:middle;"><a href="{{url('reporte_ventas'). '/1'}}" target="_blank" ><button class="btn btn-block btn-primary btn-xs">Ver</button></a></td>
+	                      <td  class="color-negro text-center" style="font-weight:300; vertical-align:middle;"><a href="{{url('reporte_ventas'). '/2'}}" target="_blank" ><button class="btn btn-block btn-danger btn-xs">Descargar</button></a></td>
+	                    
+	                    </tr>
                    
+                    @endforeach
+
+
                   </tbody></table>
                 </div>
 				@else
