@@ -91,14 +91,20 @@
 			<div class="col-sm-12 col-md-2 ">
 
 				<h4 class="h4 text-center ">
+
 					{{$producto->cDescripcionProducto}}
 				</h4>
 					
 			</div>
-			<div class="col-sm-3 col-sm-push-5 col-md-3 col-md-push-1">
+			{{-- <div class="col-sm-3 col-sm-push-5 col-md-3 col-md-push-1">
 				<img src="{{ asset('/img/productos/' . $producto->ruta_imagen) }}" class="img-fluid img-rounded rounded mx-auto d-block" alt="Sample photo" width="150" height="150">
 				
+			</div> --}}
+			<div class="col-sm-3 col-sm-push-5 col-md-3 col-md-push-1">
+				<img src="{{ asset('/img/productos/' . $producto->ruta_imagen) }}" class="img-fluid img-rounded rounded mx-auto d-block" alt="Sample photo" width="90" height="90">
+				
 			</div>
+
 
 
 

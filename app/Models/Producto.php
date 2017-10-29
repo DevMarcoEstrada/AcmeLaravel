@@ -46,7 +46,7 @@ class Producto extends Model
   public static function Listar_Producto_Id($id)
     {
          return Producto::select('productos.id', 'productos.cDescripcionProducto', 'productos.precio', 
-                          'productos.stock','categorias.nombre_categoria')
+                          'productos.stock','categorias.nombre_categoria', 'productos.ruta_imagen')
          ->join('categorias', 'productos.categoria_id', '=', 'categorias.id')
          ->where('productos.id', $id)->get();
         // return Producto::all();
