@@ -70,6 +70,7 @@ class PersonaJuridica extends Model
                                 ->where("personas.estado_id",1)
                                 ->get();
     }
+    
     public static function ListarPersonasJuridicas($datos)
     {
 

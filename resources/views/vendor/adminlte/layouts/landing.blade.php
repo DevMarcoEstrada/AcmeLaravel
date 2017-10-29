@@ -216,50 +216,7 @@
             </div>
         </div>
 
-        <div class="row">
-            <div class="col-sm-12 col-md-4">
-                <h2 class="text-center">Atención</h2>
-                <p class="text-center"><i class="fa fa-5x fa-cube"></i></p>
-                <div class="row">
-                    <div class="col-sm-8 col-sm-push-2">
-                        <p class="text-justify">
-                            <i class="fa fa-check-circle-o"></i> Mas de <strong>1000 clientes</strong> no pueden estar equivocados.
-
-                        </p>
-                        <p class="text-justify">
-                            <i class="fa fa-check-circle-o"></i> No confíes en nosotros, confía en miles de personas.
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-12 col-md-4">
-                <h2 class="text-center">Comodidad</h2>
-                <p class="text-center"><i class="fa fa-5x fa-btc"></i></p>
-                <div class="row">
-                    <div class="col-sm-8 col-sm-push-2">
-                        <p class="text-justify">
-                            <i class="fa fa-check-circle-o"></i> Multiples <strong>Metodos de Pago.</strong>
-                            
-                        </p>
-                        <p class="text-justify">
-                            <i class="fa fa-check-circle-o"></i> Monedas virtuales como <strong>Bitcoin y Ethereum.</strong>
-                        </p>
-
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-12 col-md-4">
-                <h2 class="text-center">Variedad</h2>
-                <p class="text-center"><i class="fa fa-5x fa-bars"></i></p>
-                <div class="row">
-                    <div class="col-sm-8 col-sm-push-2">
-                        <p class="text-justify">
-                            <i class="fa fa-check-circle-o"></i> <strong>Muchas Categorías</strong>, para que encuentres lo que andas buscando.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
+      
 
 
 
@@ -286,17 +243,24 @@
             <!--Contenedor de los slide -->
                 <div class="carousel-inner" role="listbox">            
                      <div class ="item active">
-                             <img src="/landing/img/carrusel4.jpg" class="img img-responsive"  width="1600" height="900" alt="Tecnologia">
+                             <img src="/landing/img/tecno.jpg" class="img img-responsive"  width="1600" height="900" alt="Tecnologia">
                          <div class="carousel-caption">  
                          <h3> 
                             </h3>
                           <p> Tecnologia.</p>
                          </div>
                      </div>
-
+<div class ="item">
+                              <img src="/landing/img/boy_moda.jpg" class="img img-responsive"  width="1010" height="613" alt="Moda">
+                        <div class="carousel-caption">
+                            <h3> 
+                            </h3>
+                            <p> Moda.</p>
+                        </div>
+                     </div>
 
                      <div class ="item" >
-                             <img src="/landing/img/carrusel5.jpg" class="img img-responsive"  width="1600" height="900" alt="Muebles">
+                             <img src="/landing/img/carruselmueble.jpg" class="img img-responsive"  width="1600" height="900" alt="Muebles">
                         <div class="carousel-caption">
                              <h3> 
                             </h3>
@@ -306,13 +270,15 @@
 
 
                      <div class ="item">
-                              <img src="/landing/img/carrusel6.jpg" class="img img-responsive"  width="1600" height="900" alt="Moda">
+                              <img src="/landing/img/girl_moda.gif" class="img img-responsive"  width="1600" height="900" alt="Moda">
                         <div class="carousel-caption">
                             <h3> 
                             </h3>
                             <p> Moda.</p>
                         </div>
                      </div>
+
+                     
                             
                 </div>
 
@@ -336,7 +302,7 @@
     <section id="Contacto">
         <div class="container" >
             <div class="row">
-                <h2 class="text-center">Contáctanos</h2>
+                <h2 class="text-center">CONTÁCTANOS</h2>
             </div>
             <br>
             <br>
@@ -344,13 +310,13 @@
             <div class="row">
                 <div class="col-sm-12 col-md-6">
                     <h3 class="text-center"> <i class="fa fa-clock-o"></i> <u>Horario de Atención</u></h3>
-                    <p class="text-justify"><i class="fa fa-check-circle-o"></i>Los mensajes mandados por la aplicación se responderán en horario de oficina.</p>
-                    <p class="text-justify"><i class="fa fa-check-circle-o"></i>Los mensajes en nuestras redes sociales se responderán cada vez que se pueda.</p>
+                    <p class="text-justify"><i class="fa fa-check-circle-o"></i>&nbsp; Los mensajes mandados por la aplicación se responderán en horario de oficina. &nbsp;</p>
+                    <p class="text-justify"><i class="fa fa-check-circle-o"></i>&nbsp; Los mensajes en nuestras redes sociales se responderán cada vez que se pueda.&nbsp;</p>
                 </div>
 
                 <div class="col-sm-12 col-md-6">
                     <h3 class="text-center"> <i class="fa fa-dot-circle-o"></i> <u>Nuestras Redes Sociales</u></h3>
-                   <p class="text-center"> <a class="sociales" href="https://www.facebook.com/centrocomputouns/" target="_blank" title="Facebook" itemprop="followee"><i class="fa fa-facebook-square fa-4x" aria-hidden="true"></i></a>
+                   <p class="text-center"> <a class="sociales" href="https://www.facebook.com/ACME-1500286046714471/" target="_blank" title="Facebook" itemprop="followee"><i class="fa fa-facebook-square fa-4x" aria-hidden="true"></i></a>
                     <a  class="sociales" href="https://www.facebook.com/centrocomputouns/" target="_blank" title="Twitter" itemprop="followee"><i class="fa fa-twitter-square fa-4x" aria-hidden="true"></i></a>
                     <a class="sociales" href="https://www.facebook.com/centrocomputouns/" target="_blank" title ="YouTube" itemprop="followee"><i class="fa fa-youtube-square fa-4x" aria-hidden="true"></i></a> </p>
                 </div>
@@ -372,28 +338,28 @@
                             <input name="_token" type="hidden" value="{{ csrf_token() }}">
                             <div class="row control-group">
                                 <div class="form-group col-xs-12 floating-label-form-group controls">
-                                    <label>Nombre</label>
+                                    <label>&nbsp;Nombre</label>
                                     <input type="text" class="form-control" placeholder="Nombre" id="name" name="name" required data-validation-required-message="Ingresa tu nombre.">
                                     <p class="help-block text-danger"></p>
                                 </div>
                             </div>
                             <div class="row control-group">
                                 <div class="form-group col-xs-12 floating-label-form-group controls">
-                                    <label>Correo Electrónico</label>
+                                    <label>&nbsp;Correo Electrónico</label>
                                     <input type="email" class="form-control" placeholder="Correo Electrónico" id="email" name="email" required data-validation-required-message="Ingresa tu correo electrónico address.">
                                     <p class="help-block text-danger"></p>
                                 </div>
                             </div>
                             <div class="row control-group">
                                 <div class="form-group col-xs-12 floating-label-form-group controls">
-                                    <label>Numero de Telefono</label>
+                                    <label>&nbsp;Numero de Telefono</label>
                                     <input type="tel" class="form-control" placeholder="Numero de Telefono" id="phone" name="phone" required data-validation-required-message="Ingresa tu número de teléfono.">
                                     <p class="help-block text-danger"></p>
                                 </div>
                             </div>
                             <div class="row control-group">
                                 <div class="form-group col-xs-12 floating-label-form-group controls">
-                                    <label>Mensaje</label>
+                                    <label>&nbsp;Mensaje</label>
                                     <textarea rows="5" class="form-control" placeholder="Mensaje" id="message" name="message" required data-validation-required-message="Ingresa tu mensaje."></textarea>
                                     <p class="help-block text-danger"></p>
                                 </div>
@@ -402,7 +368,7 @@
                             <div id="success"></div>
                             <div class="row">
                                 <div class="form-group col-xs-12">
-                                    <button type="submit" class="btn btn-default" style="color: #A4A4A4;">Enviar</button>
+                                    <button type="submit" class="btn btn-primary" style="color: #f1f230;">ENVIAR</button>
                                 </div>
                             </div>
                             </form>
@@ -451,7 +417,7 @@
                 <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                     <ul class="list-inline text-center">
                         <li>
-                            <a target="_blank" href="https://www.facebook.com/centrocomputouns/">
+                            <a target="_blank" href="https://www.facebook.com/ACME-1500286046714471/">
                                 <span class="fa-stack fa-lg">
                                     <i class="fa fa-circle fa-stack-2x"></i>
                                     <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
@@ -459,7 +425,7 @@
                             </a>
                         </li>
                         <li>
-                            <a target="_blank" href="https://www.facebook.com/centrocomputouns/">
+                            <a target="_blank" href="https://www.facebook.com/ACME-1500286046714471/">
                                 <span class="fa-stack fa-lg">
                                     <i class="fa fa-circle fa-stack-2x"></i>
                                     <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
@@ -467,7 +433,7 @@
                             </a>
                         </li>
                         <li>
-                            <a target="_blank" href="https://www.facebook.com/centrocomputouns/">
+                            <a target="_blank" href="https://www.facebook.com/ACME-1500286046714471/">
                                 <span class="fa-stack fa-lg">
                                     <i class="fa fa-circle fa-stack-2x"></i>
                                     <i class="fa fa-github fa-stack-1x fa-inverse"></i>
@@ -475,7 +441,7 @@
                             </a>
                         </li>
                     </ul>
-                    <p class="copyright text-muted">Copyright &copy; Your Website 2016</p>
+                    <p class="copyright text-muted">Copyright &copy; ACME 2017</p>
                 </div>
             </div>
         </div>

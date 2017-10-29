@@ -162,6 +162,7 @@ Route::post('Zona/Listar_Distritos_x_Provincia/{id}',['as' => 'Zona/Listar_Distr
 
 Route::get('Reportes', ['as' =>'Reportes', 'uses' => 'PDFController@reportes']);
 Route::get('reporte_usuarios/{tipo}', 'PDFController@crear_reporte_usuarios');
+Route::get('reporte_ventas/{tipo}', 'PDFController@crear_reporte_ventas');
 Route::get('listado_graficas',['as' =>'listado_graficas','uses' =>  'GraficasController@Personas']);
 Route::get('grafica_registros_personas/{anio}/{mes}',['as' =>'grafica_registros' ,'uses' => 'GraficasController@registros_mes']);
 Route::get('grafica_registros_ventas/{anio}/{mes}',['as' =>'grafica_ventas' ,'uses' => 'GraficasController@ventas_mes']);

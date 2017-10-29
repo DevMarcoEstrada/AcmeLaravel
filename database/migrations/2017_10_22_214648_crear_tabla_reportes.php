@@ -29,6 +29,8 @@ class CrearTablaReportes extends Migration
         DB::table('reportes')->insert([
                                 ['nombre_reporte' => 'Lista de Usuarios','role_id' => '1','estado_id'=> '1'],
                                 ['nombre_reporte' => 'Lista de Usuarios','role_id' => '2','estado_id'=> '1'],
+                                ['nombre_reporte' => 'Lista de Ventas','role_id' => '3','estado_id'=> '3'],
+                                ['nombre_reporte' => 'Lista de Ventas','role_id' => '4','estado_id'=> '3'],
                                ]);
     }
 
