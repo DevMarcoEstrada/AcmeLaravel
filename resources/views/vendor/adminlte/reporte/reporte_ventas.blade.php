@@ -129,21 +129,23 @@ table {
                   <thead style="color:#337ab7;">
                      <tr>
                       <th style="width: 40px;text-align: center;">Código de Venta</th>
-                      <th style="width: 40px;text-align: center;">Fecha</th>
                       <th style="width: 40px;text-align: center;">ID_Cliente</th>
+                      <th style="width: 40px;text-align: center;">Fecha</th>
+                      <th style="width: 40px;text-align: center;">Dirección</th>
                       <th style="width: 40px;text-align: center;">Total</th>
                       
                     </tr>
                   </thead>
                   
                   <tbody>
-                  <?php foreach($data as $pedidos){ ?>
+                  <?php foreach($data as $documentos){ ?>
                  
                     <tr>
-                      <td style="text-align: center;"><?= $pedidos->id; ?></td>
-                      <td style="text-align: center;"><?= $pedidos->fechaPedido; ?></td>
-                      <td style="text-align: center;"><?= $pedidos->user_id; ?></td>
-                      <td style="text-align: center;"><?= $pedidos->precio_total; ?></td>
+                      <td style="text-align: center;"><?= $documentos->id; ?></td>
+                      <td style="text-align: center;"><?= $documentos->Nombres; ?></td>
+                      <td style="text-align: center;"><?= $documentos->fecha_pago ?></td>
+                      <td style="text-align: center;"><?= $documentos->direccion_envio; ?></td>
+                      <td style="text-align: center;"><?= $documentos->total; ?></td>
                     </tr>
                     
                     <?php  } ?>

@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth as Auth;
 
 use App\Models\Reporte;
+use App\Models\Documento;
 use App\User;
 use PDF;
 
@@ -31,9 +32,9 @@ class PDFController extends Controller
     public function crear_reporte_ventas($tipo)
     {
         $vistaurl="adminlte::reporte.reporte_ventas";
-        $usuarios=User::all();
+        $pedidos=Documento::all();
      
-     return $this->CrearUsuarioPDF($usuarios, $vistaurl,$tipo);
+     return $this->CrearVentaPDF($pedidos, $vistaurl,$tipo);
 
     }
 
@@ -60,8 +61,8 @@ private function CrearVentaPDF($datos,$vistaurl,$tipo)
         $pdf = \App::make('dompdf.wrapper');
         $pdf->loadHTML($view);
         
-        if($tipo==3){return $pdf->stream('reporte');}
-        if($tipo==4){return $pdf->download('reporte_ventas.pdf'); }
+        if($tipo==1){return $pdf->stream('reporte');}
+        if($tipo==2){return $pdf->download('reporte_ventas.pdf'); }
         
     }
 }

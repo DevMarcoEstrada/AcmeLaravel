@@ -817,18 +817,18 @@ a:focus {
   margin: 0;
 }
 .control-sidebar-dark {
-  color: #b8c7ce;
+  color: #f0de94;
 }
 .control-sidebar-dark,
 .control-sidebar-dark + .control-sidebar-bg {
-  background: #222d32;
+  background: #5a4503;
 }
 .control-sidebar-dark .nav-tabs.control-sidebar-tabs {
   border-bottom: #1c2529;
 }
 .control-sidebar-dark .nav-tabs.control-sidebar-tabs > li > a {
   background: #181f23;
-  color: #b8c7ce;
+  color: #f0de94;
 }
 .control-sidebar-dark .nav-tabs.control-sidebar-tabs > li > a,
 .control-sidebar-dark .nav-tabs.control-sidebar-tabs > li > a:hover,
@@ -848,7 +848,7 @@ a:focus {
 .control-sidebar-dark .nav-tabs.control-sidebar-tabs > li.active > a:hover,
 .control-sidebar-dark .nav-tabs.control-sidebar-tabs > li.active > a:focus,
 .control-sidebar-dark .nav-tabs.control-sidebar-tabs > li.active > a:active {
-  background: #222d32;
+  background: #5a4503;
   color: #fff;
 }
 .control-sidebar-dark .control-sidebar-heading,
@@ -859,7 +859,7 @@ a:focus {
   background: #1e282c;
 }
 .control-sidebar-dark .control-sidebar-menu > li > a .menu-info > p {
-  color: #b8c7ce;
+  color: #f0de94;
 }
 .control-sidebar-light {
   color: #5e5e5e;
@@ -2802,7 +2802,7 @@ table.text-center th {
   bottom: 0;
   height: 250px;
   width: 100%;
-  background: #222d32;
+  background: #5a4503;
   color: #fff;
   overflow: auto;
 }
