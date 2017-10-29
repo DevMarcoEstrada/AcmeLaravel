@@ -129,7 +129,7 @@ table {
                   <thead style="color:#337ab7;">
                      <tr>
                       <th style="width: 40px;text-align: center;">Código de Venta</th>
-                      <th style="width: 40px;text-align: center;">ID_Cliente</th>
+                      <th style="width: 40px;text-align: center;">Nombre Cliente</th>
                       <th style="width: 40px;text-align: center;">Fecha</th>
                       <th style="width: 40px;text-align: center;">Dirección</th>
                       <th style="width: 40px;text-align: center;">Total</th>

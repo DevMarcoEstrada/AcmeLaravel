@@ -32,7 +32,7 @@ class PDFController extends Controller
     public function crear_reporte_ventas($tipo)
     {
         $vistaurl="adminlte::reporte.reporte_ventas";
-        $pedidos=Documento::all();
+        $pedidos=Documento::ListarNombreVentaAll();
      
      return $this->CrearVentaPDF($pedidos, $vistaurl,$tipo);
 

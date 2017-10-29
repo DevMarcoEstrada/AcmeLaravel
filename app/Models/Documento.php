@@ -15,18 +15,29 @@ class Documento extends Model
     public $primaryKey ='id';
 
 
-     public static function ListarNombreClienteAll()
+     public static function ListarNombreVentaAll()
     {
 
-        return Documento::select("documentos.id",
-                                       "documentos.persona_id",
-                                       "documentos.total",
-                                       "documentos.fecha_pago",
-                                       "documentos.direccion_envio",
-                                       "personasnaturales.Nombres")
-                                ->join("personas","personas.id","=","documentos.persona_id")
-                                ->join("personasnaturales","personasnaturales.id","=","personas.id")
-                                ->get();
+ $query = " SELECT documentos.id, documentos.persona_id, 
+                          documentos.total,
+                          documentos.fecha_pago,
+                          documentos.direccion_envio,
+                          CONCAT(personasnaturales.Nombres,' ', personasnaturales.cApellidoPaterno,' ',  personasnaturales.cApellidoMaterno) as Nombres
+                         FROM documentos 
+                        inner join personas on personas.id = documentos.persona_id 
+                        inner join personasnaturales on personasnaturales.id = personas.id";
+
+return DB::select($query);
+         // return Documento::select("documentos.id",
+         //                               "documentos.persona_id",
+         //                               "documentos.total",
+         //                               "documentos.fecha_pago",
+         //                               "documentos.direccion_envio",
+         //                               "personasnaturales.Nombres")
+         //                        ->join("personas","personas.id","=","documentos.persona_id")
+         //                        ->join("personasnaturales","personasnaturales.id","=","personas.id")
+         //                        ->get();
+
     }
 
  public static function ListarNombreCliente($datos)
