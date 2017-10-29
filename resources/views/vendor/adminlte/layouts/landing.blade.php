@@ -216,50 +216,7 @@
             </div>
         </div>
 
-        <div class="row">
-            <div class="col-sm-12 col-md-4">
-                <h2 class="text-center">Atención</h2>
-                <p class="text-center"><i class="fa fa-5x fa-cube"></i></p>
-                <div class="row">
-                    <div class="col-sm-8 col-sm-push-2">
-                        <p class="text-justify">
-                            <i class="fa fa-check-circle-o"></i> Mas de <strong>1000 clientes</strong> no pueden estar equivocados.
-
-                        </p>
-                        <p class="text-justify">
-                            <i class="fa fa-check-circle-o"></i> No confíes en nosotros, confía en miles de personas.
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-12 col-md-4">
-                <h2 class="text-center">Comodidad</h2>
-                <p class="text-center"><i class="fa fa-5x fa-btc"></i></p>
-                <div class="row">
-                    <div class="col-sm-8 col-sm-push-2">
-                        <p class="text-justify">
-                            <i class="fa fa-check-circle-o"></i> Multiples <strong>Metodos de Pago.</strong>
-                            
-                        </p>
-                        <p class="text-justify">
-                            <i class="fa fa-check-circle-o"></i> Monedas virtuales como <strong>Bitcoin y Ethereum.</strong>
-                        </p>
-
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-12 col-md-4">
-                <h2 class="text-center">Variedad</h2>
-                <p class="text-center"><i class="fa fa-5x fa-bars"></i></p>
-                <div class="row">
-                    <div class="col-sm-8 col-sm-push-2">
-                        <p class="text-justify">
-                            <i class="fa fa-check-circle-o"></i> <strong>Muchas Categorías</strong>, para que encuentres lo que andas buscando.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
+      
 
 
 
@@ -273,7 +230,7 @@
     <section id="carrusel">
         <div class="container-fluid">
                   
-         {{--  <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">  --}}
+         {{--  <div class="col-lg-8 col-lg-offset-2 col-md-15 col-md-offset-1">  --}}
          <div class="col-sm-10 col-sm-offset-1">
            <div id="carousel-1" class="carousel slide" data-ride="carousel">
             <!-- Indicadores -->
