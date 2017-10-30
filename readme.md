@@ -1,6 +1,6 @@
 <h2>Apuntes</h2>
 <ul>
-  <li>La sql esta en database\DB</li>
+  <li>El sql esta en database\DB</li>
   <li>En el .env, colocar en CACHE_DRIVER la palabra array
     quedando asi: CACHE_DRIVER=array</li>
   <li>El usuario con rol de Administrador esta con:
