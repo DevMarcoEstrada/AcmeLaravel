@@ -4,7 +4,7 @@ function cambiar_fecha_grafica(){
     var grafica_sel = $('#grafica_sel').val();
     var anio_sel=$("#anio_sel option:selected").text();
     var mes_sel=$("#mes_sel").val();
-        alert();
+        // alert();
 
     if(grafica_sel == 'personas')
     {
