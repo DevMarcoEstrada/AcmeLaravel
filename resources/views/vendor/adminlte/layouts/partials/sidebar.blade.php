@@ -109,7 +109,7 @@
                     <li><a href="{{url('PersonaNatural/Crud')}}">Clientes</a></li>
                     <li><a href="{{url('PersonaJuridica/Crud')}}">Proveedores</a></li>
                     <li><a href="{{url('Mensaje/Crud')}}">Mensajes</a></li>
-                    <li><a href="{{url('Transporte/Crud')}}">Transportes</a></li>
+                    {{-- <li><a href="{{url('Transporte/Crud')}}">Transportes</a></li> --}}
                     <li><a href="{{url('Productos/Crud')}}">Productos</a></li>
                     <li><a href="{{url('Categoria/Crud')}}">Categorias</a></li>
 
