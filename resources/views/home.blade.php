@@ -209,7 +209,7 @@ function Skip(Direction) {
 </div>
 
 
-<div id=NavBar style="position:relative;width:286px;top:5px;" align="center">
+<div id=NavBar class= "col-sm-4 col-sm-offset-3" style="position:relative;width:286px;top:5px;" align="center">
 <form name="when">
 <table>
 <tr>
@@ -231,7 +231,7 @@ if (ie4||ns6){
    <td><input type="button" value="SIGUIENTE -->" onClick="Skip('+')"></td>
 </tr></table></form></div>
 
-<div id=Calendar style="position:relative;width:238px;top:-2px;" align="center"></div>
+<div id=Calendar class= "col-sm-4 col-sm-offset-4" style="position:relative;width:238px;top:-2px;" align="center"></div>
 
 </body>
 @endsection
